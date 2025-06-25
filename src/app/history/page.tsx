@@ -1,21 +1,25 @@
 import Link from 'next/link';
 
 const history = [
+    {
+        year: '2021',
+        event: 'in nov i landed my frist intership at  Invade ',
+    },
   {
-    year: '2017',
-    event: '',
+    year: '2021',
+    event: 'in 27th of june i create my github account',
   },
   {
-    year: '2013',
-    event: '.',
+    year: '2020',
+    event: 'I got my frist ever laptop in my life. and for an 1 year i dont touch my laptop i did code in pen and paper 😂',
   },
   {
-    year: '2011',
-    event: '.',
+    year: '2019',
+    event: 'In university i saw sutents doing code and got inspersided by it. so i took engineering admission test without telling my parents, and got into it.',
   },
   {
-    year: '2010',
-    event: '',
+    year: '2018',
+    event: 'i gave my 12th board exam and got 93 in math. So i took admission in mathemetics honours.',
   },
   {
     year: '2001',
