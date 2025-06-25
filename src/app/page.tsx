@@ -66,21 +66,21 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex items-center justify-center p-6 transition-colors duration-200">
-      <div className="max-w-2xl w-full mx-auto px-4 text-left mt-[-3rem]">
+      <div className="max-w-2xl w-full mx-auto px-4">
         <div className="absolute top-6 right-6">
           <button
             onClick={toggleTheme}
-            className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors text-lg"
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           >
             {theme === 'dark' ? '☀' : '☾'}
           </button>
         </div>
 
-        <h1 className="text-4xl font-normal mb-6 tracking-tight">Sajda Kabir</h1>
+        <h1 className="text-2xl font-medium mb-6 tracking-wider">Sajda Kabir</h1>
         
-        <div className="space-y-4 text-base leading-normal text-gray-800 dark:text-gray-300">
-          <p className="max-w-xl">I am building something cool. Previously, I worked at xAI, scaleAI, and a YC backed startup.</p>
+        <div className="space-y-5 text-[15px] leading-relaxed text-gray-800 dark:text-gray-300">
+          <p className="max-w-xl">I am building something cool. Previously,....</p>
           
           <p className="max-w-xl">What I am interested in: Large Language Models, Data, AI research.</p>
           
@@ -88,29 +88,27 @@ export default function Home() {
           
           <div className="pt-1">
             <a 
-              href="mailto:sajdakabir@gmail.com" 
-              className="text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              href="mailto:sajda.kbir@gmail.com" 
+              className="text-[14px] text-gray-600 dark:text-gray-400 hover:underline"
             >
-              sajdakabir [at] gmail [dot] com
+              sajda [dot] kbir [at] gmail [dot] com
             </a>
           </div>
           
-          <div className="flex space-x-6 pt-5">
+          <div className="flex space-x-3 pt-3">
             <Link 
-              href="https://x.com/yourusername" 
+              href="https://x.com/sajdakabir" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
-              aria-label="X (Twitter)"
+              aria-label="Twitter"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L19.401 1.154h-.5zM16.61 20.644h2.039L6.486 3.24H4.298L16.61 20.644z"/>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
               </svg>
             </Link>
             <Link 
-              href="https://github.com/yourusername" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="https://github.com/sajdakabir" target="_blank" rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
               aria-label="GitHub"
             >
