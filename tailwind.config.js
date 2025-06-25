@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Add any custom colors if needed
+        // Add custom dark background
+        'dark-bg': '#111',
       },
     },
   },

@@ -30,13 +30,20 @@ export default function Home() {
     if (!mounted) return;
     
     const root = document.documentElement;
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     
     if (theme === 'dark') {
       root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', '#111');
+      }
     } else {
       root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', '#ffffff');
+      }
     }
   }, [theme, mounted]);
 
@@ -70,26 +77,27 @@ export default function Home() {
         <div className="absolute top-6 right-6">
           <button
             onClick={toggleTheme}
-            className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors text-lg"
+            className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors text-lg"
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           >
             {theme === 'dark' ? '☀' : '☾'}
           </button>
         </div>
 
-        <h1 className="text-2xl font-medium mb-6 tracking-wider">Sajda Kabir</h1>
+        <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Sajda Kabir</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 -mt-4 mb-6">she/her</p>
         
-        <div className="space-y-5 text-[15px] leading-relaxed text-gray-800 dark:text-gray-300">
-          <p className="max-w-xl">I am building something cool. Previously,....</p>
+        <div className="space-y-5 text-[15px] leading-relaxed text-gray-800 dark:text-gray-200">
+          <p className="max-w-xl">I grew up in Calcutta and studied computer science.</p>
           
-          <p className="max-w-xl">What I am interested in: Large Language Models, Data, AI research.</p>
+          <p className="max-w-xl">I live distributed and make things for people who make things, currently building <Link href="https://zerotrail.dev" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">zerotrail</Link> with <Link href="https://twitter.com/oliursahin" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">@oliursahin</Link>— here, I inconsistently post a few of my <Link href="/notes" className="underline hover:no-underline">self notes</Link>.</p>
           
-          <p className="max-w-xl">I love engaging in Open Source, Product, Research, and Technical Communities. The best way to reach me is via email.</p>
+          <p className="max-w-xl">To see who I am, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p>
           
           <div className="pt-1">
             <a 
               href="mailto:sajda.kbir@gmail.com" 
-              className="text-[14px] text-gray-600 dark:text-gray-400 hover:underline"
+              className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline"
             >
               sajda [dot] kbir [at] gmail [dot] com
             </a>
@@ -100,7 +108,7 @@ export default function Home() {
               href="https://x.com/sajdakabir" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+              className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
               aria-label="Twitter"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -109,7 +117,7 @@ export default function Home() {
             </Link>
             <Link 
               href="https://github.com/sajdakabir" target="_blank" rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+              className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
               aria-label="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
