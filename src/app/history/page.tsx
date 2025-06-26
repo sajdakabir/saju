@@ -3,23 +3,23 @@ import Link from 'next/link';
 const history = [
     {
         year: '2021',
-        event: 'in nov i landed my frist intership at  Invade ',
+        event: 'in nov i landed my frist intership at  Invade(automated security startup) and moved to bangalore for 6 months and decicted i will become a CTO and great developer.',
     },
   {
     year: '2021',
-    event: 'in 27th of june i create my github account',
+    event: 'in 27th of june i create my github account and started learning using laptop',
   },
   {
     year: '2020',
-    event: 'I got my frist ever laptop in my life. and for an 1 year i dont touch my laptop i did code in pen and paper 😂',
+    event: 'I got my frist ever laptop in my life. and for an year i dont touched my laptop i did code in pen and paper 😂',
   },
   {
     year: '2019',
-    event: 'In university i saw sutents doing code and got inspersided by it. so i took engineering admission test without telling my parents, and got into it.',
+    event: 'In university i saw some students writting some meaning less english words and that turn into beatiful websites/games. I got inspersided by it. so i took engineering admission test without telling my parents, and got into it.',
   },
   {
     year: '2018',
-    event: 'i gave my 12th board exam and got 93 in math. So i took admission in mathemetics honours.',
+    event: 'i gave my 12th board exam and got 93 in math. So i took admission in mathemetics honours. And got my first ever phone and access to internet.',
   },
   {
     year: '2001',

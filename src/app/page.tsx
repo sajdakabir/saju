@@ -88,11 +88,13 @@ export default function Home() {
         <p className="text-sm text-gray-500 dark:text-gray-400 -mt-4 mb-6">she/her</p>
         
         <div className="space-y-5 text-[15px] leading-relaxed text-gray-800 dark:text-gray-200">
-          <p className="max-w-xl">I grew up in Calcutta and studied computer science.</p>
+          <p className="max-w-xl">I grew up in Plassey and studied computer science in Calcutta.</p>
+
+          <p className="max-w-xl">I can't live in one place for long and i like to spend hours to automate my 10 minutes work.</p>
           
-          <p className="max-w-xl">I live distributed and make things for people who make things, currently building <Link href="https://zerotrail.dev" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">zerotrail</Link> with <Link href="https://twitter.com/oliursahin" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">@oliursahin</Link>— here, I inconsistently post a few of my <Link href="/notes" className="underline hover:no-underline">self notes</Link>.</p>
+          {/* <p className="max-w-xl">I live distributed and make things for people who make things, currently building <Link href="https://zerotrail.dev" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">zerotrail</Link> with <Link href="https://twitter.com/oliursahin" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">@oliursahin</Link>— here, I inconsistently post a few of my <Link href="/notes" className="underline hover:no-underline">self notes</Link>.</p> */}
           
-          <p className="max-w-xl">To see who I am, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p>
+          <p className="max-w-xl">To know more about me, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p>
           
           <div className="pt-1">
             <a 
