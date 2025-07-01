@@ -7,7 +7,7 @@ const history = [
     },
   {
     year: '2021',
-    event: 'in 27th of june i create my github account and started learning using laptop',
+    event: 'in 27th of june i create my github account and started learning coding using laptop',
   },
   {
     year: '2020',
