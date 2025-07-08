@@ -87,15 +87,14 @@ export default function Home() {
         <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Sajda Kabir</h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 -mt-4 mb-6">she/her</p>
         
-        <div className="space-y-5 text-[15px] leading-relaxed text-gray-800 dark:text-gray-200">
-          <p className="max-w-xl">I grew up in Plassey and studied computer science in Calcutta.</p>
-
-          <p className="max-w-xl">I perefer clean code over smart code. I can spend hours to automate my work.</p>
-
-
-          <p>while im not coding you can find me ether reading books, biking, playing badminton or trying new food and make then in home (yah, i can cook code and food boths) </p>
+        <div className="space-y-4 text-[14px] leading-relaxed text-gray-800 dark:text-gray-200">
+          <p className="max-w-xl">I grew up in <Link href="https://en.wikipedia.org/wiki/Palashi" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">Plassey</Link> and studied Computer Science in Calcutta.</p>
           
-          {/* <p className="max-w-xl">I live distributed and make things for people who make things, currently building <Link href="https://zerotrail.dev" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">zerotrail</Link> with <Link href="https://twitter.com/oliursahin" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">@oliursahin</Link>— here, I inconsistently post a few of my <Link href="/notes" className="underline hover:no-underline">self notes</Link>.</p> */}
+          <p className="max-w-xl">Now I live in hacker hostels and Airbnbs like a <Link href="https://x.com/levelsio/status/1934737739787678197" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">slowmad</Link>.</p>
+          
+          <p className="max-w-xl">I prefer clean code over clever one-liners, and I can spend hours automating 10 minutes of manual work.</p>
+          
+          <p className="max-w-xl">When I'm not coding, you can find me reading books, biking, playing badminton, trying new food, or cooking it in the kitchen (yeah, I can cook both code and food).</p>
           
           <p className="max-w-xl">To know more about me, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p>
           
