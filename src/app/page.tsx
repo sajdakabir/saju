@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { GiUbisoftSun } from 'react-icons/gi';
+import { IoMoonSharp } from 'react-icons/io5';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -77,10 +79,10 @@ export default function Home() {
         <div className="absolute top-6 right-6">
           <button
             onClick={toggleTheme}
-            className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors text-lg"
+            className="p-2 text-black dark:text-white transition-colors text-lg"
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           >
-            {theme === 'dark' ? '☼' : '☾'}
+            {theme === 'dark' ? <GiUbisoftSun /> : <IoMoonSharp />}
           </button>
         </div>
 
