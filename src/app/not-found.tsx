@@ -69,7 +69,7 @@ export default function NotFound() {
         
         <Link 
           href="/" 
-          className="px-5 py-2 text-[14px] border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+          className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline transition-colors"
         >
           Return Home
         </Link>
