@@ -132,7 +132,7 @@ export default function Home() {
               </svg>
             </Link>
             <Link 
-              href="/404" target="_blank" rel="noopener noreferrer"
+              href="/404" rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
               aria-label="404 Page"
             >
