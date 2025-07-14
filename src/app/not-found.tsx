@@ -63,8 +63,9 @@ export default function NotFound() {
           />
         </div>
         
-        <h1 className="text-xl font-medium mb-4 tracking-wider text-gray-900 dark:text-gray-100">Either you're too naive, or we're being too smart. Either way, this page doesn't exist.</h1>
+        {/* <h1 className="text-xl font-medium mb-4 tracking-wider text-gray-900 dark:text-gray-100">Either you're too naive, or we're being too smart. Either way, this page doesn't exist.</h1> */}
         {/* <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">either you are too nive or bing too smart.</p> */}
+        <h1 className="text-lg font-medium mb-4 tracking-wider text-gray-700 dark:text-gray-100">I'm working hard so that my cat can have a better life.</h1>
         
         <Link 
           href="/" 
