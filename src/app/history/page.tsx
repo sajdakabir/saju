@@ -1,9 +1,21 @@
 import Link from 'next/link';
 
 const history = [
+  {
+    year: '2024',
+    event: 'i start march ',
+  },
+  {
+    year: '2023',
+    event: 'I found my interest in Backend developmet and backend architecture i learnd it within 2 months and build 7+ projects around backend development. and in this year i i contributed full to open source projects – Meilisearch,MindsDB, Amplication,  ToolJet, Firezone, CNCF (Cloud Native Computing Foundation).',
+    },
+    {
+        year: '2022',
+        event: 'nothing special this year after lockdown back to college writing assignments , attandance and DSA .I got so much intersted in DSA in that time of period , some of my favirite topic was  graph, recuursion and dynamic programming',
+    },
     {
         year: '2021',
-        event: 'in nov i landed my frist intership at  Invade(automated security startup) and moved to bangalore for 6 months and decicted i will become a CTO and great developer.',
+        event: 'in nov i landed my frist intership at  Invade(automated security startup) and moved to bangalore for 6 months where i get the intersted in buidling for people and the found my dream/goal/what i want from my life.(call it what ever you want)',
     },
   {
     year: '2021',
