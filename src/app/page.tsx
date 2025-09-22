@@ -21,6 +21,7 @@ const getInitialTheme = () => {
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState('light');
+  const [showNavigation, setShowNavigation] = useState(false);
 
   // Initialize theme after mount
   useEffect(() => {
@@ -72,6 +73,10 @@ export default function Home() {
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  const toggleNavigation = () => {
+    setShowNavigation(!showNavigation);
   };
 
   return (
@@ -138,6 +143,16 @@ export default function Home() {
             >
               <TbError404 className="w-5 h-5" />
             </Link>
+          </div>
+
+          <div className="pt-3">
+            <button
+              onClick={toggleNavigation}
+              className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
+              aria-label="Toggle navigation menu"
+            >
+              see my notes
+            </button>
           </div>
         </div>
       </div>
