@@ -54,6 +54,8 @@ export default function Home() {
 
   // Listen for system theme changes
   useEffect(() => {
+    if (!mounted) return;
+    
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     const handleChange = () => {
@@ -62,7 +64,7 @@ export default function Home() {
 
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
+  }, [mounted]);
 
   if (!mounted) {
     return (
@@ -159,10 +161,16 @@ export default function Home() {
             <div className="pt-3">
               <button
                 onClick={toggleNavigation}
-                className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
-                aria-label="Toggle navigation menu"
+                className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-gray-500 dark:focus:ring-offset-gray-800 rounded-sm px-1 py-1"
+                aria-label={showNavigation ? "Hide navigation menu" : "Show navigation menu"}
+                aria-expanded={showNavigation}
+                aria-controls="main-navigation"
+                type="button"
               >
                 see my notes
+                <span className="sr-only">
+                  {showNavigation ? " (currently open)" : " (currently closed)"}
+                </span>
               </button>
             </div>
           </div>
