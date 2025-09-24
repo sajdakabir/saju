@@ -19,6 +19,7 @@ interface NavigationProps {
 
 // Navigation items configuration
 const navigationItems: NavigationItem[] = [
+  {label:'home',href: '/' },
   { label: 'projects', href: '/projects' },
   { label: 'notes', href: '/notes' },
   { label: 'photos', href: '/photos' }
