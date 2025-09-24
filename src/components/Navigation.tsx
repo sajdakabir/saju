@@ -60,25 +60,26 @@ export default function Navigation({ isVisible, theme, onNavigate }: NavigationP
     <nav 
       className={`
         ${animationClass}
+        fixed top-0 left-0 right-0 z-50
+        bg-white/95 dark:bg-[#1B1B1B]/95 backdrop-blur-sm
+        border-b border-gray-200 dark:border-gray-700
         transition-all duration-500 ease-out
         motion-reduce:transition-none motion-reduce:duration-0
         ${isVisible 
-          ? 'opacity-100 translate-y-0 scale-100' 
-          : 'opacity-0 translate-y-4 scale-95'
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 -translate-y-full'
         }
-        pt-6 mt-4 border-t border-gray-200 dark:border-gray-700
         transform-gpu will-change-transform
-        overflow-hidden
+        px-6 py-4
       `}
       style={{
-        transitionProperty: 'opacity, transform, max-height',
+        transitionProperty: 'opacity, transform',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-        maxHeight: isVisible ? '128px' : '0px',
       }}
       aria-label="Main navigation"
       aria-hidden={!isVisible}
     >
-      <div className="flex space-x-6">
+      <div className="max-w-2xl mx-auto flex justify-center space-x-8">
         {navigationItems.map((item, index) => (
           <Link
             key={item.label}
