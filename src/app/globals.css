@@ -11,6 +11,19 @@
 }
 
 @layer components {
+  /* Page transition animations */
+  .page-transition {
+    will-change: transform, opacity;
+  }
+  
+  .page-enter {
+    animation: pageEnter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .page-exit {
+    animation: pageExit 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
   /* Navigation animation utilities */
   .nav-enter {
     animation: slideInFade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -60,6 +73,29 @@
 }
 
 @layer utilities {
+  /* Keyframes for page transitions */
+  @keyframes pageEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes pageExit {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px) scale(1.02);
+    }
+  }
+
   /* Keyframes for smooth navigation animations */
   @keyframes slideInFade {
     0% {
@@ -132,5 +168,36 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+  }
+  
+  /* Smooth loading states */
+  .loading-cursor {
+    cursor: wait !important;
+  }
+  
+  /* Enhanced hover effects */
+  .smooth-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .smooth-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Page content fade in */
+  .content-fade-in {
+    animation: contentFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  @keyframes contentFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

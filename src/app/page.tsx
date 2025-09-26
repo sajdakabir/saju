@@ -6,6 +6,7 @@ import { GiUbisoftSun } from 'react-icons/gi';
 import { IoMoonSharp } from 'react-icons/io5';
 import { TbError404 } from 'react-icons/tb';
 import Navigation from '@/components/Navigation';
+import SmoothLink from '@/components/SmoothLink';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -159,12 +160,12 @@ export default function Home() {
             </div>
 
             <div className="pt-3">
-              <Link
+              <SmoothLink
                 href="/history"
                 className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
               >
                 see my history
-              </Link>
+              </SmoothLink>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ const navigationItems: NavigationItem[] = [
   { label: 'photos', href: '/photos' }
 ];
 
-const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onClose }: NavigationProps) {
+export default function Navigation({ isVisible, theme, onNavigate, onClose }: NavigationProps) {
   const [shouldRender, setShouldRender] = useState(isVisible);
   const [animationClass, setAnimationClass] = useState('');
 
@@ -216,7 +216,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
           <ul className="flex flex-col items-center space-y-6 max-w-sm mx-auto" role="list">
             {navigationItems.map((item, index) => (
               <li key={item.label} role="listitem">
-                <Link
+                <SmoothLink
                   href={item.href}
                   onClick={() => {
                     handleNavigationClick(item.label);
@@ -250,7 +250,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
                   <span id={`nav-item-${index}-desc`} className="sr-only">
                     Navigate to {item.label} page
                   </span>
-                </Link>
+                </SmoothLink>
               </li>
             ))}
           </ul>
@@ -294,7 +294,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
         <ul className="max-w-2xl mx-auto flex justify-center space-x-6 md:space-x-8" role="list">
           {navigationItems.map((item, index) => (
             <li key={item.label} role="listitem">
-              <Link
+              <SmoothLink
                 href={item.href}
                 onClick={() => handleNavigationClick(item.label)}
                 className="
@@ -321,13 +321,11 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
                 <span id={`desktop-nav-item-${index}-desc`} className="sr-only">
                   Navigate to {item.label} page
                 </span>
-              </Link>
+              </SmoothLink>
             </li>
           ))}
         </ul>
       </nav>
     </>
   );
-});
-
-export default Navigation;
+}

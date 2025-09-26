@@ -1,5 +1,7 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
+import PageTransition from '@/components/PageTransition';
+import LoadingBar from '@/components/LoadingBar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,7 +24,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="bg-white text-gray-900 dark:bg-[#1B1B1B] dark:text-gray-100 transition-colors duration-200">
-        {children}
+        <LoadingBar />
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );
