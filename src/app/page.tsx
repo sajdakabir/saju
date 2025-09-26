@@ -159,19 +159,12 @@ export default function Home() {
             </div>
 
             <div className="pt-3">
-              <button
-                onClick={toggleNavigation}
-                className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-gray-500 dark:focus:ring-offset-gray-800 rounded-sm px-1 py-1"
-                aria-label={showNavigation ? "Hide navigation menu" : "Show navigation menu"}
-                aria-expanded={showNavigation}
-                aria-controls="main-navigation"
-                type="button"
+              <Link
+                href="/history"
+                className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
               >
                 see my history
-                <span className="sr-only">
-                  {showNavigation ? " (currently open)" : " (currently closed)"}
-                </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

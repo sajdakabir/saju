@@ -19,7 +19,8 @@ interface NavigationProps {
 
 // Navigation items configuration
 const navigationItems: NavigationItem[] = [
-  {label:'home',href: '/' },
+  { label: 'home', href: '/' },
+  { label: 'history', href: '/history' },
   { label: 'projects', href: '/projects' },
   { label: 'notes', href: '/notes' },
   { label: 'photos', href: '/photos' }
@@ -44,7 +45,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
         setShouldRender(false);
         setAnimationClass('');
       }, 300); // Match exit animation duration
-      
+
       return () => clearTimeout(timer);
     }
   }, [isVisible]);
@@ -67,7 +68,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
           );
           const firstElement = focusableElements[0] as HTMLElement;
           const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
-          
+
           if (event.shiftKey && document.activeElement === firstElement) {
             event.preventDefault();
             lastElement?.focus();
@@ -99,7 +100,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
     if (isVisible) {
       // Store the previously focused element
       const previouslyFocused = document.activeElement as HTMLElement;
-      
+
       // Focus the first navigation item after a short delay to allow animation
       const timer = setTimeout(() => {
         const firstNavItem = document.querySelector('nav[aria-label="Main navigation"] a, .mobile-nav a') as HTMLElement;
@@ -135,7 +136,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
   return (
     <>
       {/* Mobile Navigation - Full screen overlay */}
-      <div 
+      <div
         className={`
           sm:hidden fixed inset-0 z-50 
           ${isVisible ? 'block' : 'hidden'}
@@ -147,7 +148,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
         id="main-navigation"
       >
         {/* Backdrop */}
-        <div 
+        <div
           className={`
             absolute inset-0 bg-black/10 dark:bg-black/30 backdrop-blur-[2px]
             transition-opacity duration-300
@@ -156,9 +157,9 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
           onClick={onClose}
           aria-label="Close navigation menu"
         />
-        
+
         {/* Mobile Menu */}
-        <nav 
+        <nav
           className={`
             mobile-nav
             ${animationClass}
@@ -192,25 +193,25 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
               type="button"
               tabIndex={0}
             >
-              <svg 
-                className="w-6 h-6" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
                 role="img"
               >
                 <title>Close menu</title>
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M6 18L18 6M6 6l12 12" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
             </button>
           </div>
-          
+
           {/* Navigation items - centered and spaced */}
           <ul className="flex flex-col items-center space-y-6 max-w-sm mx-auto" role="list">
             {navigationItems.map((item, index) => (
@@ -253,7 +254,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
               </li>
             ))}
           </ul>
-          
+
           {/* Subtle hint text */}
           <div className="mt-8 text-center">
             <p className="text-xs text-gray-400 dark:text-gray-500" aria-live="polite">
@@ -264,7 +265,7 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
       </div>
 
       {/* Desktop/Tablet Navigation - Top bar */}
-      <nav 
+      <nav
         className={`
           ${animationClass}
           hidden sm:block
@@ -273,8 +274,8 @@ const Navigation = memo(function Navigation({ isVisible, theme, onNavigate, onCl
           border-b border-gray-200 dark:border-gray-700
           transition-all duration-500 ease-out
           motion-reduce:transition-none motion-reduce:duration-0
-          ${isVisible 
-            ? 'opacity-100 translate-y-0' 
+          ${isVisible
+            ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-full'
           }
           transform-gpu will-change-transform
