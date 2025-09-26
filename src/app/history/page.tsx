@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { GiUbisoftSun } from 'react-icons/gi';
 import { IoMoonSharp } from 'react-icons/io5';
 import Navigation from '@/components/Navigation';
+import PageTransition from '@/components/PageTransition';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -103,15 +104,16 @@ export default function HistoryPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col transition-colors duration-200">
-      <Navigation
-        isVisible={showNavigation}
-        theme={theme as 'light' | 'dark'}
-        onClose={() => setShowNavigation(false)}
-      />
+    <PageTransition>
+      <main className="min-h-screen flex flex-col transition-colors duration-200">
+        <Navigation
+          isVisible={showNavigation}
+          theme={theme as 'light' | 'dark'}
+          onClose={() => setShowNavigation(false)}
+        />
 
-      <div className={`flex-1 flex items-center justify-center p-6 transition-all duration-500 ${showNavigation ? 'sm:pt-24' : 'pt-6'}`}>
-        <div className="max-w-2xl w-full mx-auto px-4 content-fade-in">
+        <div className={`flex-1 flex items-center justify-center p-6 transition-all duration-500 ${showNavigation ? 'sm:pt-24' : 'pt-6'}`}>
+        <div className="max-w-2xl w-full mx-auto px-4">
           <div className={`absolute right-6 transition-all duration-500 ${showNavigation ? 'sm:top-24' : 'top-6'}`}>
             <button
               onClick={toggleTheme}
@@ -181,5 +183,6 @@ export default function HistoryPage() {
         </div>
       </div>
     </main>
+    </PageTransition>
   );
 }

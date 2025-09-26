@@ -216,7 +216,7 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
           <ul className="flex flex-col items-center space-y-6 max-w-sm mx-auto" role="list">
             {navigationItems.map((item, index) => (
               <li key={item.label} role="listitem">
-                <SmoothLink
+                <Link
                   href={item.href}
                   onClick={() => {
                     handleNavigationClick(item.label);
@@ -250,7 +250,7 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                   <span id={`nav-item-${index}-desc`} className="sr-only">
                     Navigate to {item.label} page
                   </span>
-                </SmoothLink>
+                </Link>
               </li>
             ))}
           </ul>
@@ -294,7 +294,7 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
         <ul className="max-w-2xl mx-auto flex justify-center space-x-6 md:space-x-8" role="list">
           {navigationItems.map((item, index) => (
             <li key={item.label} role="listitem">
-              <SmoothLink
+              <Link
                 href={item.href}
                 onClick={() => handleNavigationClick(item.label)}
                 className="
@@ -321,7 +321,7 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                 <span id={`desktop-nav-item-${index}-desc`} className="sr-only">
                   Navigate to {item.label} page
                 </span>
-              </SmoothLink>
+              </Link>
             </li>
           ))}
         </ul>
