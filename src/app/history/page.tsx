@@ -113,7 +113,7 @@ export default function HistoryPage() {
         />
 
         <div className={`flex-1 flex items-center justify-center p-6 transition-all duration-500 ${showNavigation ? 'sm:pt-24' : 'pt-6'}`}>
-        <div className="max-w-2xl w-full mx-auto px-4">
+        <div className="max-w-2xl w-full mx-auto px-4 content-fade-in">
           <div className={`absolute right-6 transition-all duration-500 ${showNavigation ? 'sm:top-24' : 'top-6'}`}>
             <button
               onClick={toggleTheme}

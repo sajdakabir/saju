@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import LoadingBar from './LoadingBar';
 
 interface SmoothLinkProps {
   href: string;
@@ -21,7 +20,6 @@ interface SmoothLinkProps {
 export default function SmoothLink({ href, children, className, target, rel, onClick, style, ...props }: SmoothLinkProps) {
   const router = useRouter();
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [showLoading, setShowLoading] = useState(false);
 
   const handleClick = async (e: React.MouseEvent) => {
     // Call the custom onClick handler if provided
@@ -39,7 +37,6 @@ export default function SmoothLink({ href, children, className, target, rel, onC
     if (isTransitioning) return;
     
     setIsTransitioning(true);
-    setShowLoading(true);
     
     // Add a subtle loading state
     document.body.style.cursor = 'wait';
@@ -53,7 +50,6 @@ export default function SmoothLink({ href, children, className, target, rel, onC
     setTimeout(() => {
       document.body.style.cursor = 'default';
       setIsTransitioning(false);
-      setShowLoading(false);
     }, 300);
   };
 
