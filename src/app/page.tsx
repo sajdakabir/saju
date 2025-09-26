@@ -167,7 +167,7 @@ export default function Home() {
                 aria-controls="main-navigation"
                 type="button"
               >
-                see my notes
+                see my history
                 <span className="sr-only">
                   {showNavigation ? " (currently open)" : " (currently closed)"}
                 </span>
