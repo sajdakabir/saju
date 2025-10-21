@@ -59,7 +59,7 @@ export default function NotFound() {
           return (
             <div
               key={`small-${i}`}
-              className="absolute rounded-full bg-white"
+              className="absolute star"
               style={{
                 width: size + 'px',
                 height: size + 'px',
@@ -67,7 +67,6 @@ export default function NotFound() {
                 left: Math.random() * 100 + '%',
                 opacity: Math.random() * 0.4 + 0.2,
                 animation: `twinkle ${Math.random() * 4 + 3}s ease-in-out ${Math.random() * 5}s infinite`,
-                boxShadow: `0 0 ${size * 2}px rgba(255, 255, 255, 0.5)`,
               }}
             />
           );
@@ -79,7 +78,7 @@ export default function NotFound() {
           return (
             <div
               key={`medium-${i}`}
-              className="absolute rounded-full bg-white"
+              className="absolute star"
               style={{
                 width: size + 'px',
                 height: size + 'px',
@@ -87,7 +86,6 @@ export default function NotFound() {
                 left: Math.random() * 100 + '%',
                 opacity: Math.random() * 0.6 + 0.4,
                 animation: `twinkle ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 3}s infinite`,
-                boxShadow: `0 0 ${size * 3}px rgba(255, 255, 255, 0.8)`,
               }}
             />
           );
@@ -99,26 +97,15 @@ export default function NotFound() {
           return (
             <div
               key={`large-${i}`}
-              className="absolute"
+              className="absolute star-large"
               style={{
+                width: size + 'px',
+                height: size + 'px',
                 top: Math.random() * 100 + '%',
                 left: Math.random() * 100 + '%',
                 animation: `sparkle ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 4}s infinite`,
               }}
-            >
-              <div
-                className="rounded-full bg-white"
-                style={{
-                  width: size + 'px',
-                  height: size + 'px',
-                  boxShadow: `
-                    0 0 ${size * 4}px rgba(255, 255, 255, 0.9),
-                    0 0 ${size * 8}px rgba(255, 255, 255, 0.5),
-                    0 0 ${size * 12}px rgba(255, 255, 255, 0.3)
-                  `,
-                }}
-              />
-            </div>
+            />
           );
         })}
 
@@ -161,33 +148,68 @@ export default function NotFound() {
       </div>
 
       <style jsx>{`
+        .star {
+          background: white;
+          clip-path: polygon(
+            50% 0%, 
+            61% 35%, 
+            98% 35%, 
+            68% 57%, 
+            79% 91%, 
+            50% 70%, 
+            21% 91%, 
+            32% 57%, 
+            2% 35%, 
+            39% 35%
+          );
+          filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+        }
+        
+        .star-large {
+          background: white;
+          clip-path: polygon(
+            50% 0%, 
+            61% 35%, 
+            98% 35%, 
+            68% 57%, 
+            79% 91%, 
+            50% 70%, 
+            21% 91%, 
+            32% 57%, 
+            2% 35%, 
+            39% 35%
+          );
+          filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1)) 
+                  drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+        }
+        
         @keyframes twinkle {
           0%, 100% { 
-            opacity: 0.2;
+            opacity: 0.3;
             transform: scale(1);
           }
           50% { 
             opacity: 1;
-            transform: scale(1.3);
+            transform: scale(1.2);
           }
         }
         
         @keyframes sparkle {
           0%, 100% { 
-            opacity: 0.4;
+            opacity: 0.5;
             transform: scale(1) rotate(0deg);
           }
           25% {
-            opacity: 0.8;
-            transform: scale(1.2) rotate(90deg);
+            opacity: 0.9;
+            transform: scale(1.3) rotate(90deg);
           }
           50% { 
             opacity: 1;
-            transform: scale(1.4) rotate(180deg);
+            transform: scale(1.5) rotate(180deg);
           }
           75% {
-            opacity: 0.8;
-            transform: scale(1.2) rotate(270deg);
+            opacity: 0.9;
+            transform: scale(1.3) rotate(270deg);
           }
         }
         
