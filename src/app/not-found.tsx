@@ -9,7 +9,7 @@ const getInitialTheme = () => {
   if (typeof window !== 'undefined') {
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme) return storedTheme;
-    
+
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     return systemDark ? 'dark' : 'light';
   }
@@ -29,9 +29,9 @@ export default function NotFound() {
   // Update theme when it changes
   useEffect(() => {
     if (!mounted) return;
-    
+
     const root = document.documentElement;
-    
+
     if (theme === 'dark') {
       root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -50,30 +50,181 @@ export default function NotFound() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-200">
-      <div className="max-w-2xl w-full mx-auto px-4 text-center">
-        <div className="mb-8 relative w-full max-w-lg mx-auto">
+    <main className="h-screen w-screen flex items-center justify-center relative overflow-hidden bg-black">
+      {/* Starry background with multiple layers */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Small distant stars */}
+        {[...Array(200)].map((_, i) => {
+          const size = Math.random() * 1.5 + 0.5;
+          return (
+            <div
+              key={`small-${i}`}
+              className="absolute star"
+              style={{
+                width: size + 'px',
+                height: size + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+                opacity: Math.random() * 0.4 + 0.2,
+                animation: `twinkle ${Math.random() * 4 + 3}s ease-in-out ${Math.random() * 5}s infinite`,
+              }}
+            />
+          );
+        })}
+
+        {/* Medium bright stars */}
+        {[...Array(50)].map((_, i) => {
+          const size = Math.random() * 2 + 1.5;
+          return (
+            <div
+              key={`medium-${i}`}
+              className="absolute star"
+              style={{
+                width: size + 'px',
+                height: size + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+                opacity: Math.random() * 0.6 + 0.4,
+                animation: `twinkle ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 3}s infinite`,
+              }}
+            />
+          );
+        })}
+
+        {/* Large sparkle stars */}
+        {[...Array(15)].map((_, i) => {
+          const size = Math.random() * 3 + 2;
+          return (
+            <div
+              key={`large-${i}`}
+              className="absolute star-large"
+              style={{
+                width: size + 'px',
+                height: size + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+                animation: `sparkle ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 4}s infinite`,
+              }}
+            />
+          );
+        })}
+
+        {/* Crystal Astronaut Image - right side - clickable */}
+        <Link
+          href="/"
+          className="absolute right-[10%] top-1/2 -translate-y-1/2 cursor-pointer transition-transform hover:scale-105"
+          style={{
+            animation: 'float 8s ease-in-out infinite',
+          }}
+        >
           <Image
-            src="/404 Error with a cute animal-pana.svg"
-            alt="404 Error Illustration"
-            width={500}
-            height={500}
-            className="w-full h-auto"
+            src="/Cool_Astronaut-removebg-preview.png"
+            alt="Crystal Astronaut in Space - Click to return home"
+            width={450}
+            height={650}
+            className="object-contain"
             priority
           />
-        </div>
-        
-        {/* <h1 className="text-xl font-medium mb-4 tracking-wider text-gray-900 dark:text-gray-100">Either you're too naive, or we're being too smart. Either way, this page doesn't exist.</h1> */}
-        {/* <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">either you are too nive or bing too smart.</p> */}
-        <h1 className="text-lg font-medium mb-4 tracking-wider text-gray-700 dark:text-gray-100">I'm working hard so that my cat can have a better life.</h1>
-        
-        <Link 
-          href="/" 
-          className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline transition-colors"
-        >
-          Return Home
         </Link>
       </div>
+
+      {/* Content - left side */}
+      <div className="absolute left-[10%] top-1/2 -translate-y-1/2 max-w-md z-10">
+        <h1 className="text-6xl font-light text-white mb-4 tracking-wide">
+          404
+        </h1>
+        <p className="text-xl text-gray-400 mb-2 font-light">
+          Lost in space
+        </p>
+        <p className="text-sm text-gray-500 mb-8 font-light">
+          This page drifted away into the void
+        </p>
+        <Link
+          href="/"
+          className="inline-block text-sm text-gray-400 hover:text-white transition-colors duration-300 border-b border-gray-600 hover:border-white pb-1"
+        >
+          Return to Earth →
+        </Link>
+      </div>
+
+      <style jsx>{`
+        .star {
+          background: white;
+          clip-path: polygon(
+            50% 0%, 
+            61% 35%, 
+            98% 35%, 
+            68% 57%, 
+            79% 91%, 
+            50% 70%, 
+            21% 91%, 
+            32% 57%, 
+            2% 35%, 
+            39% 35%
+          );
+          filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+        }
+        
+        .star-large {
+          background: white;
+          clip-path: polygon(
+            50% 0%, 
+            61% 35%, 
+            98% 35%, 
+            68% 57%, 
+            79% 91%, 
+            50% 70%, 
+            21% 91%, 
+            32% 57%, 
+            2% 35%, 
+            39% 35%
+          );
+          filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1)) 
+                  drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+        }
+        
+        @keyframes twinkle {
+          0%, 100% { 
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% { 
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        }
+        
+        @keyframes sparkle {
+          0%, 100% { 
+            opacity: 0.5;
+            transform: scale(1) rotate(0deg);
+          }
+          25% {
+            opacity: 0.9;
+            transform: scale(1.3) rotate(90deg);
+          }
+          50% { 
+            opacity: 1;
+            transform: scale(1.5) rotate(180deg);
+          }
+          75% {
+            opacity: 0.9;
+            transform: scale(1.3) rotate(270deg);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(-50%) translateY(0) rotate(-3deg);
+          }
+          33% {
+            transform: translateY(-50%) translateY(-30px) rotate(2deg);
+          }
+          66% {
+            transform: translateY(-50%) translateY(-15px) rotate(-2deg);
+          }
+        }
+      `}</style>
     </main>
   );
 }

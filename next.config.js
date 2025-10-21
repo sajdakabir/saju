@@ -8,9 +8,17 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
+  // Performance optimizations
+  poweredByHeader: false,
+  compress: true,
+  // Optimize bundle splitting
   experimental: {
-    appDir: true,
+    optimizePackageImports: ['react-icons'],
   },
+  // Enable static optimization
+  trailingSlash: false,
+  // Optimize fonts
+  optimizeFonts: true,
 };
 
 module.exports = nextConfig;
