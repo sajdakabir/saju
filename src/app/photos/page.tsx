@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { GiUbisoftSun } from 'react-icons/gi';
 import { IoMoonSharp } from 'react-icons/io5';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -132,11 +133,7 @@ export default function Photos() {
           ))}
           </div>
 
-          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Sajda Kabir <Link href="https://x.com/sajdakabir" target="_blank" rel="noopener noreferrer" className="hover:underline">@sajdakabir</Link>
-            </p>
-          </div>
+          <Footer />
         </div>
       </div>
     </main>
