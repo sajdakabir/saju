@@ -141,6 +141,25 @@ export default function NotFound() {
         </Link>
       </div>
 
+      {/* Content - left side */}
+      <div className="absolute left-[10%] top-1/2 -translate-y-1/2 max-w-md z-10">
+        <h1 className="text-6xl font-light text-white mb-4 tracking-wide">
+          404
+        </h1>
+        <p className="text-xl text-gray-400 mb-2 font-light">
+          Lost in space
+        </p>
+        <p className="text-sm text-gray-500 mb-8 font-light">
+          This page drifted away into the void
+        </p>
+        <Link
+          href="/"
+          className="inline-block text-sm text-gray-400 hover:text-white transition-colors duration-300 border-b border-gray-600 hover:border-white pb-1"
+        >
+          Return to Earth →
+        </Link>
+      </div>
+
       <style jsx>{`
         @keyframes twinkle {
           0%, 100% { 
