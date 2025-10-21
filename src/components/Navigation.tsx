@@ -111,17 +111,17 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
           role="navigation"
           id="main-navigation"
         >
-        {/* Navigation Items */}
-        <div className="flex flex-col items-center space-y-3">
-          {navigationItems.map((item) => {
-            const isActive = pathname === item.href;
+          {/* Navigation Items */}
+          <div className="flex flex-col items-center space-y-3">
+            {navigationItems.map((item) => {
+              const isActive = pathname === item.href;
 
-            return (
-              <div key={item.label} className="relative group">
-                <Link
-                  href={item.href}
-                  onClick={() => handleNavigationClick(item.label)}
-                  className={`
+              return (
+                <div key={item.label} className="relative group">
+                  <Link
+                    href={item.href}
+                    onClick={() => handleNavigationClick(item.label)}
+                    className={`
                     nav-item
                     flex items-center justify-center
                     w-10 h-10
@@ -130,19 +130,19 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                     transform-gpu will-change-transform
                     focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-transparent
                     ${isActive
-                      ? 'bg-white/90 text-gray-900 shadow-lg scale-105'
-                      : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white hover:scale-105'
-                    }
+                        ? 'bg-white/90 text-gray-900 shadow-lg scale-105'
+                        : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white hover:scale-105'
+                      }
                     active:scale-95
                   `}
-                  aria-label={`Navigate to ${item.label}`}
-                  title={item.label}
-                >
-                  {item.icon}
-                </Link>
+                    aria-label={`Navigate to ${item.label}`}
+                    title={item.label}
+                  >
+                    {item.icon}
+                  </Link>
 
-                {/* Tooltip */}
-                <div className={`
+                  {/* Tooltip */}
+                  <div className={`
                   absolute left-full ml-3 top-1/2 -translate-y-1/2
                   px-3 py-2 bg-black/80 backdrop-blur-sm
                   text-white text-sm font-medium
@@ -153,16 +153,16 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                   whitespace-nowrap
                   z-50
                 `}>
-                  <span className="capitalize">{item.label}</span>
-                  {/* Arrow */}
-                  <div className="absolute right-full top-1/2 -translate-y-1/2 
+                    <span className="capitalize">{item.label}</span>
+                    {/* Arrow */}
+                    <div className="absolute right-full top-1/2 -translate-y-1/2 
                                   border-4 border-transparent 
                                   border-r-black/80" />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
         </nav>
       </div>
     </>
