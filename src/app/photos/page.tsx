@@ -18,7 +18,7 @@ const getInitialTheme = () => {
   return 'light';
 };
 
-export default function Notes() {
+export default function Photos() {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState('light');
   const [showNavigation, setShowNavigation] = useState(true);
@@ -63,9 +63,25 @@ export default function Notes() {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
-  const notes = [
-    { date: '23-01-2025', title: 'distributed living' },
-    { date: '09-10-2023', title: 'my productivity set up' },
+  const photoCollections = [
+    { 
+      title: 'Street Photography', 
+      description: 'Capturing moments from everyday life',
+      count: 12,
+      date: '2024'
+    },
+    { 
+      title: 'Nature & Landscapes', 
+      description: 'Beautiful scenes from travels and hikes',
+      count: 8,
+      date: '2023-2024'
+    },
+    { 
+      title: 'Architecture', 
+      description: 'Interesting buildings and structures',
+      count: 15,
+      date: '2023'
+    },
   ];
 
   return (
@@ -89,44 +105,40 @@ export default function Notes() {
           </div>
 
           <div className="mb-12">
-          <h2 className="text-lg font-medium mb-6 text-gray-900 dark:text-gray-100">latest</h2>
-          <div className="space-y-3">
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-500 dark:text-gray-400 w-20">23-01-2025</span>
-              <Link 
-                href="/notes/distributed-living" 
-                className="text-[15px] text-gray-900 dark:text-gray-100 hover:underline"
-              >
-                distributed living
-              </Link>
-            </div>
-          </div>
-          </div>
+          <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Photos</h1>
+          <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+            A collection of photographs capturing moments, places, and perspectives through my lens.
+          </p>
+        </div>
 
-          <div>
-            <h2 className="text-lg font-medium mb-6 text-gray-900 dark:text-gray-100">posts</h2>
-            <div className="space-y-3">
-              {notes.map((note, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <span className="text-sm text-gray-500 dark:text-gray-400 w-20">{note.date}</span>
-                  <Link 
-                    href={`/notes/${note.title.replace(/\s+/g, '-')}`}
-                    className="text-[15px] text-gray-900 dark:text-gray-100 hover:underline"
-                  >
-                    {note.title}
-                  </Link>
-                </div>
-              ))}
+          <div className="space-y-8">
+          {photoCollections.map((collection, index) => (
+            <div key={index} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0">
+              <div className="flex items-start justify-between mb-2">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                  {collection.title}
+                </h3>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  {collection.count} photos
+                </span>
+              </div>
+              <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-2 leading-relaxed">
+                {collection.description}
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-500">
+                {collection.date}
+              </p>
             </div>
+          ))}
           </div>
 
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Sajda kabir <Link href="https://x.com/sajdakabir" target="_blank" rel="noopener noreferrer" className="hover:underline">@sajdakabr</Link>
+              Sajda Kabir <Link href="https://x.com/sajdakabir" target="_blank" rel="noopener noreferrer" className="hover:underline">@sajdakabir</Link>
             </p>
           </div>
         </div>
       </div>
     </main>
   );
-} 
+}

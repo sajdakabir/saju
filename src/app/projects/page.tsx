@@ -18,7 +18,7 @@ const getInitialTheme = () => {
   return 'light';
 };
 
-export default function Notes() {
+export default function Projects() {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState('light');
   const [showNavigation, setShowNavigation] = useState(true);
@@ -63,9 +63,19 @@ export default function Notes() {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
-  const notes = [
-    { date: '23-01-2025', title: 'distributed living' },
-    { date: '09-10-2023', title: 'my productivity set up' },
+  const projects = [
+    { 
+      name: 'Portfolio Website', 
+      description: 'Personal portfolio built with Next.js and Tailwind CSS',
+      tech: 'Next.js, TypeScript, Tailwind CSS',
+      link: 'https://github.com/sajdakabir/portfolio'
+    },
+    { 
+      name: 'Backend Architecture', 
+      description: 'Scalable backend systems and API development',
+      tech: 'Node.js, Express, PostgreSQL',
+      link: '#'
+    },
   ];
 
   return (
@@ -89,44 +99,48 @@ export default function Notes() {
           </div>
 
           <div className="mb-12">
-          <h2 className="text-lg font-medium mb-6 text-gray-900 dark:text-gray-100">latest</h2>
-          <div className="space-y-3">
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-500 dark:text-gray-400 w-20">23-01-2025</span>
-              <Link 
-                href="/notes/distributed-living" 
-                className="text-[15px] text-gray-900 dark:text-gray-100 hover:underline"
-              >
-                distributed living
-              </Link>
-            </div>
-          </div>
-          </div>
+          <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Projects</h1>
+          <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+            A collection of projects I've worked on, from backend architecture to full-stack applications.
+          </p>
+        </div>
 
-          <div>
-            <h2 className="text-lg font-medium mb-6 text-gray-900 dark:text-gray-100">posts</h2>
-            <div className="space-y-3">
-              {notes.map((note, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <span className="text-sm text-gray-500 dark:text-gray-400 w-20">{note.date}</span>
-                  <Link 
-                    href={`/notes/${note.title.replace(/\s+/g, '-')}`}
-                    className="text-[15px] text-gray-900 dark:text-gray-100 hover:underline"
-                  >
-                    {note.title}
-                  </Link>
-                </div>
-              ))}
+          <div className="space-y-8">
+          {projects.map((project, index) => (
+            <div key={index} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0">
+              <div className="flex items-start justify-between mb-2">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                  {project.link !== '#' ? (
+                    <Link 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      {project.name}
+                    </Link>
+                  ) : (
+                    project.name
+                  )}
+                </h3>
+              </div>
+              <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-2 leading-relaxed">
+                {project.description}
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-500">
+                {project.tech}
+              </p>
             </div>
+          ))}
           </div>
 
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Sajda kabir <Link href="https://x.com/sajdakabir" target="_blank" rel="noopener noreferrer" className="hover:underline">@sajdakabr</Link>
-            </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Sajda Kabir <Link href="https://x.com/sajdakabir" target="_blank" rel="noopener noreferrer" className="hover:underline">@sajdakabir</Link>
+          </p>
           </div>
         </div>
       </div>
     </main>
   );
-} 
+}

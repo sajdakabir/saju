@@ -9,3 +9,221 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@layer components {
+
+  /* Page transition animations */
+  .page-transition {
+    will-change: transform, opacity;
+  }
+
+  .page-enter {
+    animation: pageEnter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .page-exit {
+    animation: pageExit 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Navigation animation utilities */
+  .nav-enter {
+    animation: slideInFade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .nav-exit {
+    animation: slideOutFade 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Staggered animation for navigation items */
+  .nav-enter .nav-item {
+    animation: navItemSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .nav-enter .nav-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .nav-enter .nav-item:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .nav-enter .nav-item:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  /* Mobile-specific responsive styles */
+  @media (max-width: 640px) {
+    .nav-enter .nav-item {
+      animation: navItemSlideInMobile 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+
+    .nav-enter .nav-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .nav-enter .nav-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .nav-enter .nav-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+
+    .nav-enter,
+    .nav-exit,
+    .nav-enter .nav-item {
+      animation: none;
+    }
+
+    .nav-enter .nav-item {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer utilities {
+
+  /* Keyframes for page transitions */
+  @keyframes pageEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes pageExit {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-10px) scale(1.02);
+    }
+  }
+
+  /* Keyframes for smooth navigation animations */
+  @keyframes slideInFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideOutFade {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes navItemSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes navItemSlideInMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform, opacity, max-height;
+  }
+
+  .transform-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Custom scale utilities */
+  .active\:scale-98:active {
+    transform: scale(0.98);
+  }
+
+  /* Screen reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Smooth loading states */
+  .loading-cursor {
+    cursor: wait !important;
+  }
+
+  /* Enhanced hover effects */
+  .smooth-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .smooth-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Page content fade in */
+  .content-fade-in {
+    animation: contentFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes contentFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
