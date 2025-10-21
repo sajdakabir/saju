@@ -162,14 +162,14 @@ export default function Home() {
         </Link>
             </div>
 
-            <div className="pt-3">
+            {/* <div className="pt-3">
               <SmoothLink
                 href="/history"
                 className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
               >
                 see my history
               </SmoothLink>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
