@@ -66,23 +66,23 @@ export default function Photos() {
 
   const photoCollections = [
     { 
-      title: 'Street Photography', 
-      description: 'Capturing moments from everyday life',
-      count: 12,
-      date: '2024'
+      title: '', 
+      description: '',
+      count: '',
+      date: ''
     },
-    { 
-      title: 'Nature & Landscapes', 
-      description: 'Beautiful scenes from travels and hikes',
-      count: 8,
-      date: '2023-2024'
-    },
-    { 
-      title: 'Architecture', 
-      description: 'Interesting buildings and structures',
-      count: 15,
-      date: '2023'
-    },
+    // { 
+    //   title: 'Nature & Landscapes', 
+    //   description: 'Beautiful scenes from travels and hikes',
+    //   count: 8,
+    //   date: '2023-2024'
+    // },
+    // { 
+    //   title: 'Architecture', 
+    //   description: 'Interesting buildings and structures',
+    //   count: 15,
+    //   date: '2023'
+    // },
   ];
 
   return (
@@ -108,7 +108,9 @@ export default function Photos() {
           <div className="mb-12">
           <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Photos</h1>
           <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
-            A collection of photographs capturing moments, places, and perspectives through my lens.
+            {/* A collection of photographs capturing moments, places, and perspectives through my lens. */}
+
+            coming soon..
           </p>
         </div>
 
@@ -119,9 +121,9 @@ export default function Photos() {
                 <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                   {collection.title}
                 </h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400">
+                {/* <span className="text-sm text-gray-500 dark:text-gray-400">
                   {collection.count} photos
-                </span>
+                </span> */}
               </div>
               <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-2 leading-relaxed">
                 {collection.description}

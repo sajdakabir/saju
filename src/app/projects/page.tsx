@@ -66,17 +66,17 @@ export default function Projects() {
 
   const projects = [
     { 
-      name: 'Portfolio Website', 
-      description: 'Personal portfolio built with Next.js and Tailwind CSS',
-      tech: 'Next.js, TypeScript, Tailwind CSS',
-      link: 'https://github.com/sajdakabir/portfolio'
+      name: '', 
+      description: '',
+      tech: '',
+      link: ''
     },
-    { 
-      name: 'Backend Architecture', 
-      description: 'Scalable backend systems and API development',
-      tech: 'Node.js, Express, PostgreSQL',
-      link: '#'
-    },
+    // { 
+    //   name: 'Backend Architecture', 
+    //   description: 'Scalable backend systems and API development',
+    //   tech: 'Node.js, Express, PostgreSQL',
+    //   link: '#'
+    // },
   ];
 
   return (
@@ -102,7 +102,8 @@ export default function Projects() {
           <div className="mb-12">
           <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Projects</h1>
           <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
-            A collection of projects I've worked on, from backend architecture to full-stack applications.
+            {/* A collection of projects I've worked on, from backend architecture to full-stack applications. */}
+            coming soon...
           </p>
         </div>
 

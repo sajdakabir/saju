@@ -65,8 +65,8 @@ export default function Notes() {
   };
 
   const notes = [
-    { date: '23-01-2025', title: 'distributed living' },
-    { date: '09-10-2023', title: 'my productivity set up' },
+    { date: '21-10-2025', title: 'coming soon...' },
+    // { date: '09-10-2023', title: 'my productivity set up' },
   ];
 
   return (
@@ -93,12 +93,12 @@ export default function Notes() {
           <h2 className="text-lg font-medium mb-6 text-gray-900 dark:text-gray-100">latest</h2>
           <div className="space-y-3">
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-500 dark:text-gray-400 w-20">23-01-2025</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400 w-20">21-10-2025</span>
               <Link 
                 href="/notes/distributed-living" 
                 className="text-[15px] text-gray-900 dark:text-gray-100 hover:underline"
               >
-                distributed living
+              coming soon...
               </Link>
             </div>
           </div>
