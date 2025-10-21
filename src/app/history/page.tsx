@@ -113,12 +113,7 @@ export default function HistoryPage() {
       />
 
       {/* Main Layout Container */}
-      <div
-        className="h-screen overflow-hidden transition-colors duration-200"
-        style={{
-          background: theme === 'dark' ? '#111' : '#ffffff'
-        }}
-      >
+      <div className="h-screen overflow-hidden transition-colors duration-200">
         {/* Scrollable Content Area */}
         <main
           className="h-full overflow-y-auto"
@@ -127,10 +122,10 @@ export default function HistoryPage() {
             transition: 'padding-left 300ms ease-out'
           }}
         >
-          <div className="min-h-full flex items-center justify-center p-6">
+          <div className={`min-h-full flex items-center justify-center p-6 transition-all duration-500 ${showNavigation ? 'sm:pt-24' : 'pt-6'}`}>
             <div className="max-w-2xl w-full mx-auto px-4 content-fade-in">
               {/* Theme Toggle Button */}
-              <div className="fixed right-6 top-6 z-40">
+              <div className={`absolute right-6 transition-all duration-500 ${showNavigation ? 'sm:top-24' : 'top-6'}`}>
                 <button
                   onClick={toggleTheme}
                   className="p-2 text-black dark:text-white transition-colors text-lg"
