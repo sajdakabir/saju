@@ -16,9 +16,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} font-sans`} suppressHydrationWarning>
       <head>
         <title>Sajda Kabir</title>
-        <meta name="description" content="Personal website of Sajda Kabir" />
+        <meta name="description" content="Sajda Kabir" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="icon" href="/saju.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="bg-white text-gray-900 dark:bg-[#1B1B1B] dark:text-gray-100 transition-colors duration-200">
