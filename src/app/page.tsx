@@ -121,6 +121,15 @@ export default function Home() {
             {/* <p className="max-w-xl">To know more about me, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p> */}
 
             <div className="pt-1">
+              <SmoothLink
+                href="/history"
+                className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
+              >
+                see my history
+              </SmoothLink>
+            </div>
+
+            <div className="pt-1">
               <a
                 href="mailto:sajda.kbir@gmail.com"
                 className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline"
@@ -161,15 +170,6 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
-
-            {/* <div className="pt-3">
-              <SmoothLink
-                href="/history"
-                className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
-              >
-                see my history
-              </SmoothLink>
-            </div> */}
           </div>
         </div>
       </div>
