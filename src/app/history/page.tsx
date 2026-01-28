@@ -121,7 +121,7 @@ export default function HistoryPage() {
             transition: 'padding-left 300ms ease-out'
           }}
         >
-          <div className={`min-h-full flex items-center justify-center p-6 transition-all duration-500 ${showNavigation ? 'sm:pt-24' : 'pt-6'}`}>
+          <div className="min-h-full flex justify-center p-6 pt-6">
             <div className="max-w-2xl w-full mx-auto px-4">
               {/* Theme Toggle Button */}
               <div className="absolute right-6 top-6">
@@ -135,7 +135,7 @@ export default function HistoryPage() {
               </div>
 
               <h1 className="text-2xl font-medium mb-12 tracking-wider text-gray-900 dark:text-gray-100">
-                my history
+                my <Link href="/history" className="hover:no-underline">history</Link>
               </h1>
 
               <div className="relative border-l border-gray-200 dark:border-gray-700">
