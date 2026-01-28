@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { GiUbisoftSun } from 'react-icons/gi';
+import { Sun } from 'lucide-react';
 import { IoMoonSharp } from 'react-icons/io5';
 import { TbError404 } from 'react-icons/tb';
 import Navigation from '@/components/Navigation';
@@ -101,7 +101,7 @@ export default function Home() {
               className="p-2 text-black dark:text-white transition-colors text-lg"
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
-              {theme === 'dark' ? <GiUbisoftSun /> : <IoMoonSharp />}
+              {theme === 'dark' ? <Sun /> : <IoMoonSharp />}
             </button>
           </div>
 
