@@ -2,11 +2,10 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { IoMoonSharp } from 'react-icons/io5';
 import Navigation from '@/components/Navigation';
 import PageTransition from '@/components/PageTransition';
 import Footer from '@/components/Footer';
-import {Sun } from 'lucide-react';
+import ThemeToggle from '@/components/ThemeToggle';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -123,16 +122,7 @@ export default function HistoryPage() {
         >
           <div className="min-h-full flex justify-center p-6 pt-6">
             <div className="max-w-2xl w-full mx-auto px-4">
-              {/* Theme Toggle Button */}
-              <div className="absolute right-6 top-6">
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 text-black dark:text-white transition-colors text-lg"
-                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-                >
-                  {theme === 'dark' ? <Sun /> : <IoMoonSharp />}
-                </button>
-              </div>
+              <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
               <h1 className="text-2xl font-medium mb-12 tracking-wider text-gray-900 dark:text-gray-100">
                 my <Link href="/history" className="hover:no-underline">history</Link>

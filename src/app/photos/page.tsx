@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { GiUbisoftSun } from 'react-icons/gi';
-import { IoMoonSharp } from 'react-icons/io5';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ThemeToggle from '@/components/ThemeToggle';
+import PageTransition from '@/components/PageTransition';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -86,24 +86,24 @@ export default function Photos() {
   ];
 
   return (
-    <main className="min-h-screen flex flex-col transition-colors duration-200">
-      <Navigation
-        isVisible={showNavigation}
-        theme={theme as 'light' | 'dark'}
-        onClose={() => setShowNavigation(false)}
-      />
+    <PageTransition>
+      <div className="h-screen overflow-hidden transition-colors duration-200">
+        <Navigation
+          isVisible={showNavigation}
+          theme={theme as 'light' | 'dark'}
+          onClose={() => setShowNavigation(false)}
+        />
 
-      <div className={`flex-1 p-6 transition-all duration-500 ${showNavigation ? 'sm:pt-24' : 'pt-6'}`}>
-        <div className="max-w-2xl w-full mx-auto px-4">
-          <div className={`absolute right-6 transition-all duration-500 ${showNavigation ? 'sm:top-24' : 'top-6'}`}>
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-black dark:text-white transition-colors text-lg"
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              {theme === 'dark' ? <GiUbisoftSun /> : <IoMoonSharp />}
-            </button>
-          </div>
+        <main
+          className="h-full overflow-y-auto"
+          style={{
+            paddingLeft: showNavigation ? '96px' : '0px',
+            transition: 'padding-left 300ms ease-out'
+          }}
+        >
+          <div className="min-h-full flex justify-center p-6 pt-6">
+            <div className="max-w-2xl w-full mx-auto px-4">
+              <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
           <div className="mb-12">
           <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Photos</h1>
@@ -135,9 +135,11 @@ export default function Photos() {
           ))}
           </div>
 
-          <Footer />
-        </div>
+              <Footer />
+            </div>
+          </div>
+        </main>
       </div>
-    </main>
+    </PageTransition>
   );
 }
