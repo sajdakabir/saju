@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
-import PageTransition from '@/components/PageTransition';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -80,7 +79,6 @@ export default function Projects() {
   ];
 
   return (
-    <PageTransition>
       <div className="h-screen overflow-hidden transition-colors duration-200">
         <Navigation
           isVisible={showNavigation}
@@ -141,6 +139,5 @@ export default function Projects() {
           </div>
         </main>
       </div>
-    </PageTransition>
   );
 }

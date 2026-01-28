@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
-import PageTransition from '@/components/PageTransition';
+// import PageTransition from '@/components/PageTransition';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 
@@ -104,7 +104,7 @@ export default function HistoryPage() {
   };
 
   return (
-    <PageTransition>
+    // <PageTransition>
       <div className="h-screen overflow-hidden transition-colors duration-200">
         <Navigation
           isVisible={showNavigation}
@@ -152,6 +152,6 @@ export default function HistoryPage() {
           </div>
         </main>
       </div>
-    </PageTransition>
+    // </PageTransition>
   );
 }
