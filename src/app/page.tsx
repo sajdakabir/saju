@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import Navigation from '@/components/Navigation';
 import SmoothLink from '@/components/SmoothLink';
 import ThemeToggle from '@/components/ThemeToggle';
 
@@ -21,7 +20,6 @@ const getInitialTheme = () => {
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState('light');
-  const [showNavigation, setShowNavigation] = useState(true);
 
   // Initialize theme after mount
   useEffect(() => {
@@ -79,12 +77,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col transition-colors duration-200">
-      <Navigation
-        isVisible={showNavigation}
-        theme={theme as 'light' | 'dark'}
-        onClose={() => setShowNavigation(false)}
-      />
-
       <div className="flex-1 flex items-center justify-center p-6">
         <div className="max-w-2xl w-full mx-auto px-4">
           <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
