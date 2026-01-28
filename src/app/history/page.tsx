@@ -135,7 +135,7 @@ export default function HistoryPage() {
               </div>
 
               <h1 className="text-2xl font-medium mb-12 tracking-wider text-gray-900 dark:text-gray-100">
-                my <Link href="/history" className="underline hover:no-underline">history</Link>.
+                my history
               </h1>
 
               <div className="relative border-l border-gray-200 dark:border-gray-700">
