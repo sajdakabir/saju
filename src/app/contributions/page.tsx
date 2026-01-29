@@ -20,19 +20,68 @@ const getInitialTheme = () => {
 
 const contributions = [
   {
-    name: 'Meilisearch',
-    description: 'Open source search engine',
+    name: 'BerriAI(YC)',
+    description: 'Python SDK to call 100+ LLM providers with unified APIs, cost tracking, and guardrails',
     prs: [
-      { title: 'PR Title 1', url: '#' },
-      { title: 'PR Title 2', url: '#' },
+      { title: 'fix:Gemini Flash 2.0 implementation is not returning the logprobs', url: 'https://github.com/BerriAI/litellm/pull/9713' }
+    ],
+    date: '2025'
+  },
+    {
+    name: 'Stylelint',
+    description: 'A mighty CSS linter that helps you avoid errors and enforce conventions',
+    prs: [
+      { title: 'Fix custom-property-no-missing-var-function false positives for style query in if() function', url: 'https://github.com/stylelint/stylelint/pull/8813' }
+    ],
+    date: '2025'
+  },
+  {
+    name: 'Ecma TC39',
+    description: 'Ecma TC39 is the standards committee that designs and maintains the official JavaScript language specification.',
+    prs: [
+      { title: 'Editorial: use typical phrasing for Agent Record field access', url:"https://github.com/tc39/ecma262/pull/3704"}
+    ] ,
+     date: '2025'
+
+},
+    {
+    name: 'Andromeda',
+    description: 'JavaScript and TypeScript runtime, written in Rust and powered by the Nova engine',
+    prs: [
+      { title: 'feat: implement missing store verbose/strict in compiled binary', url: 'https://github.com/tryandromeda/andromeda/pull/172' },
+      { title: 'feat: implement profile, profileEnd and timeStamp console methods', url: 'https://github.com/tryandromeda/andromeda/pull/184' }
+    ],
+    date: '2025'
+  },
+  {
+    name: 'meilisearch',
+    description: 'Powerful, fast, and an easy to use search engine',
+    prs: [
+      { title: 'added updateDocumentsCsv(string docs, string primaryKey)', url: 'https://github.com/meilisearch/meilisearch-python/pull/654' },
     ],
     date: '2023'
   },
   {
-    name: 'MindsDB',
-    description: 'Machine learning database',
+    name: 'ToolJet',
+    description: 'Open-source low-code application development platform for building and deploying business applications.',
     prs: [
-      { title: 'PR Title 1', url: '#' },
+      { title: 'Documentation bug ', url: 'https://github.com/ToolJet/ToolJet/pull/5376' },
+    ],
+    date: '2023'
+  },
+    {
+    name: 'Amplication',
+    description: 'Open-source backend development platform. Build production-ready services without wasting time on repetitive coding',
+    prs: [
+      { title: 'docs: grammatical errors in the readme ', url: 'https://github.com/amplication/amplication/pull/7154' },
+    ],
+    date: '2023'
+  },
+        {
+    name: 'litefy',
+    description: 'a lightweight spotify client',
+    prs: [
+      { title: 'Added Bengali language ', url: 'https://github.com/mathkruger/litefy/pull/100' },
     ],
     date: '2023'
   },
