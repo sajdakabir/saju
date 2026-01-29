@@ -151,14 +151,13 @@ export default function ContributionsPage() {
           <div className="max-w-2xl w-full mx-auto px-4">
             <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
-            <h1 className="text-2xl font-medium mb-12 tracking-wider text-gray-900 dark:text-gray-100">
+            <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">
               open source contributions
             </h1>
-
-            <div className="space-y-8">
+            <div className="space-y-6">
               {contributions.map((project, index) => (
-                <div key={index} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0">
-                  <div className="mb-4">
+                <div key={index} className="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0">
+                  <div className="mb-3">
                     <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">
                       {project.name}
                     </h3>

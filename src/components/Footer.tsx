@@ -8,7 +8,7 @@ interface FooterProps {
 
 export default function Footer({ showBorder = false }: FooterProps) {
   return (
-    <div className={`mt-16 pt-8 ${showBorder ? 'border-t border-gray-200 dark:border-gray-700' : ''}`}>
+    <div className={`pt-4 ${showBorder ? 'border-t border-gray-200 dark:border-gray-700' : ''}`}>
       <div className="pt-1">
         <a
           href="mailto:sajda.kbir@gmail.com"
