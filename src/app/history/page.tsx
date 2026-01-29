@@ -19,7 +19,23 @@ const getInitialTheme = () => {
   return 'light';
 };
 
-const history = [
+type HistoryLink = {
+  text: string;
+  url: string;
+};
+
+type HistoryItem = {
+  year: string;
+  event: string;
+  links?: HistoryLink[];
+};
+
+const history: HistoryItem[] = [
+  {
+    year: '2026',
+    event: 'coming soon',
+    links: [],
+  }
   // {
   //   year: '2025',
   //   event: 'On June 29th, I won the Digital Country Hackathon Bhutan 2025 with my team project "The Residents". We built an innovative solution that earned us first place among all participants.',
