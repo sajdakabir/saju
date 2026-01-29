@@ -21,6 +21,15 @@ const getInitialTheme = () => {
 
 const history = [
   {
+    year: '2025',
+    event: 'On June 29th, I won the Digital Country Hackathon Bhutan 2025 with my team project "The Residents". We built an innovative solution that earned us first place among all participants.',
+    links: [
+      { text: 'Project Repository', url: 'https://github.com/ZerraHQ/digital-country-hackathon-bhutan-2025/tree/main/the-residents' },
+      { text: 'Demo Video', url: 'https://www.loom.com/share/4e04841cfa3648248967972fe110a6d8?sid=cb69eaa4-6bc8-40be-889b-201ef74f14ec' },
+      { text: 'Winners Announcement', url: 'https://x.com/dsh_india/status/1941068196376969463?s=20' }
+    ]
+  },
+  {
     year: '2024',
     event: 'i start march ',
   },
@@ -143,6 +152,21 @@ export default function HistoryPage() {
                     <p className="block mb-2 text-sm font-normal leading-relaxed text-gray-600 dark:text-gray-400">
                       {item.event}
                     </p>
+                    {item.links && item.links.length > 0 && (
+                      <div className="flex flex-wrap gap-3 mt-3">
+                        {item.links.map((link, linkIndex) => (
+                          <Link
+                            key={linkIndex}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 underline hover:no-underline transition-colors"
+                          >
+                            {link.text}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
