@@ -95,12 +95,21 @@ export default function Home() {
 
                 {/* <p className="max-w-xl">To know more about me, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p> */}
 
-                <div className="pt-1">
+                {/* <div className="pt-1">
                   <SmoothLink
                     href="/history"
                     className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
                   >
                     see my history
+                  </SmoothLink>
+                </div> */}
+
+                 <div className="pt-1">
+                  <SmoothLink
+                    href="/contributions"
+                    className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
+                  >
+                    see my  open-source contributions
                   </SmoothLink>
                 </div>
 
