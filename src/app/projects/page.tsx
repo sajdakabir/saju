@@ -121,6 +121,18 @@ export default function Projects() {
       ],
       date: '2025'
     },
+       {
+      name: 'userArray',
+      description: "userArray is a Linear companion for open-source and user-facing teams. It syncs your Linear workspace to collect feedback, share progress, and keep users updated.",
+      techStack: ['Nextjs', 'Nodejs', 'Webhooks', 'websockets', 'Redis', 'MongoDB'],
+      githubUrl: 'https://github.com/sajdakabir/userarray',
+      liveUrl: 'https://userarray.sajdakabir.com/',
+
+      challenges: [
+   
+      ],
+      date: '2025'
+    },
   ];
 
   return (
