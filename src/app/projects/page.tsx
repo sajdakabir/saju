@@ -108,8 +108,19 @@ export default function Projects() {
    
       ],
       date: '2024'
-    }
-    // Add more projects here
+    },
+   {
+      name: 'webToMd',
+      description: "Web to Markdown converts any website URL into a clean, readable Markdown file. Built to scrape, clean, and prepare content for LLMs",
+      techStack: ['Nextjs', 'Flask', 'python', 'BeautifulSoup', 'Playwright', 'ZenRows', 'openAi'],
+      githubUrl: 'https://github.com/sajdakabir/webToMd',
+      liveUrl: 'https://webtomd.sajdakabir.com/',
+
+      challenges: [
+   
+      ],
+      date: '2025'
+    },
   ];
 
   return (
@@ -131,10 +142,10 @@ export default function Projects() {
             <div className="max-w-2xl w-full mx-auto px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
-              <div className="mb-12">
+              <div className="mb-6">
                 <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Projects</h1>
                 <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
-                  A collection of projects I've built, showcasing technical challenges overcome and solutions implemented.
+                  A collection of projects I've built over time.
                 </p>
               </div>
 
