@@ -121,6 +121,18 @@ export default function Projects() {
       ],
       date: '2025'
     },
+       {
+      name: 'userArray',
+      description: "userArray is a Linear companion for open-source and user-facing teams. It syncs your Linear workspace to collect feedback, share progress, and keep users updated.",
+      techStack: ['Nextjs', 'Nodejs', 'Webhooks', 'websockets', 'Redis', 'MongoDB'],
+      githubUrl: 'https://github.com/sajdakabir/userarray',
+      liveUrl: 'https://userarray.sajdakabir.com/',
+
+      challenges: [
+   
+      ],
+      date: '2025'
+    },
   ];
 
   return (
@@ -138,29 +150,29 @@ export default function Projects() {
             transition: 'padding-left 300ms ease-out'
           }}
         >
-          <div className="min-h-full flex justify-center p-6 pt-6">
-            <div className="max-w-2xl w-full mx-auto px-4">
+          <div className="min-h-full flex justify-center p-4 sm:p-6 pt-4 sm:pt-6">
+            <div className="max-w-2xl w-full mx-auto px-0 sm:px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
-              <div className="mb-6">
-                <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Projects</h1>
-                <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+              <div className="mb-6 sm:mb-8">
+                <h1 className="text-xl sm:text-2xl font-medium mb-4 sm:mb-6 tracking-wider text-gray-900 dark:text-gray-100">Projects</h1>
+                <p className="text-[13px] sm:text-[14px] text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-xl">
                   A collection of projects I've built over time.
                 </p>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 {projects.length === 0 ? (
                   <p className="text-[14px] text-gray-500 dark:text-gray-500">Coming soon...</p>
                 ) : (
                   projects.map((project, index) => (
                     <div 
                       key={index} 
-                      className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
+                      className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
                     >
                       {/* Header with Title and Date */}
-                      <div className="flex items-start justify-between mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4 gap-2 sm:gap-0">
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 flex-1">
                           {project.githubUrl ? (
                             <Link 
                               href={project.githubUrl}
@@ -174,22 +186,22 @@ export default function Projects() {
                             project.name
                           )}
                         </h3>
-                        <span className="ml-4 text-xs text-gray-500 dark:text-gray-500 whitespace-nowrap">
+                        <span className="sm:ml-4 text-xs text-gray-500 dark:text-gray-500 whitespace-nowrap">
                           {project.date}
                         </span>
                       </div>
 
                       {/* Description */}
-                      <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-4">
+                      <p className="text-[13px] sm:text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
                         {project.description}
                       </p>
 
                       {/* Tech Stack */}
-                      <div className="mb-4 flex flex-wrap gap-2">
+                      <div className="mb-3 sm:mb-4 flex flex-wrap gap-1.5 sm:gap-2">
                         {project.techStack.map((tech, techIndex) => (
                           <span 
                             key={techIndex}
-                            className="inline-block px-2.5 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded"
+                            className="inline-block px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded"
                           >
                             {tech}
                           </span>
@@ -198,26 +210,26 @@ export default function Projects() {
 
                       {/* GitHub Stats */}
                       {project.githubStats && (
-                        <div className="mb-5 flex gap-4 text-xs text-gray-600 dark:text-gray-400">
+                        <div className="mb-4 sm:mb-5 flex flex-wrap gap-3 sm:gap-4 text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
                           {project.githubStats.stars !== undefined && (
-                            <div className="flex items-center gap-1.5">
-                              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center gap-1 sm:gap-1.5">
+                              <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                               </svg>
                               <span>{project.githubStats.stars} stars</span>
                             </div>
                           )}
                           {project.githubStats.forks !== undefined && (
-                            <div className="flex items-center gap-1.5">
-                              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center gap-1 sm:gap-1.5">
+                              <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4" />
                               </svg>
                               <span>{project.githubStats.forks} forks</span>
                             </div>
                           )}
                           {project.githubStats.contributors !== undefined && (
-                            <div className="flex items-center gap-1.5">
-                              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center gap-1 sm:gap-1.5">
+                              <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-2a6 6 0 0112 0v2zm0 0h6v-2a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                               </svg>
                               <span>{project.githubStats.contributors} contributors</span>
@@ -227,14 +239,14 @@ export default function Projects() {
                       )}
 
                       {/* Links */}
-                      <div className="flex flex-wrap gap-4  ">
+                      <div className="flex flex-wrap gap-3 sm:gap-4">
                         <Link
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                          className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                         >
-                             <Github size={16}/>
+                             <Github size={14} className="sm:w-4 sm:h-4"/>
                           GitHub
                         </Link>
                         {project.liveUrl && (
@@ -242,9 +254,9 @@ export default function Projects() {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                             Link
