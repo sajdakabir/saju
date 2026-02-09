@@ -72,11 +72,7 @@ export default function Sidebar({ theme }: SidebarProps) {
     <div className="fixed left-0 top-0 h-full z-50 flex items-center">
       {/* Sidebar Container */}
       <div className="
-        ml-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl
-        rounded-2xl border border-gray-200/50 dark:border-gray-700/50
-        shadow-2xl shadow-black/10 dark:shadow-black/30
-        p-3 flex flex-col space-y-3
-        transition-all duration-300 ease-out
+        ml-6 flex flex-col space-y-8 py-6
       ">
         {navigationItems.map((item) => {
           const isActive = pathname === item.href;
@@ -88,28 +84,18 @@ export default function Sidebar({ theme }: SidebarProps) {
                 href={item.href}
                 className={`
                   relative flex items-center justify-center
-                  w-12 h-12 rounded-xl
-                  transition-all duration-300 ease-out
-                  transform-gpu will-change-transform
+                  w-10 h-10
+                  transition-all duration-200 ease-out
                   ${isActive 
-                    ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/30 scale-110' 
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'text-gray-900 dark:text-white' 
+                    : 'text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400'
                   }
-                  ${isHovered && !isActive ? 'scale-125 shadow-lg' : ''}
-                  hover:scale-125 hover:shadow-lg
-                  active:scale-105
                 `}
                 onMouseEnter={() => setHoveredItem(item.href)}
                 onMouseLeave={() => setHoveredItem(null)}
                 aria-label={`Navigate to ${item.label}`}
               >
-                <div className={`
-                  transition-all duration-300 ease-out
-                  ${isActive ? 'scale-110' : ''}
-                  ${isHovered && !isActive ? 'scale-110' : ''}
-                `}>
-                  {item.icon}
-                </div>
+                {item.icon}
               </Link>
               
               {/* Tooltip */}

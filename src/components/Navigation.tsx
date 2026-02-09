@@ -105,17 +105,13 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
             : 'translateY(-50%) translateX(-16px)',
           transition: 'opacity 300ms ease-out, transform 300ms ease-out',
           width: '64px',
-          background: theme === 'dark' 
-            ? 'rgba(0, 0, 0, 0.4)' 
-            : 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(24px)',
+          background: 'transparent',
+          backdropFilter: 'none',
           borderRadius: '24px',
           border: theme === 'dark' 
             ? '1px solid rgba(255, 255, 255, 0.1)' 
             : '1px solid rgba(0, 0, 0, 0.1)',
-          boxShadow: theme === 'dark' 
-            ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' 
-            : '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+          boxShadow: 'none',
           padding: '12px'
         }}
       >
@@ -138,23 +134,15 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                     nav-item
                     flex items-center justify-center
                     w-10 h-10
-                    rounded-2xl
                     transition-all duration-200 ease-out
-                    transform-gpu will-change-transform
-                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent
-                    ${theme === 'dark' 
-                      ? 'focus:ring-white/30' 
-                      : 'focus:ring-gray-900/30'
-                    }
                     ${isActive
                         ? theme === 'dark'
-                          ? 'bg-white/90 text-gray-900 shadow-lg scale-105'
-                          : 'bg-gray-900/90 text-white shadow-lg scale-105'
+                          ? 'text-white'
+                          : 'text-gray-900'
                         : theme === 'dark'
-                          ? 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white hover:scale-105'
-                          : 'bg-gray-900/10 text-gray-700 hover:bg-gray-900/20 hover:text-gray-900 hover:scale-105'
+                          ? 'text-white/50 hover:text-white/80'
+                          : 'text-gray-500 hover:text-gray-900'
                       }
-                    active:scale-95
                   `}
                     aria-label={`Navigate to ${item.label}`}
                     title={item.label}
@@ -174,8 +162,8 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                   whitespace-nowrap
                   z-50
                   ${theme === 'dark' 
-                    ? 'bg-black/80 text-white' 
-                    : 'bg-white/90 text-gray-900 border border-gray-200'
+                    ? 'bg-white text-gray-900' 
+                    : 'bg-gray-900 text-white'
                   }
                 `}>
                     <span className="capitalize">{item.label}</span>
@@ -183,8 +171,8 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                     <div className={`absolute right-full top-1/2 -translate-y-1/2 
                                   border-4 border-transparent 
                                   ${theme === 'dark' 
-                                    ? 'border-r-black/80' 
-                                    : 'border-r-white/90'
+                                    ? 'border-r-white' 
+                                    : 'border-r-gray-900'
                                   }`} />
                   </div>
                 </div>
