@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -45,6 +46,7 @@ interface Project {
   challenges: Challenge[];
   githubStats?: GitHubStats;
   date: string;
+  image?: string;
 }
 
 export default function Projects() {
@@ -107,7 +109,8 @@ export default function Projects() {
       challenges: [
    
       ],
-      date: '2024'
+      date: '2024',
+      image: '/project/march.png'
     },
    {
       name: 'webToMd',
@@ -119,7 +122,8 @@ export default function Projects() {
       challenges: [
    
       ],
-      date: '2025'
+      date: '2025',
+      image: '/project/webtomd.png'
     },
        {
       name: 'userArray',
@@ -131,7 +135,8 @@ export default function Projects() {
       challenges: [
    
       ],
-      date: '2025'
+      date: '2025',
+      image: '/project/userarray.png'
     },
   ];
 
@@ -260,6 +265,19 @@ export default function Projects() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                             Link
+                          </Link>
+                        )}
+                        {project.image && (
+                          <Link
+                            href={project.image}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                          >
+                            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Screenshot
                           </Link>
                         )}
                         {project.links && project.links.map((link, linkIndex) => (
