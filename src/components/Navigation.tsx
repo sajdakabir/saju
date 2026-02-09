@@ -139,11 +139,6 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                     flex items-center justify-center
                     w-10 h-10
                     transition-all duration-200 ease-out
-                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent
-                    ${theme === 'dark' 
-                      ? 'focus:ring-white/30' 
-                      : 'focus:ring-gray-900/30'
-                    }
                     ${isActive
                         ? theme === 'dark'
                           ? 'text-white'
