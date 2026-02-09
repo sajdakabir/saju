@@ -138,9 +138,7 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                     nav-item
                     flex items-center justify-center
                     w-10 h-10
-                    rounded-2xl
                     transition-all duration-200 ease-out
-                    transform-gpu will-change-transform
                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent
                     ${theme === 'dark' 
                       ? 'focus:ring-white/30' 
@@ -148,13 +146,12 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                     }
                     ${isActive
                         ? theme === 'dark'
-                          ? 'bg-white/90 text-gray-900 shadow-lg scale-105'
-                          : 'bg-gray-900/90 text-white shadow-lg scale-105'
+                          ? 'text-white'
+                          : 'text-gray-900'
                         : theme === 'dark'
-                          ? 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white hover:scale-105'
-                          : 'bg-gray-900/10 text-gray-700 hover:bg-gray-900/20 hover:text-gray-900 hover:scale-105'
+                          ? 'text-white/50 hover:text-white/80'
+                          : 'text-gray-500 hover:text-gray-900'
                       }
-                    active:scale-95
                   `}
                     aria-label={`Navigate to ${item.label}`}
                     title={item.label}
