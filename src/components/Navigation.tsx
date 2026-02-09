@@ -162,8 +162,8 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                   whitespace-nowrap
                   z-50
                   ${theme === 'dark' 
-                    ? 'bg-black/80 text-white' 
-                    : 'bg-white/90 text-gray-900 border border-gray-200'
+                    ? 'bg-white text-gray-900' 
+                    : 'bg-gray-900 text-white'
                   }
                 `}>
                     <span className="capitalize">{item.label}</span>
@@ -171,8 +171,8 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                     <div className={`absolute right-full top-1/2 -translate-y-1/2 
                                   border-4 border-transparent 
                                   ${theme === 'dark' 
-                                    ? 'border-r-black/80' 
-                                    : 'border-r-white/90'
+                                    ? 'border-r-white' 
+                                    : 'border-r-gray-900'
                                   }`} />
                   </div>
                 </div>
