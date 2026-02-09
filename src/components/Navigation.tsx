@@ -105,17 +105,13 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
             : 'translateY(-50%) translateX(-16px)',
           transition: 'opacity 300ms ease-out, transform 300ms ease-out',
           width: '64px',
-          background: theme === 'dark' 
-            ? 'rgba(0, 0, 0, 0.4)' 
-            : 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(24px)',
+          background: 'transparent',
+          backdropFilter: 'none',
           borderRadius: '24px',
           border: theme === 'dark' 
             ? '1px solid rgba(255, 255, 255, 0.1)' 
             : '1px solid rgba(0, 0, 0, 0.1)',
-          boxShadow: theme === 'dark' 
-            ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' 
-            : '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+          boxShadow: 'none',
           padding: '12px'
         }}
       >
