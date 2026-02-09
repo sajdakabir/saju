@@ -173,10 +173,10 @@ export default function Projects() {
                   projects.map((project, index) => (
                     <div 
                       key={index} 
-                      className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
+                      className="border-b border-gray-200 dark:border-gray-700 pb-5 sm:pb-6 last:border-b-0"
                     >
                       {/* Header with Title and Date */}
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4 gap-2 sm:gap-0">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-0">
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 flex-1">
                           {project.githubUrl ? (
                             <Link 
@@ -197,12 +197,12 @@ export default function Projects() {
                       </div>
 
                       {/* Description */}
-                      <p className="text-[13px] sm:text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
+                      <p className="text-[13px] sm:text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-3">
                         {project.description}
                       </p>
 
                       {/* Tech Stack */}
-                      <div className="mb-3 sm:mb-4 flex flex-wrap gap-1.5 sm:gap-2">
+                      <div className="mb-3 flex flex-wrap gap-1.5 sm:gap-2">
                         {project.techStack.map((tech, techIndex) => (
                           <span 
                             key={techIndex}
@@ -215,7 +215,7 @@ export default function Projects() {
 
                       {/* GitHub Stats */}
                       {project.githubStats && (
-                        <div className="mb-4 sm:mb-5 flex flex-wrap gap-3 sm:gap-4 text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
+                        <div className="mb-4 flex flex-wrap gap-3 sm:gap-4 text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
                           {project.githubStats.stars !== undefined && (
                             <div className="flex items-center gap-1 sm:gap-1.5">
                               <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="currentColor" viewBox="0 0 24 24">
