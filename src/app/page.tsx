@@ -14,12 +14,12 @@ const getInitialTheme = () => {
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     return systemDark ? 'dark' : 'light';
   }
-  return 'light';
+  return 'dark';
 };
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   // Initialize theme after mount
   useEffect(() => {
