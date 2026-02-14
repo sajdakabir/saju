@@ -96,6 +96,17 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      name: 'Orbit',
+      description: "Your second brain, powered by voice. Journal, take notes, and dictate in any app—all powered by your voice. One workspace to replace multiple apps.",
+      techStack: ['Rust', 'Postgres', 'MCP', 'Composio', 'Voice Dictation'],
+      githubUrl: '',
+      liveUrl: 'https://orbit.sajdakabir.com/',
+      challenges: [
+
+      ],
+      date: '2026',
+    },
+    {
       name: 'march',
       description: "March brings tasks, meetings, bookmarks, and issues from all your tools into a single actionable workflow. One place to see what matters and get things done.",
       techStack: ['Nextjs', 'Node.js', 'TypeScript', 'Redis', 'mongodb', 'websockets'],
@@ -107,7 +118,7 @@ export default function Projects() {
         contributors: 17
       },
       challenges: [
-   
+
       ],
       date: '2024',
       image: '/project/march.png'
