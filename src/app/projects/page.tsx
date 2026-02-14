@@ -99,7 +99,7 @@ export default function Projects() {
       name: 'Orbit',
       description: "Your second brain, powered by voice. Journal, take notes, and dictate in any app—all powered by your voice. One workspace to replace multiple apps.",
       techStack: ['Rust', 'Postgres', 'MCP', 'Composio', 'Voice Dictation'],
-      githubUrl: '',
+      githubUrl: 'https://github.com/sajdakabir/orbit',
       liveUrl: 'https://orbit.sajdakabir.com/',
       challenges: [
 
