@@ -1,10 +1,10 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
-import { title } from 'process';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -76,7 +76,7 @@ export default function Photos() {
     // },
     {
       title: 'Makoto Shinkai',
-      why: 'My favorite filmmaker. The stories, the silence, the skies. They stay with me.',
+      why: 'My favorite filmmaker. The stories, the silence, the skies. your name and the garden words are my most fav.',
       image: '/loves/Makoto.jpg',
     },
         {
