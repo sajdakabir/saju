@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
+import { title } from 'process';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -64,60 +64,76 @@ export default function Photos() {
   };
 
   const loves = [
+    // {
+    //   title: 'Cooking',
+    //   why: 'I love experimenting in the kitchen — trying new recipes, new cuisines, and making food for people I care about.',
+    //   image: '/loves/cooking.jpg',
+    // },
+    // {
+    //   title: 'Trying new foods',
+    //   why: 'Nothing beats discovering a dish you never knew existed. Street food, hole-in-the-wall spots, anything.',
+    //   image: '/loves/food.jpg',
+    // },
     {
-      title: 'Cooking',
-      why: 'I love experimenting in the kitchen — trying new recipes, new cuisines, and making food for people I care about.',
-      image: '/loves/cooking.jpg',
+      title: 'Makoto Shinkai',
+      why: 'My favorite filmmaker. The stories, the silence, the skies. They stay with me.',
+      image: '/loves/Makoto.jpg',
     },
-    {
-      title: 'Trying new foods',
-      why: 'Nothing beats discovering a dish you never knew existed. Street food, hole-in-the-wall spots, anything.',
-      image: '/loves/food.jpg',
-    },
-    {
-      title: 'Your Name',
-      why: 'Makoto Shinkai is a genius. Your Name hit me differently — the visuals, the music, the longing.',
-      image: '/loves/your-name.jpg',
-    },
-    {
-      title: 'The Garden of Words',
-      why: 'Another Shinkai masterpiece. Rain has never looked more beautiful. The quiet intimacy of it stays with you.',
-      image: '/loves/garden-of-words.jpg',
-    },
-    {
+        {
       title: 'Frieren',
-      why: 'Currently watching and completely hooked. The way it handles time, memory, and what it means to understand someone.',
+      why: 'one of my fav anime .',
       image: '/loves/frieren.jpg',
     },
     {
-      title: 'Cafe hopping',
-      why: 'I love finding quiet working cafes — good coffee, ambient noise, a corner seat. That\'s my happy place.',
-      image: '/loves/cafe.jpg',
+      title: 'Pizza',
+      why: 'Fresh out of the wooden oven. Instant happiness.',
+      image: '/loves/pizza1.jpeg',
+
+
     },
     {
+      title: 'Iced Pour-Over Coffee',
+      why: 'My kind of comfort.',
+      image: '/loves/coffee.jpeg',
+    },
+    {
+      title: 'Late night walks + songs',
+      why: 'My kinda love language',
+      image: '/loves/late-night-walk.jpeg',
+    },
+        {
       title: 'Cats',
-      why: 'Cats just get it. Independent, curious, and they choose to love you. What more could you want.',
-      image: '/loves/cats.jpg',
+      why: 'Why shouldn\'t i love them?',
+      image: '/loves/cat.jpeg',
     },
+
     {
-      title: 'Late night walks',
-      why: 'There\'s something about the world at 2am — empty streets, cool air, your own thoughts. Pure peace.',
-      image: '/loves/night-walk.jpg',
+      title: 'Cafe hopping',
+      why: 'I love cafe hopping — a quiet cafe and im set for a productive sunday.',
+      image: '/loves/cafe.jpeg',
     },
+
+
+    // {
+    //   title: 'Calligraphy',
+    //   why: 'Currently learning. There\'s something meditative about shaping letters with intention. Every stroke matters.',
+    //   image: '/loves/calligraphy.jpg',
+    // },
+    // {
+    //   title: 'Pencil drawing',
+    //   why: 'I love sketching — it slows everything down and makes you really see things.',
+    //   image: '/loves/drawing.jpg',
+    // },
     {
-      title: 'Calligraphy',
-      why: 'Currently learning. There\'s something meditative about shaping letters with intention. Every stroke matters.',
-      image: '/loves/calligraphy.jpg',
+      title: 'Pistachio Ice Cream Cone',
+      why: 'take my heart',
+      image: '/loves/fav-ic.jpeg',
     },
-    {
-      title: 'Pencil drawing',
-      why: 'I love sketching — it slows everything down and makes you really see things.',
-      image: '/loves/drawing.jpg',
-    },
-    {
-      title: 'Writing with my left hand',
-      why: 'A random hobby I picked up. It\'s frustrating and fun — like learning to write all over again.',
-      image: '/loves/left-hand.jpg',
+        {
+      title:'random doodles',
+      why: 'I like to draw random stuff when i\'m bored. It\'s fun and relaxing.',
+      image: '/loves/doodles.jpeg',
+
     },
   ];
 
@@ -153,13 +169,10 @@ export default function Photos() {
                 key={index}
                 className="group relative break-inside-avoid rounded-xl overflow-hidden cursor-default"
               >
-                <Image
+                <img
                   src={item.image}
                   alt={item.title}
-                  width={600}
-                  height={800}
                   className="w-full h-auto block"
-                  sizes="(max-width: 640px) 50vw, 33vw"
                 />
                 <div className="absolute bottom-3 left-3 right-3 bg-white dark:bg-gray-900 rounded-lg p-3 sm:p-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
                   <h3 className="text-gray-900 dark:text-gray-100 font-semibold text-sm sm:text-base mb-0.5">{item.title}</h3>
