@@ -1,10 +1,10 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
-import { title } from 'process';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -76,7 +76,7 @@ export default function Photos() {
     // },
     {
       title: 'Makoto Shinkai',
-      why: 'My favorite filmmaker. The stories, the silence, the skies. They stay with me.',
+      why: 'My favorite filmmaker. The stories, the silence, the skies. your name and the garden words are my most fav.',
       image: '/loves/Makoto.jpg',
     },
         {
@@ -169,10 +169,15 @@ export default function Photos() {
                 key={index}
                 className="group relative break-inside-avoid rounded-xl overflow-hidden cursor-default"
               >
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-auto block"
+                  width={1200}
+                  height={1200}
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  quality={100}
+                  style={{ width: '100%', height: 'auto' }}
+                  className="block"
                 />
                 <div className="absolute bottom-3 left-3 right-3 bg-white dark:bg-gray-900 rounded-lg p-3 sm:p-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
                   <h3 className="text-gray-900 dark:text-gray-100 font-semibold text-sm sm:text-base mb-0.5">{item.title}</h3>
