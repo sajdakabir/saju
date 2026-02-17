@@ -104,11 +104,9 @@ export default function Photos() {
               <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
           <div className="mb-12">
-          <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Photos</h1>
+          <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">What I love</h1>
           <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
-            {/* A collection of photographs capturing moments, places, and perspectives through my lens. */}
-
-            coming soon..
+            Stuff that makes me smile
           </p>
         </div>
 
