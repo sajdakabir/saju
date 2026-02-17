@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -63,25 +63,62 @@ export default function Photos() {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
-  const photoCollections = [
-    { 
-      title: '', 
-      description: '',
-      count: '',
-      date: ''
+  const loves = [
+    {
+      title: 'Cooking',
+      why: 'I love experimenting in the kitchen — trying new recipes, new cuisines, and making food for people I care about.',
+      image: '/loves/cooking.jpg',
     },
-    // { 
-    //   title: 'Nature & Landscapes', 
-    //   description: 'Beautiful scenes from travels and hikes',
-    //   count: 8,
-    //   date: '2023-2024'
-    // },
-    // { 
-    //   title: 'Architecture', 
-    //   description: 'Interesting buildings and structures',
-    //   count: 15,
-    //   date: '2023'
-    // },
+    {
+      title: 'Trying new foods',
+      why: 'Nothing beats discovering a dish you never knew existed. Street food, hole-in-the-wall spots, anything.',
+      image: '/loves/food.jpg',
+    },
+    {
+      title: 'Your Name',
+      why: 'Makoto Shinkai is a genius. Your Name hit me differently — the visuals, the music, the longing.',
+      image: '/loves/your-name.jpg',
+    },
+    {
+      title: 'The Garden of Words',
+      why: 'Another Shinkai masterpiece. Rain has never looked more beautiful. The quiet intimacy of it stays with you.',
+      image: '/loves/garden-of-words.jpg',
+    },
+    {
+      title: 'Frieren',
+      why: 'Currently watching and completely hooked. The way it handles time, memory, and what it means to understand someone.',
+      image: '/loves/frieren.jpg',
+    },
+    {
+      title: 'Cafe hopping',
+      why: 'I love finding quiet working cafes — good coffee, ambient noise, a corner seat. That\'s my happy place.',
+      image: '/loves/cafe.jpg',
+    },
+    {
+      title: 'Cats',
+      why: 'Cats just get it. Independent, curious, and they choose to love you. What more could you want.',
+      image: '/loves/cats.jpg',
+    },
+    {
+      title: 'Late night walks',
+      why: 'There\'s something about the world at 2am — empty streets, cool air, your own thoughts. Pure peace.',
+      image: '/loves/night-walk.jpg',
+    },
+    {
+      title: 'Calligraphy',
+      why: 'Currently learning. There\'s something meditative about shaping letters with intention. Every stroke matters.',
+      image: '/loves/calligraphy.jpg',
+    },
+    {
+      title: 'Pencil drawing',
+      why: 'I love sketching — it slows everything down and makes you really see things.',
+      image: '/loves/drawing.jpg',
+    },
+    {
+      title: 'Writing with my left hand',
+      why: 'A random hobby I picked up. It\'s frustrating and fun — like learning to write all over again.',
+      image: '/loves/left-hand.jpg',
+    },
   ];
 
   return (
@@ -100,7 +137,7 @@ export default function Photos() {
           }}
         >
           <div className="min-h-full flex justify-center p-6 pt-6">
-            <div className="max-w-2xl w-full mx-auto px-4">
+            <div className="max-w-3xl w-full mx-auto px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
           <div className="mb-12">
@@ -110,25 +147,26 @@ export default function Photos() {
           </p>
         </div>
 
-          <div className="space-y-8">
-          {photoCollections.map((collection, index) => (
-            <div key={index} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0">
-              <div className="flex items-start justify-between mb-2">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                  {collection.title}
-                </h3>
-                {/* <span className="text-sm text-gray-500 dark:text-gray-400">
-                  {collection.count} photos
-                </span> */}
+          <div className="columns-2 sm:columns-3 gap-4 space-y-4">
+            {loves.map((item, index) => (
+              <div
+                key={index}
+                className="group relative break-inside-avoid rounded-xl overflow-hidden cursor-default"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={600}
+                  height={800}
+                  className="w-full h-auto block"
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                />
+                <div className="absolute bottom-3 left-3 right-3 bg-white dark:bg-gray-900 rounded-lg p-3 sm:p-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
+                  <h3 className="text-gray-900 dark:text-gray-100 font-semibold text-sm sm:text-base mb-0.5">{item.title}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-[13px] leading-relaxed">{item.why}</p>
+                </div>
               </div>
-              <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-2 leading-relaxed">
-                {collection.description}
-              </p>
-              <p className="text-sm text-gray-500 dark:text-gray-500">
-                {collection.date}
-              </p>
-            </div>
-          ))}
+            ))}
           </div>
 
               <Footer />
