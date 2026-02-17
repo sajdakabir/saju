@@ -64,6 +64,7 @@ export default function Photos() {
   };
 
   const loves = [
+    
     // {
     //   title: 'Cooking',
     //   why: 'I love experimenting in the kitchen — trying new recipes, new cuisines, and making food for people I care about.',
@@ -91,21 +92,12 @@ export default function Photos() {
 
 
     },
-    {
+        {
       title: 'Iced Pour-Over Coffee',
       why: 'My kind of comfort.',
       image: '/loves/coffee.jpeg',
     },
-    {
-      title: 'Late night walks + songs',
-      why: 'My kinda love language',
-      image: '/loves/late-night-walk.jpeg',
-    },
-        {
-      title: 'Cats',
-      why: 'Why shouldn\'t i love them?',
-      image: '/loves/cat.jpeg',
-    },
+
 
     {
       title: 'Cafe hopping',
@@ -129,6 +121,19 @@ export default function Photos() {
       why: 'take my heart',
       image: '/loves/fav-ic.jpeg',
     },
+
+    {
+      title: 'Late night walks + songs',
+      why: 'My kinda love language',
+      image: '/loves/late-night-walk.jpeg',
+    },
+
+        {
+      title: 'Cats',
+      why: 'Why shouldn\'t i love them?',
+      image: '/loves/cat.jpeg',
+    },
+
       //   {
       // title:'random doodles',
       // why: 'I like to draw random stuff when i\'m bored. It\'s fun and relaxing.',
