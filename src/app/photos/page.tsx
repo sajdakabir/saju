@@ -129,12 +129,12 @@ export default function Photos() {
       why: 'take my heart',
       image: '/loves/fav-ic.jpeg',
     },
-        {
-      title:'random doodles',
-      why: 'I like to draw random stuff when i\'m bored. It\'s fun and relaxing.',
-      image: '/loves/doodles.jpeg',
+      //   {
+      // title:'random doodles',
+      // why: 'I like to draw random stuff when i\'m bored. It\'s fun and relaxing.',
+      // image: '/loves/doodles.jpeg',
 
-    },
+    // },
   ];
 
   return (
@@ -163,7 +163,7 @@ export default function Photos() {
           </p>
         </div>
 
-          <div className="columns-2 sm:columns-3 gap-4 space-y-4">
+          <div className="columns-1 sm:columns-2 gap-4 space-y-4">
             {loves.map((item, index) => (
               <div
                 key={index}
