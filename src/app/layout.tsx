@@ -4,6 +4,28 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sajdakabir.com'),
+  title: 'Sajda Kabir',
+  description: 'Personal website of Sajda Kabir',
+  openGraph: {
+    title: 'Sajda Kabir',
+    description: 'Personal website of Sajda Kabir',
+    url: 'https://sajdakabir.com',
+    siteName: 'Sajda Kabir',
+    images: [
+      {
+        url: '/loves/dsh.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Sajda Kabir',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sajda Kabir',
+    description: 'Personal website of Sajda Kabir',
+    images: ['/loves/dsh.jpeg'],
+  },
 };
 
 const inter = Inter({
