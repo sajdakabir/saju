@@ -1,5 +1,10 @@
 import { Inter } from 'next/font/google';
+import { Metadata } from 'next';
 import './globals.css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://sajdakabir.com'),
+};
 
 const inter = Inter({
   subsets: ['latin'],
