@@ -66,7 +66,7 @@ const history: HistoryItem[] = [
 
 {
   year: '2023',
-event: 'I found my interest in backend development and backend architecture. Within two months, I built 7+ backend-focused projects. This was also the year I started contributing to open source.', links: [ { text: 'See all contributions', url: '/contributions' } ] },
+event: 'I found my interest in backend development and backend architecture. Within two months, I built 7+ backend-focused projects. This was also the year I started contributing to open source.', links: [ { text: 'See all contributions', url: '/oss-acc' } ] },
 
  { year: '2022',
   event: 'Nothing special this year. After lockdown, it was back to college — assignments, attendance, and DSA. I became deeply interested in DSA during this time. Some of my favorite topics were graphs, recursion, and dynamic programming.',
@@ -194,7 +194,7 @@ export default function HistoryPage() {
             transition: 'padding-left 300ms ease-out'
           }}
         >
-          <div className="min-h-full flex justify-center p-6 pt-6">
+          <div className="min-h-full flex justify-center p-6 pt-16">
             <div className="max-w-2xl w-full mx-auto px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 

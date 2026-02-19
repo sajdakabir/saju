@@ -157,7 +157,7 @@ export default function Photos() {
             transition: 'padding-left 300ms ease-out'
           }}
         >
-          <div className="min-h-full flex justify-center p-6 pt-6">
+          <div className="min-h-full flex justify-center p-6 pt-16">
             <div className="max-w-3xl w-full mx-auto px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 

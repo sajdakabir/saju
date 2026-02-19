@@ -161,7 +161,7 @@ export default function Projects() {
             transition: 'padding-left 300ms ease-out'
           }}
         >
-          <div className="min-h-full flex justify-center p-4 sm:p-6 pt-4 sm:pt-6">
+          <div className="min-h-full flex justify-center p-4 sm:p-6 pt-16 sm:pt-16">
             <div className="max-w-2xl w-full mx-auto px-0 sm:px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
 
