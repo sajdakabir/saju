@@ -87,8 +87,8 @@ export default function Navigation({ isVisible, theme, onNavigate, onClose }: Na
                   transition-all duration-200 ease-out
                   ${isActive
                       ? theme === 'dark'
-                        ? 'text-white'
-                        : 'text-gray-900'
+                        ? 'text-white underline underline-offset-2'
+                        : 'text-gray-900 underline underline-offset-2'
                       : theme === 'dark'
                         ? 'text-white/50 hover:text-white/80'
                         : 'text-gray-500 hover:text-gray-900'
