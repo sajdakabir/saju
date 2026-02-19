@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import SmoothLink from '@/components/SmoothLink';
 import ThemeToggle from '@/components/ThemeToggle';
+import Navigation from '@/components/Navigation';
 
 // Helper function to get initial theme
 const getInitialTheme = () => {
@@ -77,6 +78,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col transition-colors duration-200">
+      <Navigation
+        isVisible={true}
+        theme={theme as 'light' | 'dark'}
+      />
       <div className="flex-1 flex items-center justify-center p-6">
         <div className="max-w-2xl w-full mx-auto px-4">
           <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
@@ -103,15 +108,6 @@ export default function Home() {
                     see my history
                   </SmoothLink>
                 </div> */}
-
-                 <div className="pt-1">
-                  <SmoothLink
-                    href="/contributions"
-                    className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline cursor-pointer transition-colors"
-                  >
-                    see my  open-source contributions
-                  </SmoothLink>
-                </div>
 
                 <div className="pt-1">
                   <a
