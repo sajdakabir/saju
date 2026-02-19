@@ -93,7 +93,7 @@ export default function Notes() {
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-500 dark:text-gray-400 w-20">21-10-2025</span>
               <Link 
-                href="/notes/distributed-living" 
+                href="/posts/distributed-living" 
                 className="text-[15px] text-gray-900 dark:text-gray-100 hover:underline"
               >
               coming soon...
@@ -109,7 +109,7 @@ export default function Notes() {
                 <div key={index} className="flex items-center space-x-4">
                   <span className="text-sm text-gray-500 dark:text-gray-400 w-20">{note.date}</span>
                   <Link 
-                    href={`/notes/${note.title.replace(/\s+/g, '-')}`}
+                    href={`/posts/${note.title.replace(/\s+/g, '-')}`}
                     className="text-[15px] text-gray-900 dark:text-gray-100 hover:underline"
                   >
                     {note.title}

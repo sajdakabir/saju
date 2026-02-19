@@ -22,9 +22,9 @@ interface NavigationProps {
 const navigationItems: NavigationItem[] = [
   { label: 'home', href: '/' },
   { label: 'history', href: '/history' },
-  { label: 'oss/acc', href: '/contributions' },
+  { label: 'oss/acc', href: '/oss-acc' },
   { label: 'projects', href: '/projects' },
-  { label: 'posts', href: '/notes' },
+  { label: 'posts', href: '/posts' },
   { label: 'love', href: '/photos' },
 ];
 
