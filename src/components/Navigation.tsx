@@ -24,8 +24,8 @@ const navigationItems: NavigationItem[] = [
   { label: 'history', href: '/history' },
   { label: 'oss/acc', href: '/contributions' },
   { label: 'projects', href: '/projects' },
-  { label: 'notes', href: '/notes' },
-  { label: 'loves', href: '/photos' },
+  { label: 'posts', href: '/notes' },
+  { label: 'love', href: '/photos' },
 ];
 
 export default function Navigation({ isVisible, theme, onNavigate, onClose }: NavigationProps) {
