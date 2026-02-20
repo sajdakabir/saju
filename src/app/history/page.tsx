@@ -72,10 +72,7 @@ event: 'I found my interest in backend development and backend architecture. Wit
   event: 'Nothing special this year. After lockdown, it was back to college — assignments, attendance, and DSA. I became deeply interested in DSA during this time. Some of my favorite topics were graphs, recursion, and dynamic programming.',
 },
 
-{
-  year: '2021',
-  event: 'On June 27, I created my GitHub account and started learning to code using my laptop.',
-},
+
 
   {
     year: '2021',
