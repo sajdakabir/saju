@@ -27,6 +27,7 @@ export default function Notes() {
 
   return (
       <div className="h-screen overflow-hidden transition-colors duration-200">
+        <ThemeWave isAnimating={isAnimating} incomingTheme={incomingTheme} />
         <Navigation
           isVisible={showNavigation}
           theme={theme as 'light' | 'dark'}
