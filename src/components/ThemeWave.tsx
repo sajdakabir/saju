@@ -12,7 +12,7 @@ export default function ThemeWave({ isAnimating, incomingTheme }: ThemeWaveProps
     <div
       className="theme-wave-overlay"
       style={{
-        backgroundColor: incomingTheme === 'dark' ? '#1B1B1B' : '#ffffff',
+        backgroundColor: incomingTheme === 'dark' ? '#ffffff' : '#1B1B1B',
       }}
     />
   );

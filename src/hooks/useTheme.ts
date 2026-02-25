@@ -82,30 +82,33 @@ export function useTheme() {
       return;
     }
 
-    // Start wave animation
+    // Show overlay first (covers page with OLD theme bg)
     setIncomingTheme(nextTheme);
     setIsAnimating(true);
 
-    // Apply theme to DOM synchronously BEFORE removing overlay to prevent blink
-    animationTimeoutRef.current = setTimeout(() => {
-      // Apply theme class directly to DOM first
-      const root = document.documentElement;
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-      if (nextTheme === 'dark') {
-        root.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-        if (metaThemeColor) metaThemeColor.setAttribute('content', '#111');
-      } else {
-        root.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-        if (metaThemeColor) metaThemeColor.setAttribute('content', '#ffffff');
-      }
+    // Apply new theme after overlay has rendered (double-rAF ensures paint)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const root = document.documentElement;
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (nextTheme === 'dark') {
+          root.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          if (metaThemeColor) metaThemeColor.setAttribute('content', '#111');
+        } else {
+          root.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          if (metaThemeColor) metaThemeColor.setAttribute('content', '#ffffff');
+        }
+        setTheme(nextTheme);
+      });
+    });
 
-      // Then update React state (overlay removed after DOM is already correct)
-      setTheme(nextTheme);
+    // Remove overlay after wave animation completes
+    animationTimeoutRef.current = setTimeout(() => {
       setIsAnimating(false);
       setIncomingTheme(null);
-    }, 1000);
+    }, 1050);
   }, [theme, isAnimating]);
 
   return {

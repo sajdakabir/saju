@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Register custom property so browsers can animate it inside gradients */
+@property --wave-size {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
 @layer base {
   body {
     @apply bg-white text-black dark:bg-[#1B1B1B] dark:text-gray-100;
@@ -12,7 +19,7 @@
 
 @layer components {
 
-  /* Theme wave transition overlay */
+  /* Theme wave transition overlay – shows OLD theme bg with a growing hole that reveals new theme */
   .theme-wave-overlay {
     position: fixed;
     top: 0;
@@ -21,7 +28,17 @@
     height: 100%;
     z-index: 50;
     pointer-events: none;
-    clip-path: circle(0% at calc(100% - 2rem) 2rem);
+    --wave-size: 0%;
+    -webkit-mask-image: radial-gradient(
+      circle farthest-corner at calc(100% - 2rem) 2rem,
+      transparent var(--wave-size),
+      black var(--wave-size)
+    );
+    mask-image: radial-gradient(
+      circle farthest-corner at calc(100% - 2rem) 2rem,
+      transparent var(--wave-size),
+      black var(--wave-size)
+    );
     animation: themeWaveExpand 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
   }
 
@@ -110,13 +127,13 @@
 
 @layer utilities {
 
-  /* Keyframe for theme wave transition */
+  /* Keyframe for theme wave transition – grows the transparent hole */
   @keyframes themeWaveExpand {
     0% {
-      clip-path: circle(0% at calc(100% - 2rem) 2rem);
+      --wave-size: 0%;
     }
     100% {
-      clip-path: circle(150% at calc(100% - 2rem) 2rem);
+      --wave-size: 100%;
     }
   }
 
