@@ -1,55 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
-
-// Helper function to get initial theme
-const getInitialTheme = () => {
-  if (typeof window !== 'undefined') {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) return storedTheme;
-    
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return systemDark ? 'dark' : 'light';
-  }
-  return 'light';
-};
+import ThemeWave from '@/components/ThemeWave';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Notes() {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const { theme, mounted, toggleTheme, isAnimating, incomingTheme } = useTheme();
   const [showNavigation, setShowNavigation] = useState(true);
-
-  // Initialize theme after mount
-  useEffect(() => {
-    setTheme(getInitialTheme());
-    setMounted(true);
-  }, []);
-
-  // Update theme when it changes
-  useEffect(() => {
-    if (!mounted) return;
-    
-    const root = document.documentElement;
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    
-    if (theme === 'dark') {
-      root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', '#111');
-      }
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', '#ffffff');
-      }
-    }
-  }, [theme, mounted]);
 
   if (!mounted) {
     return (
@@ -58,10 +19,6 @@ export default function Notes() {
       </div>
     );
   }
-  
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const notes = [
     { date: '21-10-2025', title: 'coming soon...' },
@@ -85,7 +42,7 @@ export default function Notes() {
         >
           <div className="min-h-full flex justify-center p-6 pt-16">
             <div className="max-w-2xl w-full mx-auto px-4">
-              <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
+              <ThemeToggle onClick={toggleTheme} theme={theme} />
 
           <div className="mb-12">
           <h2 className="text-lg font-medium mb-6 text-gray-900 dark:text-gray-100">latest</h2>

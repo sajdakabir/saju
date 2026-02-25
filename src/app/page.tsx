@@ -1,68 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import SmoothLink from '@/components/SmoothLink';
 import ThemeToggle from '@/components/ThemeToggle';
+import ThemeWave from '@/components/ThemeWave';
 import Navigation from '@/components/Navigation';
-
-// Helper function to get initial theme
-const getInitialTheme = () => {
-  if (typeof window !== 'undefined') {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) return storedTheme;
-
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return systemDark ? 'dark' : 'light';
-  }
-  return 'dark';
-};
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState('dark');
-
-  // Initialize theme after mount
-  useEffect(() => {
-    setTheme(getInitialTheme());
-    setMounted(true);
-  }, []);
-
-  // Update theme when it changes
-  useEffect(() => {
-    if (!mounted) return;
-
-    const root = document.documentElement;
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-
-    if (theme === 'dark') {
-      root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', '#111');
-      }
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', '#ffffff');
-      }
-    }
-  }, [theme, mounted]);
-
-  // Listen for system theme changes
-  useEffect(() => {
-    if (!mounted) return;
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    const handleChange = () => {
-      setTheme(mediaQuery.matches ? 'dark' : 'light');
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [mounted]);
+  const { theme, mounted, toggleTheme, isAnimating, incomingTheme } = useTheme();
 
   if (!mounted) {
     return (
@@ -72,19 +18,16 @@ export default function Home() {
     );
   }
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   return (
     <main className="min-h-screen flex flex-col transition-colors duration-200">
+      <ThemeWave isAnimating={isAnimating} incomingTheme={incomingTheme} />
       <Navigation
         isVisible={true}
-        theme={theme as 'light' | 'dark'}
+        theme={theme}
       />
       <div className="flex-1 flex items-center justify-center p-6">
         <div className="max-w-2xl w-full mx-auto px-4">
-          <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
+          <ThemeToggle onClick={toggleTheme} theme={theme} />
 
               <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Sajda Kabir</h1>
               <p className="text-sm text-gray-500 dark:text-gray-400 -mt-4 mb-6">she/her</p>

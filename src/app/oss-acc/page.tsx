@@ -1,22 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
-
-// Helper function to get initial theme
-const getInitialTheme = () => {
-  if (typeof window !== 'undefined') {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) return storedTheme;
-
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return systemDark ? 'dark' : 'light';
-  }
-  return 'light';
-};
+import ThemeWave from '@/components/ThemeWave';
+import { useTheme } from '@/hooks/useTheme';
 
 const contributions = [
   {
@@ -88,37 +78,8 @@ const contributions = [
 ];
 
 export default function ContributionsPage() {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const { theme, mounted, toggleTheme, isAnimating, incomingTheme } = useTheme();
   const [showNavigation, setShowNavigation] = useState(true);
-
-  // Initialize theme after mount
-  useEffect(() => {
-    setTheme(getInitialTheme());
-    setMounted(true);
-  }, []);
-
-  // Update theme when it changes
-  useEffect(() => {
-    if (!mounted) return;
-
-    const root = document.documentElement;
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-
-    if (theme === 'dark') {
-      root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', '#111');
-      }
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', '#ffffff');
-      }
-    }
-  }, [theme, mounted]);
 
   if (!mounted) {
     return (
@@ -128,15 +89,12 @@ export default function ContributionsPage() {
     );
   }
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   return (
     <div className="h-screen overflow-hidden transition-colors duration-200">
+      <ThemeWave isAnimating={isAnimating} incomingTheme={incomingTheme} />
       <Navigation
         isVisible={showNavigation}
-        theme={theme as 'light' | 'dark'}
+        theme={theme}
         onClose={() => setShowNavigation(false)}
       />
 
@@ -149,7 +107,7 @@ export default function ContributionsPage() {
       >
         <div className="min-h-full flex justify-center p-6 pt-16">
           <div className="max-w-2xl w-full mx-auto px-4">
-            <ThemeToggle onClick={toggleTheme} theme={theme as 'light' | 'dark'} />
+            <ThemeToggle onClick={toggleTheme} theme={theme} />
 
             <h1 className="text-2xl font-medium mb-8 tracking-wider text-gray-900 dark:text-gray-100">
               open source contributions

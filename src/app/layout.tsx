@@ -48,7 +48,7 @@ export default function RootLayout({
         <link rel="icon" href="/saju.png" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="bg-white text-gray-900 dark:bg-[#1B1B1B] dark:text-gray-100 transition-colors duration-200">
+      <body className="bg-white text-gray-900 dark:bg-[#1B1B1B] dark:text-gray-100">
         {children}
       </body>
     </html>
