@@ -62,6 +62,18 @@ export default function Projects() {
       date: '2026',
     },
     {
+      name: 'meow',
+      description: "A free, open-source macOS menu-bar app that combines a pomodoro timer with ambient sounds and adorable animal companions. Deep work feels less lonely.",
+      techStack: ['Rust', 'Tauri', 'JavaScript', 'CSS'],
+      githubUrl: 'https://github.com/sajdakabir/meow',
+      liveUrl: 'https://meow.sajdakabir.com/',
+      githubStats: {
+        // stars: 5,
+      },
+      challenges: [],
+      date: '2026',
+    },
+    {
       name: 'march',
       description: "March brings tasks, meetings, bookmarks, and issues from all your tools into a single actionable workflow. One place to see what matters and get things done.",
       techStack: ['Nextjs', 'Node.js', 'TypeScript', 'Redis', 'mongodb', 'websockets'],
