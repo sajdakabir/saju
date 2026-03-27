@@ -33,29 +33,30 @@ export default function Photos() {
     //   image: '/loves/food.jpg',
     // },
     {
-      title: 'Makoto Shinkai',
-      why: 'My favorite filmmaker. The stories, the silence, the skies. your name and the garden words are my most fav.',
-      image: '/loves/Makoto.jpg',
-    },
-        {
       title: 'Frieren',
       why: 'one of my fav anime .',
       image: '/loves/frieren.jpg',
     },
     {
-      title: 'Pizza',
-      why: 'Fresh out of the wooden oven. Instant happiness.',
-      image: '/loves/pizza1.jpeg',
-
-
+      title: 'DSH, Bangalore',
+      why: 'If I\'m in blr, you can find me here.',
+      image: '/loves/dsh.jpeg',
     },
-        {
+    {
+      title: 'Makoto Shinkai',
+      why: 'My favorite filmmaker. The stories, the silence, the skies. your name and the garden words are my most fav.',
+      image: '/loves/Makoto.jpg',
+    },
+    {
       title: 'Iced Pour-Over Coffee',
       why: 'My kind of comfort.',
       image: '/loves/coffee.jpeg',
     },
-
-
+    {
+      title: 'Murderbot Diaries',
+      why: 'My fav sci-fi comedy. A socially awkward security bot that just wants to watch Sanctuary Moon — id be crazy not to love it.',
+      image: '/loves/Murderbot.jpeg',
+    },
     {
       title: 'Cafe hopping',
       why: 'I love cafe hopping — a quiet cafe and im set for a productive sunday.',
@@ -85,10 +86,15 @@ export default function Photos() {
       image: '/loves/late-night-walk.jpeg',
     },
 
-        {
+    {
       title: 'Cats',
       why: 'Why shouldn\'t i love them?',
       image: '/loves/cat.jpeg',
+    },
+    {
+      title: 'Pizza',
+      why: 'Fresh out of the wooden oven. Instant happiness.',
+      image: '/loves/pizza1.jpeg',
     },
 
       //   {
