@@ -34,7 +34,7 @@ export default function Photos() {
     // },
     {
       title: 'Frieren',
-      why: 'one of my fav anime .',
+      why: 'I love this anime — the slow storytelling, the quiet character building, and the way it makes you feel things without rushing.',
       image: '/loves/frieren.jpg',
     },
     {
