@@ -109,10 +109,10 @@ export default function NotFound() {
           );
         })}
 
-        {/* Crystal Astronaut Image - right side - clickable */}
+        {/* Crystal Astronaut Image - clickable */}
         <Link
           href="/"
-          className="absolute right-[10%] top-1/2 -translate-y-1/2 cursor-pointer transition-transform hover:scale-105"
+          className="absolute right-[5%] md:right-[10%] top-1/2 -translate-y-1/2 cursor-pointer transition-transform hover:scale-105"
           style={{
             animation: 'float 8s ease-in-out infinite',
           }}
@@ -122,21 +122,21 @@ export default function NotFound() {
             alt="Crystal Astronaut in Space - Click to return home"
             width={450}
             height={650}
-            className="object-contain"
+            className="object-contain w-[200px] h-[300px] md:w-[450px] md:h-[650px]"
             priority
           />
         </Link>
       </div>
 
-      {/* Content - left side */}
-      <div className="absolute left-[10%] top-1/2 -translate-y-1/2 max-w-md z-10">
-        <h1 className="text-6xl font-light text-white mb-4 tracking-wide">
+      {/* Content */}
+      <div className="absolute left-[8%] md:left-[10%] top-1/3 md:top-1/2 md:-translate-y-1/2 max-w-xs md:max-w-md z-10">
+        <h1 className="text-4xl md:text-6xl font-light text-white mb-4 tracking-wide">
           404
         </h1>
-        <p className="text-xl text-gray-400 mb-2 font-light">
+        <p className="text-lg md:text-xl text-gray-400 mb-2 font-light">
           Lost in space
         </p>
-        <p className="text-sm text-gray-500 mb-8 font-light">
+        <p className="text-xs md:text-sm text-gray-500 mb-8 font-light">
           This page drifted away into the void
         </p>
         <Link

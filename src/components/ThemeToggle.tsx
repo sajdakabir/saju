@@ -10,7 +10,7 @@ interface ThemeToggleProps {
 
 export default function ThemeToggle({ onClick, theme }: ThemeToggleProps) {
   return (
-    <div className="absolute right-6 top-6">
+    <div className="fixed right-4 top-4 md:right-6 md:top-6 z-[9998]">
       <button
         onClick={onClick}
         className="p-2 text-black dark:text-white transition-colors text-lg"

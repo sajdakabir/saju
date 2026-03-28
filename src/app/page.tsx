@@ -25,8 +25,8 @@ export default function Home() {
         isVisible={true}
         theme={theme}
       />
-      <div className="flex-1 flex items-center justify-center p-6">
-        <div className="max-w-2xl w-full mx-auto px-4">
+      <div className="flex-1 flex items-center justify-center p-4 sm:p-6">
+        <div className="max-w-2xl w-full mx-auto px-2 sm:px-4">
           <ThemeToggle onClick={toggleTheme} theme={theme} />
 
               <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Sajda Kabir</h1>

@@ -115,13 +115,12 @@ export default function Photos() {
         />
 
         <main
-          className="h-full overflow-y-auto"
+          className="h-full overflow-y-auto pl-0 md:pl-24"
           style={{
-            paddingLeft: showNavigation ? '96px' : '0px',
             transition: 'padding-left 300ms ease-out'
           }}
         >
-          <div className="min-h-full flex justify-center p-6 pt-16">
+          <div className="min-h-full flex justify-center p-4 sm:p-6 pt-10 sm:pt-16">
             <div className="max-w-3xl w-full mx-auto px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme} />
 
@@ -143,12 +142,12 @@ export default function Photos() {
                   alt={item.title}
                   width={1200}
                   height={1200}
-                  sizes="(max-width: 640px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   quality={100}
                   style={{ width: '100%', height: 'auto' }}
                   className="block"
                 />
-                <div className="absolute bottom-3 left-3 right-3 bg-white dark:bg-gray-900 rounded-lg p-3 sm:p-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
+                <div className="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-300 shadow-lg">
                   <h3 className="text-gray-900 dark:text-gray-100 font-semibold text-sm sm:text-base mb-0.5">{item.title}</h3>
                   <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-[13px] leading-relaxed">{item.why}</p>
                 </div>

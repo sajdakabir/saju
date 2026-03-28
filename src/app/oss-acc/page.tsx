@@ -99,13 +99,12 @@ export default function ContributionsPage() {
       />
 
       <main
-        className="h-full overflow-y-auto"
+        className="h-full overflow-y-auto pl-0 md:pl-24"
         style={{
-          paddingLeft: showNavigation ? '96px' : '0px',
           transition: 'padding-left 300ms ease-out'
         }}
       >
-        <div className="min-h-full flex justify-center p-6 pt-16">
+        <div className="min-h-full flex justify-center p-4 sm:p-6 pt-10 sm:pt-16">
           <div className="max-w-2xl w-full mx-auto px-4">
             <ThemeToggle onClick={toggleTheme} theme={theme} />
 
