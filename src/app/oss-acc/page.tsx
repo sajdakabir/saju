@@ -10,6 +10,14 @@ import { useTheme } from '@/hooks/useTheme';
 
 const contributions = [
   {
+    name: 'Dokploy',
+    description: 'Open Source Alternative to Vercel, Netlify and Heroku.',
+    prs: [
+      { title: 'Fix: stop leaking Drizzle SQL queries in webhook error responses', url: 'https://github.com/Dokploy/dokploy/pull/4281' }
+    ],
+    date: '2026'
+  },
+  {
     name: 'BerriAI (YC)',
     description: 'Python SDK to call 100+ LLM providers with unified APIs, cost tracking, and guardrails',
     prs: [
