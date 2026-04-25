@@ -82,11 +82,13 @@ export function useTheme() {
       return;
     }
 
-    // Show overlay first (covers page with OLD theme bg)
+    // Show overlay (OLD theme color) covering the page
     setIncomingTheme(nextTheme);
     setIsAnimating(true);
 
-    // Apply new theme after overlay has rendered (double-rAF ensures paint)
+    // Switch the actual theme right away so the page underneath the overlay
+    // is already in the NEW theme (text + bg). The mask reveal then shows the
+    // NEW theme content as the wave expands.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const root = document.documentElement;
