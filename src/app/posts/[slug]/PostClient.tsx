@@ -16,29 +16,34 @@ interface PostClientProps {
 
 function PostActions({ slug }: { slug: string }) {
   const likedKey = `liked-${slug}`;
-  const countKey = `likes-${slug}`;
 
   const [liked, setLiked] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number | null>(null);
   const [popped, setPopped] = useState(false);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     setLiked(localStorage.getItem(likedKey) === '1');
-    setCount(parseInt(localStorage.getItem(countKey) ?? '0', 10));
-  }, [likedKey, countKey]);
+    fetch(`/api/likes/${slug}`)
+      .then((r) => r.json())
+      .then((d) => setCount(d.count));
+  }, [slug, likedKey]);
 
-  const handleLike = () => {
+  const handleLike = async () => {
     const next = !liked;
-    const nextCount = next ? count + 1 : Math.max(0, count - 1);
     setLiked(next);
-    setCount(nextCount);
     localStorage.setItem(likedKey, next ? '1' : '0');
-    localStorage.setItem(countKey, String(nextCount));
     if (next) {
       setPopped(true);
       setTimeout(() => setPopped(false), 500);
     }
+    const res = await fetch(`/api/likes/${slug}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: next ? 'like' : 'unlike' }),
+    });
+    const data = await res.json();
+    setCount(data.count);
   };
 
   const handleShare = async () => {
@@ -97,7 +102,7 @@ function PostActions({ slug }: { slug: string }) {
           </svg>
         </span>
         <span className={`text-sm tabular-nums transition-colors min-w-[1ch] ${liked ? 'text-[#f91880]' : 'text-gray-400 dark:text-gray-500'}`}>
-          {count > 0 ? count : ''}
+          {count === null ? '' : count > 0 ? count : ''}
         </span>
       </button>
 
