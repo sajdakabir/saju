@@ -209,6 +209,12 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
+  /* Heart like button ring pop */
+  @keyframes heartRing {
+    0%   { transform: scale(1);   opacity: 0.6; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
   /* Page content fade in */
   .content-fade-in {
     animation: contentFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
