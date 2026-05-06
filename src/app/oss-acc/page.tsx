@@ -122,8 +122,8 @@ export default function ContributionsPage() {
 
             <div className="space-y-6">
               {contributions.map((project, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="border-b border-gray-200 dark:border-gray-700 pb-5 last:border-b-0"
                 >
                   <div className="flex items-start justify-between mb-2">
@@ -134,7 +134,7 @@ export default function ContributionsPage() {
                       {project.date}
                     </span>
                   </div>
-                  
+
                   <p className="text-[13px] leading-relaxed text-gray-600 dark:text-gray-400 mb-3">
                     {project.description}
                   </p>
@@ -148,8 +148,9 @@ export default function ContributionsPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors group/link"
                       >
-                        <svg className="w-3 h-3 opacity-50 group-hover/link:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        {/* git merge / PR icon */}
+                        <svg className="w-3.5 h-3.5 shrink-0 text-purple-400 opacity-80 group-hover/link:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z"/>
                         </svg>
                         <span className="group-hover/link:underline">{pr.title}</span>
                       </Link>
