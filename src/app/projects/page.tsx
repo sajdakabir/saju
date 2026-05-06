@@ -35,11 +35,18 @@ interface Project {
   githubStats?: GitHubStats;
   date: string;
   image?: string;
+  demo?: string;
+}
+
+function getYouTubeId(url: string): string | null {
+  const match = url.match(/(?:youtu\.be\/|v=|\/embed\/)([^?&]+)/);
+  return match ? match[1] : null;
 }
 
 export default function Projects() {
   const { theme, mounted, toggleTheme, isAnimating, incomingTheme } = useTheme();
   const [showNavigation, setShowNavigation] = useState(true);
+  const [openDemo, setOpenDemo] = useState<string | null>(null);
 
   if (!mounted) {
     return (
@@ -67,6 +74,7 @@ export default function Projects() {
       techStack: ['Rust', 'Tauri', 'JavaScript', 'CSS'],
       githubUrl: 'https://github.com/sajdakabir/meow',
       liveUrl: 'https://meow.sajdakabir.com/',
+      demo: 'https://youtu.be/hvV6_gn72TI?si=8MNDO2C1oWlVkzP_',
       githubStats: {
         // stars: 5,
       },
@@ -224,6 +232,17 @@ export default function Projects() {
                           Link
                         </Link>
                       )}
+                      {project.demo && (
+                        <button
+                          onClick={() => setOpenDemo(openDemo === project.name ? null : project.name)}
+                          className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                        >
+                          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d={openDemo === project.name ? "M6 19h4V5H6v14zm8-14v14h4V5h-4z" : "M8 5v14l11-7z"}/>
+                          </svg>
+                          {openDemo === project.name ? 'Close' : 'Demo'}
+                        </button>
+                      )}
                       {project.image && (
                         <Link
                           href={project.image}
@@ -238,6 +257,22 @@ export default function Projects() {
                         </Link>
                       )}
                     </div>
+
+                    {/* Inline demo embed */}
+                    {project.demo && openDemo === project.name && (() => {
+                      const videoId = getYouTubeId(project.demo);
+                      return videoId ? (
+                        <div className="mt-4 rounded-lg overflow-hidden aspect-video w-full">
+                          <iframe
+                            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                            title={`${project.name} demo`}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                          />
+                        </div>
+                      ) : null;
+                    })()}
                   </div>
                 ))}
               </div>
