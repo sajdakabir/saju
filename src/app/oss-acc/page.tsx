@@ -10,6 +10,15 @@ import { useTheme } from '@/hooks/useTheme';
 
 const contributions = [
   {
+    name: 'Hatchet',
+    description: 'An orchestration engine for background tasks, AI agents, and durable workflows',
+    prs: [
+      { title: 'Reported CVE-2026-42572: cross-tenant information disclosure in listTasksByDAGIds', url: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-55gc-6fmc-fpx9' },
+      { title: 'Fix: persist dashboard column visibility across reloads', url: 'https://github.com/hatchet-dev/hatchet/pull/3844' }
+    ],
+    date: '2026'
+  },
+  {
     name: 'Dokploy',
     description: 'Open Source Alternative to Vercel, Netlify and Heroku.',
     prs: [
