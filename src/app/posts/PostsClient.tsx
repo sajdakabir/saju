@@ -43,7 +43,7 @@ export default function PostsClient({ posts }: PostsClientProps) {
             <ThemeToggle onClick={toggleTheme} theme={theme} />
 
             <h1 className="text-2xl font-medium mb-8 tracking-wider text-gray-900 dark:text-gray-100">
-              posts
+              writing
             </h1>
 
             {posts.length === 0 ? (

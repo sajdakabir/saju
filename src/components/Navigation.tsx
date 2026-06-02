@@ -21,7 +21,7 @@ const navigationItems: NavigationItem[] = [
   { label: 'history', href: '/history' },
   { label: 'oss/acc', href: '/oss-acc' },
   { label: 'projects', href: '/projects' },
-  { label: 'posts', href: '/posts' },
+  { label: 'writing', href: '/posts' },
   { label: 'love', href: '/photos' },
 ];
 
