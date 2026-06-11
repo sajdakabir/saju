@@ -26,7 +26,7 @@ export default function PostsClient({ posts }: PostsClientProps) {
   }
 
   return (
-    <div className="h-screen overflow-hidden transition-colors duration-200">
+    <div className="min-h-screen transition-colors duration-200">
       <ThemeWave isAnimating={isAnimating} incomingTheme={incomingTheme} />
       <Navigation
         isVisible={showNavigation}
@@ -34,17 +34,19 @@ export default function PostsClient({ posts }: PostsClientProps) {
         onClose={() => setShowNavigation(false)}
       />
 
-      <main
-        className="h-full overflow-y-auto pl-0 md:pl-24"
-        style={{ transition: 'padding-left 300ms ease-out' }}
-      >
-        <div className="min-h-full flex justify-center p-4 sm:p-6 pt-10 sm:pt-16">
+      <main className="pl-0 md:pl-24">
+        <div className="min-h-screen flex justify-center p-4 sm:p-6 pt-20 sm:pt-16">
           <div className="max-w-2xl w-full mx-auto px-4">
             <ThemeToggle onClick={toggleTheme} theme={theme} />
 
-            <h1 className="text-2xl font-medium mb-8 tracking-wider text-gray-900 dark:text-gray-100">
-              writing
-            </h1>
+            <div className="mb-16">
+              <div className="text-[11px] font-mono text-gray-400 dark:text-gray-600 mb-1">
+                sajdakabir.com / writing
+              </div>
+              <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                writing
+              </h1>
+            </div>
 
             {posts.length === 0 ? (
               <p className="text-sm text-gray-500 dark:text-gray-400">nothing published yet.</p>

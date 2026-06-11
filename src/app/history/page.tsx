@@ -129,7 +129,7 @@ export default function HistoryPage() {
       />
 
       <main className="pl-0 md:pl-24">
-        <div className="min-h-screen flex justify-center p-4 sm:p-6 pt-10 sm:pt-16">
+        <div className="min-h-screen flex justify-center p-4 sm:p-6 pt-20 sm:pt-16">
           <div className="max-w-2xl w-full mx-auto px-4">
             <ThemeToggle onClick={toggleTheme} theme={theme} />
 
