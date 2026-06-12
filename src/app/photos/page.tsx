@@ -106,7 +106,7 @@ export default function Photos() {
   ];
 
   return (
-      <div className="h-screen overflow-hidden transition-colors duration-200">
+      <div className="min-h-screen transition-colors duration-200">
         <ThemeWave isAnimating={isAnimating} incomingTheme={incomingTheme} />
         <Navigation
           isVisible={showNavigation}
@@ -114,22 +114,22 @@ export default function Photos() {
           onClose={() => setShowNavigation(false)}
         />
 
-        <main
-          className="h-full overflow-y-auto pl-0 md:pl-24"
-          style={{
-            transition: 'padding-left 300ms ease-out'
-          }}
-        >
-          <div className="min-h-full flex justify-center p-4 sm:p-6 pt-10 sm:pt-16">
+        <main className="pl-0 md:pl-24">
+          <div className="min-h-screen flex justify-center p-4 sm:p-6 pt-20 sm:pt-16">
             <div className="max-w-3xl w-full mx-auto px-4">
               <ThemeToggle onClick={toggleTheme} theme={theme} />
 
-          <div className="mb-12">
-          <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">What I love</h1>
-          <p className="text-[14px] text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
-            Stuff that makes me smile
-          </p>
-        </div>
+              <div className="mb-16">
+                <div className="text-[11px] font-mono text-gray-400 dark:text-gray-600 mb-1">
+                  sajdakabir.com / love
+                </div>
+                <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  what i love
+                </h1>
+                <p className="text-[13px] text-gray-500 dark:text-gray-500 mt-2">
+                  Stuff that makes me smile
+                </p>
+              </div>
 
           <div className="columns-1 sm:columns-2 gap-4 space-y-4">
             {loves.map((item, index) => (
