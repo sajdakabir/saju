@@ -124,7 +124,7 @@ export default function Photos() {
                   sajdakabir.com / love
                 </div>
                 <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                  What I love
+                  what i love
                 </h1>
                 <p className="text-[13px] text-gray-500 dark:text-gray-500 mt-2">
                   Stuff that makes me smile
