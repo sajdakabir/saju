@@ -3,12 +3,20 @@
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 import ThemeWave from '@/components/ThemeWave';
 import { useTheme } from '@/hooks/useTheme';
 import type { Post } from '@/lib/posts';
+
+function formatDate(iso: string) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
 
 interface PostClientProps {
   post: Post;
@@ -155,33 +163,76 @@ export default function PostClient({ post }: PostClientProps) {
         className="h-full overflow-y-auto pl-0 md:pl-24"
         style={{ transition: 'padding-left 300ms ease-out' }}
       >
-        <div className="min-h-full flex justify-center p-4 sm:p-6 pt-10 sm:pt-16">
+        <div className="min-h-full flex justify-center p-4 sm:p-6 pt-20 sm:pt-16">
           <div className="max-w-2xl w-full mx-auto px-4">
             <ThemeToggle onClick={toggleTheme} theme={theme} />
 
-            <div className="mb-6">
-              <span className="text-xs text-gray-500 dark:text-gray-500">{post.date}</span>
-              <h1 className="text-2xl font-medium mt-1 text-gray-900 dark:text-gray-100">
+            <div className="mb-14">
+              <div className="text-[11px] font-mono text-gray-400 dark:text-gray-600 mb-6">
+                writing&nbsp;&nbsp;/&nbsp;&nbsp;{post.slug}
+              </div>
+              <div className="text-[11px] font-mono tabular-nums text-gray-500 dark:text-gray-500">
+                {formatDate(post.date)}
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-medium mt-3 leading-[1.15] tracking-tight text-gray-900 dark:text-gray-100">
                 {post.title}
               </h1>
               {post.description && (
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">
+                <p className="text-base italic text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">
                   {post.description}
                 </p>
               )}
             </div>
 
-            <div className="prose prose-sm dark:prose-invert max-w-none
+            {post.toc.length > 0 && (
+              <nav
+                aria-label="Table of contents"
+                className="mb-14 border-l-2 border-[#cc785c]/40 dark:border-[#e89a7d]/40 pl-5"
+              >
+                <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-[#cc785c] dark:text-[#e89a7d] mb-3">
+                  contents
+                </div>
+                <ul className="space-y-1.5 text-sm">
+                  {post.toc.map((item) => (
+                    <li
+                      key={item.slug}
+                      style={{ paddingLeft: `${Math.max(0, item.level - 3) * 1}rem` }}
+                    >
+                      <a
+                        href={`#${item.slug}`}
+                        className="text-gray-500 dark:text-gray-500 hover:text-[#cc785c] dark:hover:text-[#e89a7d] hover:underline transition-colors"
+                      >
+                        {item.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+
+            <article className="prose prose-base dark:prose-invert max-w-none
               prose-headings:font-medium prose-headings:text-gray-900 dark:prose-headings:text-gray-100
-              prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed
-              prose-a:text-gray-900 dark:prose-a:text-gray-100 prose-a:underline
-              prose-code:text-gray-800 dark:prose-code:text-gray-200
-              prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400
-              prose-strong:text-gray-900 dark:prose-strong:text-gray-100
+              prose-headings:tracking-tight prose-headings:scroll-mt-24
+              prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-14 prose-h2:mb-4
+              prose-h3:text-xl prose-h3:mt-12 prose-h3:mb-3
+              prose-h4:text-base prose-h4:mt-8 prose-h4:mb-2 prose-h4:text-gray-700 dark:prose-h4:text-gray-300
+              prose-p:text-[15.5px] prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-[1.75]
+              prose-a:text-gray-900 dark:prose-a:text-gray-100 prose-a:underline prose-a:underline-offset-2 prose-a:decoration-gray-300 dark:prose-a:decoration-gray-700 hover:prose-a:text-[#cc785c] dark:hover:prose-a:text-[#e89a7d] hover:prose-a:decoration-current
+              prose-strong:text-gray-900 dark:prose-strong:text-gray-100 prose-strong:font-semibold
+              prose-code:text-gray-800 dark:prose-code:text-gray-200 prose-code:bg-gray-100 dark:prose-code:bg-gray-800/60 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[13.5px] prose-code:before:content-none prose-code:after:content-none
+              prose-blockquote:border-l-2 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-700 prose-blockquote:not-italic prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400 prose-blockquote:pl-5
+              prose-ul:text-[15.5px] prose-ul:text-gray-700 dark:prose-ul:text-gray-300 prose-ul:leading-[1.75]
+              prose-ol:text-[15.5px] prose-ol:text-gray-700 dark:prose-ol:text-gray-300 prose-ol:leading-[1.75]
+              prose-li:marker:text-gray-400 dark:prose-li:marker:text-gray-600
+              prose-hr:border-gray-200 dark:prose-hr:border-gray-800 prose-hr:my-14
             ">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug]}>
                 {post.content}
               </ReactMarkdown>
+            </article>
+
+            <div className="mt-16 mb-2 text-center text-[11px] font-mono text-[#cc785c] dark:text-[#e89a7d]">
+              — end —
             </div>
 
             <PostActions slug={post.slug} />
