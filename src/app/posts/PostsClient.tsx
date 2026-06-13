@@ -9,6 +9,13 @@ import ThemeWave from '@/components/ThemeWave';
 import { useTheme } from '@/hooks/useTheme';
 import type { PostMeta } from '@/lib/posts';
 
+function formatDate(iso: string) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 interface PostsClientProps {
   posts: PostMeta[];
 }
@@ -51,16 +58,16 @@ export default function PostsClient({ posts }: PostsClientProps) {
             {posts.length === 0 ? (
               <p className="text-sm text-gray-500 dark:text-gray-400">nothing published yet.</p>
             ) : (
-              <ul className="font-mono text-sm list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-100 marker:text-gray-400 dark:marker:text-gray-600">
+              <ul className="text-sm list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-100 marker:text-[#cc785c] dark:marker:text-[#e89a7d]">
                 {posts.map((post) => (
                   <li key={post.slug} className="leading-relaxed">
-                    <span className="text-gray-500 dark:text-gray-500 tabular-nums">
-                      {post.date}
+                    <span className="font-mono text-[12px] text-gray-500 dark:text-gray-500 tabular-nums">
+                      {formatDate(post.date)}
                     </span>
-                    <span className="mx-2 text-gray-400 dark:text-gray-600">›</span>
+                    <span className="mx-2 text-[#cc785c] dark:text-[#e89a7d]">›</span>
                     <Link
                       href={`/posts/${post.slug}`}
-                      className="underline hover:no-underline"
+                      className="underline hover:no-underline hover:text-[#cc785c] dark:hover:text-[#e89a7d] transition-colors"
                     >
                       {post.title}
                     </Link>

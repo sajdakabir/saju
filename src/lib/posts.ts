@@ -24,6 +24,17 @@ export interface Post extends PostMeta {
 
 const POSTS_DIR = path.join(process.cwd(), 'src/content/posts');
 
+function toIsoDate(raw: unknown): string {
+  if (!raw) return '';
+  if (raw instanceof Date) {
+    const yyyy = raw.getUTCFullYear();
+    const mm = String(raw.getUTCMonth() + 1).padStart(2, '0');
+    const dd = String(raw.getUTCDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  }
+  return String(raw).slice(0, 10);
+}
+
 function extractToc(content: string): TocItem[] {
   const slugger = new GithubSlugger();
   const items: TocItem[] = [];
@@ -60,7 +71,7 @@ export function getAllPosts(): PostMeta[] {
         slug,
         title: data.title ?? slug,
         description: data.description ?? '',
-        date: data.date ? String(data.date).slice(0, 10) : '',
+        date: toIsoDate(data.date),
         status: (data.status === 'published' ? 'published' : 'draft') as 'draft' | 'published',
       };
     })
@@ -82,7 +93,7 @@ export function getPost(slug: string): Post | null {
     slug,
     title: data.title ?? slug,
     description: data.description ?? '',
-    date: data.date ? String(data.date).slice(0, 10) : '',
+    date: toIsoDate(data.date),
     status: (data.status === 'published' ? 'published' : 'draft') as 'draft' | 'published',
     content,
     toc: extractToc(content),

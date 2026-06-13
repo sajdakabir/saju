@@ -11,6 +11,13 @@ import ThemeWave from '@/components/ThemeWave';
 import { useTheme } from '@/hooks/useTheme';
 import type { Post } from '@/lib/posts';
 
+function formatDate(iso: string) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 interface PostClientProps {
   post: Post;
 }
@@ -165,7 +172,7 @@ export default function PostClient({ post }: PostClientProps) {
                 writing&nbsp;&nbsp;/&nbsp;&nbsp;{post.slug}
               </div>
               <div className="text-[11px] font-mono tabular-nums text-gray-500 dark:text-gray-500">
-                {post.date}
+                {formatDate(post.date)}
               </div>
               <h1 className="text-3xl sm:text-4xl font-medium mt-3 leading-[1.15] tracking-tight text-gray-900 dark:text-gray-100">
                 {post.title}
@@ -180,9 +187,9 @@ export default function PostClient({ post }: PostClientProps) {
             {post.toc.length > 0 && (
               <nav
                 aria-label="Table of contents"
-                className="mb-14 border-l border-gray-200 dark:border-gray-800 pl-5"
+                className="mb-14 border-l-2 border-[#cc785c]/40 dark:border-[#e89a7d]/40 pl-5"
               >
-                <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-gray-400 dark:text-gray-600 mb-3">
+                <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-[#cc785c] dark:text-[#e89a7d] mb-3">
                   contents
                 </div>
                 <ul className="space-y-1.5 text-sm">
@@ -193,7 +200,7 @@ export default function PostClient({ post }: PostClientProps) {
                     >
                       <a
                         href={`#${item.slug}`}
-                        className="text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition-colors"
+                        className="text-gray-500 dark:text-gray-500 hover:text-[#cc785c] dark:hover:text-[#e89a7d] hover:underline transition-colors"
                       >
                         {item.text}
                       </a>
@@ -206,11 +213,11 @@ export default function PostClient({ post }: PostClientProps) {
             <article className="prose prose-base dark:prose-invert max-w-none
               prose-headings:font-medium prose-headings:text-gray-900 dark:prose-headings:text-gray-100
               prose-headings:tracking-tight prose-headings:scroll-mt-24
-              prose-h2:text-2xl prose-h2:mt-14 prose-h2:mb-4
+              prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-14 prose-h2:mb-4
               prose-h3:text-xl prose-h3:mt-12 prose-h3:mb-3
               prose-h4:text-base prose-h4:mt-8 prose-h4:mb-2 prose-h4:text-gray-700 dark:prose-h4:text-gray-300
               prose-p:text-[15.5px] prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-[1.75]
-              prose-a:text-gray-900 dark:prose-a:text-gray-100 prose-a:underline prose-a:underline-offset-2 prose-a:decoration-gray-300 dark:prose-a:decoration-gray-700 hover:prose-a:decoration-current
+              prose-a:text-gray-900 dark:prose-a:text-gray-100 prose-a:underline prose-a:underline-offset-2 prose-a:decoration-gray-300 dark:prose-a:decoration-gray-700 hover:prose-a:text-[#cc785c] dark:hover:prose-a:text-[#e89a7d] hover:prose-a:decoration-current
               prose-strong:text-gray-900 dark:prose-strong:text-gray-100 prose-strong:font-semibold
               prose-code:text-gray-800 dark:prose-code:text-gray-200 prose-code:bg-gray-100 dark:prose-code:bg-gray-800/60 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[13.5px] prose-code:before:content-none prose-code:after:content-none
               prose-blockquote:border-l-2 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-700 prose-blockquote:not-italic prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400 prose-blockquote:pl-5
@@ -224,7 +231,7 @@ export default function PostClient({ post }: PostClientProps) {
               </ReactMarkdown>
             </article>
 
-            <div className="mt-16 mb-2 text-center text-[11px] font-mono text-gray-300 dark:text-gray-700">
+            <div className="mt-16 mb-2 text-center text-[11px] font-mono text-[#cc785c] dark:text-[#e89a7d]">
               — end —
             </div>
 
