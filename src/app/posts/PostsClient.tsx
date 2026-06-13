@@ -51,28 +51,22 @@ export default function PostsClient({ posts }: PostsClientProps) {
             {posts.length === 0 ? (
               <p className="text-sm text-gray-500 dark:text-gray-400">nothing published yet.</p>
             ) : (
-              <div className="space-y-5">
+              <ul className="font-mono text-sm list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-100 marker:text-gray-400 dark:marker:text-gray-600">
                 {posts.map((post) => (
-                  <div key={post.slug} className="border-b border-gray-200 dark:border-gray-700 pb-5 last:border-b-0">
-                    <div className="flex items-start justify-between mb-1">
-                      <Link
-                        href={`/posts/${post.slug}`}
-                        className="text-[15px] font-medium text-gray-900 dark:text-gray-100 hover:underline"
-                      >
-                        {post.title}
-                      </Link>
-                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-500 whitespace-nowrap">
-                        {post.date}
-                      </span>
-                    </div>
-                    {post.description && (
-                      <p className="text-[13px] text-gray-600 dark:text-gray-400 leading-relaxed">
-                        {post.description}
-                      </p>
-                    )}
-                  </div>
+                  <li key={post.slug} className="leading-relaxed">
+                    <span className="text-gray-500 dark:text-gray-500 tabular-nums">
+                      {post.date}
+                    </span>
+                    <span className="mx-2 text-gray-400 dark:text-gray-600">›</span>
+                    <Link
+                      href={`/posts/${post.slug}`}
+                      className="underline hover:no-underline"
+                    >
+                      {post.title}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
 
             <Footer />
