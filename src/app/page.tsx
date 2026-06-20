@@ -30,7 +30,7 @@ export default function Home() {
           <ThemeToggle onClick={toggleTheme} theme={theme} />
 
               <h1 className="text-2xl font-medium mb-6 tracking-wider text-gray-900 dark:text-gray-100">Sajda Kabir</h1>
-              <p className="text-sm text-gray-500 dark:text-gray-400 -mt-4 mb-6">she/her</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 -mt-4 mb-6">she/her, <Link href="https://zerotrail.ai" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">zerotrail cto</Link></p>
 
               <div className="space-y-4 text-[14px] leading-relaxed text-gray-800 dark:text-gray-200">
                 <p className="max-w-xl">I grew up in <Link href="https://en.wikipedia.org/wiki/Palashi" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">Plassey</Link> and studied Computer Science in Calcutta.</p>
@@ -39,7 +39,7 @@ export default function Home() {
 
                 <p className="max-w-xl">I prefer clean code over clever one-liners, and I can spend hours automating 10 minutes of manual work.</p>
 
-                <p className="max-w-xl">When I'm not coding, you can find me reading books, biking, playing badminton, trying new food, or cooking it in the kitchen (yeah, I can cook both code and food).</p>
+                <p className="max-w-xl">When I'm not coding, you can find me breaking code, reading, playing badminton, trying new food, or cooking it in the kitchen (yeah, I can cook both code and food).</p>
 
                 {/* <p className="max-w-xl">To know more about me, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p> */}
 
@@ -55,7 +55,7 @@ export default function Home() {
                 <div className="pt-1">
                   <a
                     href="mailto:sajda.kbir@gmail.com"
-                    className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline"
+                    className="text-[14px] text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
                   >
                     sajda [dot] kbir [at] gmail [dot] com
                   </a>
