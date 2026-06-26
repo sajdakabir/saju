@@ -43,9 +43,9 @@ export default function Photos() {
       image: '/loves/dsh.jpeg',
     },
     {
-      title: 'Makoto Shinkai',
-      why: 'My favorite filmmaker. The stories, the silence, the skies. your name and the garden words are my most fav.',
-      image: '/loves/Makoto.jpg',
+      title: 'Delicious in Dungeon',
+      why: 'Love this series — waiting for season 2. I want to recreate every meal from it in my own way and give it a try.',
+      image: '/loves/Dungeon.webp',
     },
     {
       title: 'Iced Pour-Over Coffee',
