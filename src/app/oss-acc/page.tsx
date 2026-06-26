@@ -10,6 +10,14 @@ import { useTheme } from '@/hooks/useTheme';
 
 const contributions = [
   {
+    name: 'n8n',
+    description: 'Workflow automation platform for connecting apps and building automations with a node-based editor',
+    prs: [
+      { title: 'Fix(OpenAI Node): Convert binary stream to buffer before FormData append', url: 'https://github.com/n8n-io/n8n/pull/26530' }
+    ],
+    date: '2026'
+  },
+  {
     name: 'Hatchet',
     description: 'An orchestration engine for background tasks, AI agents, and durable workflows',
     prs: [

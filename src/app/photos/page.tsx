@@ -43,9 +43,9 @@ export default function Photos() {
       image: '/loves/dsh.jpeg',
     },
     {
-      title: 'Makoto Shinkai',
-      why: 'My favorite filmmaker. The stories, the silence, the skies. your name and the garden words are my most fav.',
-      image: '/loves/Makoto.jpg',
+      title: 'Delicious in Dungeon',
+      why: 'Love this series — waiting for season 2. I want to recreate every meal from it in my own way and give it a try.',
+      image: '/loves/Dungeon.webp',
     },
     {
       title: 'Iced Pour-Over Coffee',
@@ -131,11 +131,11 @@ export default function Photos() {
                 </p>
               </div>
 
-          <div className="columns-1 sm:columns-2 gap-4 space-y-4">
+          <div className="columns-1 sm:columns-2 gap-4">
             {loves.map((item, index) => (
               <div
                 key={index}
-                className="group relative break-inside-avoid rounded-xl overflow-hidden cursor-default"
+                className="group relative break-inside-avoid mb-4 rounded-xl overflow-hidden cursor-default"
               >
                 <Image
                   src={item.image}
