@@ -131,11 +131,11 @@ export default function Photos() {
                 </p>
               </div>
 
-          <div className="columns-1 sm:columns-2 gap-4 space-y-4">
+          <div className="columns-1 sm:columns-2 gap-4">
             {loves.map((item, index) => (
               <div
                 key={index}
-                className="group relative break-inside-avoid rounded-xl overflow-hidden cursor-default"
+                className="group relative break-inside-avoid mb-4 rounded-xl overflow-hidden cursor-default"
               >
                 <Image
                   src={item.image}
