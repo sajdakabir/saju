@@ -12,7 +12,7 @@ export default function Footer({ showBorder = false }: FooterProps) {
       <div className="pt-1">
         <a
           href="mailto:sajda.kbir@gmail.com"
-          className="text-[14px] text-gray-600 dark:text-gray-300 hover:underline"
+          className="text-[14px] text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
         >
           sajda [dot] kbir [at] gmail [dot] com
         </a>
