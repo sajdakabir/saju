@@ -8,26 +8,97 @@ import ThemeToggle from '@/components/ThemeToggle';
 import ThemeWave from '@/components/ThemeWave';
 import { useTheme } from '@/hooks/useTheme';
 
-type PullRequest = {
-  project: string;
-  title: string;
-  url: string;
-  date: string;
-};
-
-const pullRequests: PullRequest[] = [
-  { project: 'n8n', title: 'Fix(OpenAI Node): Convert binary stream to buffer before FormData append', url: 'https://github.com/n8n-io/n8n/pull/26530', date: '2026' },
-  { project: 'Hatchet', title: 'Fix: persist dashboard column visibility across reloads', url: 'https://github.com/hatchet-dev/hatchet/pull/3844', date: '2026' },
-  { project: 'Dokploy', title: 'Fix: stop leaking Drizzle SQL queries in webhook error responses', url: 'https://github.com/Dokploy/dokploy/pull/4281', date: '2026' },
-  { project: 'BerriAI (YC)', title: 'Fix: Gemini Flash 2.0 implementation is not returning the logprobs', url: 'https://github.com/BerriAI/litellm/pull/9713', date: '2025' },
-  { project: 'Stylelint', title: 'Fix: custom-property-no-missing-var-function false positives for style query in if() function', url: 'https://github.com/stylelint/stylelint/pull/8813', date: '2025' },
-  { project: 'Ecma TC39', title: 'Editorial: use typical phrasing for Agent Record field access', url: 'https://github.com/tc39/ecma262/pull/3704', date: '2025' },
-  { project: 'Andromeda', title: 'Feat: implement missing store verbose/strict in compiled binary', url: 'https://github.com/tryandromeda/andromeda/pull/172', date: '2025' },
-  { project: 'Andromeda', title: 'Feat: implement profile, profileEnd and timeStamp console methods', url: 'https://github.com/tryandromeda/andromeda/pull/184', date: '2025' },
-  { project: 'Meilisearch', title: 'Added updateDocumentsCsv(string docs, string primaryKey)', url: 'https://github.com/meilisearch/meilisearch-python/pull/654', date: '2023' },
-  { project: 'ToolJet', title: 'Documentation bug fix', url: 'https://github.com/ToolJet/ToolJet/pull/5376', date: '2023' },
-  { project: 'Amplication', title: 'Docs: grammatical errors in the readme', url: 'https://github.com/amplication/amplication/pull/7154', date: '2023' },
-  { project: 'Litefy', title: 'Added Bengali language support', url: 'https://github.com/mathkruger/litefy/pull/100', date: '2023' },
+const contributions = [
+  {
+    name: 'n8n',
+    description: 'Workflow automation platform for connecting apps and building automations with a node-based editor',
+    prs: [
+      { title: 'Fix(OpenAI Node): Convert binary stream to buffer before FormData append', url: 'https://github.com/n8n-io/n8n/pull/26530' }
+    ],
+    date: '2026'
+  },
+  {
+    name: 'Hatchet',
+    description: 'An orchestration engine for background tasks, AI agents, and durable workflows',
+    prs: [
+      { title: 'Reported CVE-2026-42572: cross-tenant information disclosure in listTasksByDAGIds', url: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-55gc-6fmc-fpx9' },
+      { title: 'Fix: persist dashboard column visibility across reloads', url: 'https://github.com/hatchet-dev/hatchet/pull/3844' }
+    ],
+    date: '2026'
+  },
+  {
+    name: 'Dokploy',
+    description: 'Open Source Alternative to Vercel, Netlify and Heroku.',
+    prs: [
+      { title: 'Fix: stop leaking Drizzle SQL queries in webhook error responses', url: 'https://github.com/Dokploy/dokploy/pull/4281' }
+    ],
+    date: '2026'
+  },
+  {
+    name: 'BerriAI (YC)',
+    description: 'Python SDK to call 100+ LLM providers with unified APIs, cost tracking, and guardrails',
+    prs: [
+      { title: 'Fix: Gemini Flash 2.0 implementation is not returning the logprobs', url: 'https://github.com/BerriAI/litellm/pull/9713' }
+    ],
+    date: '2025'
+  },
+  {
+    name: 'Stylelint',
+    description: 'A mighty CSS linter that helps you avoid errors and enforce conventions',
+    prs: [
+      { title: 'Fix: custom-property-no-missing-var-function false positives for style query in if() function', url: 'https://github.com/stylelint/stylelint/pull/8813' }
+    ],
+    date: '2025'
+  },
+  {
+    name: 'Ecma TC39',
+    description: 'Ecma TC39 is the standards committee that designs and maintains the official JavaScript language specification',
+    prs: [
+      { title: 'Editorial: use typical phrasing for Agent Record field access', url: 'https://github.com/tc39/ecma262/pull/3704' }
+    ],
+    date: '2025'
+  },
+  {
+    name: 'Andromeda',
+    description: 'JavaScript and TypeScript runtime, written in Rust and powered by the Nova engine',
+    prs: [
+      { title: 'Feat: implement missing store verbose/strict in compiled binary', url: 'https://github.com/tryandromeda/andromeda/pull/172' },
+      { title: 'Feat: implement profile, profileEnd and timeStamp console methods', url: 'https://github.com/tryandromeda/andromeda/pull/184' }
+    ],
+    date: '2025'
+  },
+  {
+    name: 'Meilisearch',
+    description: 'Powerful, fast, and an easy to use search engine',
+    prs: [
+      { title: 'Added updateDocumentsCsv(string docs, string primaryKey)', url: 'https://github.com/meilisearch/meilisearch-python/pull/654' }
+    ],
+    date: '2023'
+  },
+  {
+    name: 'ToolJet',
+    description: 'Open-source low-code application development platform for building and deploying business applications',
+    prs: [
+      { title: 'Documentation bug fix', url: 'https://github.com/ToolJet/ToolJet/pull/5376' }
+    ],
+    date: '2023'
+  },
+  {
+    name: 'Amplication',
+    description: 'Open-source backend development platform. Build production-ready services without wasting time on repetitive coding',
+    prs: [
+      { title: 'Docs: grammatical errors in the readme', url: 'https://github.com/amplication/amplication/pull/7154' }
+    ],
+    date: '2023'
+  },
+  {
+    name: 'Litefy',
+    description: 'A lightweight Spotify client',
+    prs: [
+      { title: 'Added Bengali language support', url: 'https://github.com/mathkruger/litefy/pull/100' }
+    ],
+    date: '2023'
+  },
 ];
 
 type Severity = 'Critical' | 'High' | 'Medium';
@@ -86,9 +157,26 @@ const sevStyle: Record<Severity, string> = {
   Medium: 'border-yellow-500/40 bg-yellow-500/10 text-yellow-600 dark:text-yellow-500',
 };
 
+// Colored spine on the left of each row, so the table scans by risk.
+const sevAccent: Record<Severity, string> = {
+  Critical: 'border-l-red-500',
+  High: 'border-l-orange-500',
+  Medium: 'border-l-yellow-500',
+};
+
+// Full literal class names so Tailwind compiles them (constructed strings aren't detected).
+const sevDot: Record<Severity, string> = {
+  Critical: 'bg-red-500',
+  High: 'bg-orange-500',
+  Medium: 'bg-yellow-500',
+};
+
+const sevOrder: Severity[] = ['Critical', 'High', 'Medium'];
+
 export default function ContributionsPage() {
   const { theme, mounted, toggleTheme, isAnimating, incomingTheme } = useTheme();
   const [showNavigation, setShowNavigation] = useState(true);
+  const [tab, setTab] = useState<'security' | 'pr'>('security');
 
   if (!mounted) {
     return (
@@ -97,6 +185,13 @@ export default function ContributionsPage() {
       </div>
     );
   }
+
+  const publishedFindings = securityFindings.filter((f) => f.published);
+  const sevCounts = sevOrder.map((sev) => ({
+    sev,
+    count: publishedFindings.filter((f) => f.severity === sev).length,
+  }));
+  const pendingCount = securityFindings.length - publishedFindings.length;
 
   return (
     <div className="min-h-screen transition-colors duration-200">
@@ -121,65 +216,97 @@ export default function ContributionsPage() {
               </h1>
             </div>
 
-            {/* Pull Requests table */}
-            <section className="mb-14">
-              <h2 className="text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 mb-3">
-                Pull Requests
-              </h2>
-              <div className="overflow-x-auto border border-gray-200 dark:border-gray-800 rounded-md">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="border-b border-gray-200 dark:border-gray-800">
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
-                        Project
-                      </th>
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600">
-                        Contribution
-                      </th>
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap text-right">
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {pullRequests.map((pr, i) => (
-                      <tr
-                        key={`${pr.url}-${i}`}
-                        className="border-b border-gray-100 dark:border-gray-800/60 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-900/40 transition-colors"
-                      >
-                        <td className="px-3 py-2.5 text-[13px] font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap align-top">
-                          {pr.project}
-                        </td>
-                        <td className="px-3 py-2.5 text-[13px] align-top">
-                          <Link
-                            href={pr.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition-colors"
-                          >
-                            {pr.title}
-                          </Link>
-                        </td>
-                        <td className="px-3 py-2.5 text-[12px] text-gray-500 dark:text-gray-500 whitespace-nowrap text-right align-top">
-                          {pr.date}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            {/* Tabs: Security | Pull Requests */}
+            <div className="mb-8 flex items-center gap-6 border-b border-gray-200 dark:border-gray-800">
+              {([
+                { key: 'security', label: 'Security', count: securityFindings.length },
+                { key: 'pr', label: 'Pull Requests', count: contributions.length },
+              ] as const).map((t) => (
+                <button
+                  key={t.key}
+                  type="button"
+                  onClick={() => setTab(t.key)}
+                  aria-selected={tab === t.key}
+                  className={`-mb-px flex items-center gap-2 border-b-2 pb-2.5 pt-1 text-[11px] font-mono uppercase tracking-wide transition-colors ${
+                    tab === t.key
+                      ? 'border-gray-900 text-gray-900 dark:border-gray-100 dark:text-gray-100'
+                      : 'border-transparent text-gray-400 hover:text-gray-600 dark:text-gray-600 dark:hover:text-gray-400'
+                  }`}
+                >
+                  {t.label}
+                  <span className="rounded bg-gray-100 px-1.5 py-0.5 text-[10px] text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+                    {t.count}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Pull Requests — card list */}
+            {tab === 'pr' && (
+            <section className="mb-16">
+              <div className="space-y-6">
+                {contributions.map((project, index) => (
+                  <div
+                    key={index}
+                    className="border-b border-gray-200 dark:border-gray-700 pb-5 last:border-b-0"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                        {project.name}
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-500 whitespace-nowrap">
+                        {project.date}
+                      </span>
+                    </div>
+
+                    <p className="text-[13px] leading-relaxed text-gray-600 dark:text-gray-400 mb-3">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-col gap-1.5">
+                      {project.prs.map((pr, prIndex) => (
+                        <Link
+                          key={prIndex}
+                          href={pr.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[13px] text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors group/link"
+                        >
+                          {/* git merge / PR icon */}
+                          <svg className="w-3.5 h-3.5 shrink-0 text-purple-400 opacity-80 group-hover/link:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z"/>
+                          </svg>
+                          <span className="group-hover/link:underline">{pr.title}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
+            )}
 
-            {/* Security Disclosures table */}
+            {/* Security — table */}
+            {tab === 'security' && (
             <section className="mb-16">
-              <h2 className="text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 mb-3">
-                Security Disclosures
-              </h2>
+              {/* Severity summary */}
+              <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-gray-500 dark:text-gray-500">
+                {sevCounts.map(({ sev, count }) => (
+                  <span key={sev} className="inline-flex items-center gap-1.5">
+                    <span className={`h-2 w-2 rounded-full ${sevDot[sev]}`} />
+                    <span className="text-gray-700 dark:text-gray-300">{count}</span>
+                    <span className="uppercase tracking-wide">{sev}</span>
+                  </span>
+                ))}
+                <span className="ml-auto text-gray-400 dark:text-gray-600">
+                  {publishedFindings.length} disclosed · {pendingCount} pending
+                </span>
+              </div>
               <div className="overflow-x-auto border border-gray-200 dark:border-gray-800 rounded-md">
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-gray-200 dark:border-gray-800">
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
+                      <th className="border-l-2 border-transparent px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
                         ID
                       </th>
                       <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
@@ -199,9 +326,13 @@ export default function ContributionsPage() {
                   <tbody>
                     {securityFindings.map((f, i) => {
                       const pending = !f.published;
+                      const clickable = !pending && !!f.href;
+                      const accent = pending
+                        ? 'border-l-gray-300 dark:border-l-gray-700'
+                        : sevAccent[f.severity];
                       const row = (
                         <>
-                          <td className="px-3 py-2.5 font-mono text-[12px] align-top whitespace-nowrap">
+                          <td className={`border-l-2 ${accent} px-3 py-2.5 font-mono text-[12px] align-top whitespace-nowrap`}>
                             <span className={pending ? 'italic text-gray-400 dark:text-gray-600' : 'text-gray-700 dark:text-gray-300'}>
                               {f.id}
                             </span>
@@ -219,19 +350,38 @@ export default function ContributionsPage() {
                             )}
                           </td>
                           <td className="px-3 py-2.5 align-top whitespace-nowrap">
-                            <span
-                              className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[10.5px] uppercase tracking-wide ${sevStyle[f.severity]}`}
-                            >
-                              {f.severity}
-                            </span>
+                            <div className="flex flex-col items-start gap-1">
+                              <span
+                                className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[10.5px] uppercase tracking-wide ${sevStyle[f.severity]}`}
+                              >
+                                {f.severity}
+                              </span>
+                              {!pending && f.cvss && (
+                                <span className="font-mono text-[10px] text-gray-400 dark:text-gray-600">
+                                  CVSS {f.cvss}
+                                </span>
+                              )}
+                            </div>
                           </td>
                           <td className="px-3 py-2.5 text-[12px] text-gray-500 dark:text-gray-500 whitespace-nowrap text-right align-top">
-                            {pending ? 'TBD' : f.date}
+                            <span className="inline-flex items-center justify-end gap-1">
+                              {pending ? 'TBD' : f.date}
+                              {clickable && (
+                                <svg
+                                  className="h-3 w-3 shrink-0 text-gray-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-gray-500"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="1.75"
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M9 7h8v8" />
+                                </svg>
+                              )}
+                            </span>
                           </td>
                         </>
                       );
-
-                      const clickable = !pending && !!f.href;
 
                       return (
                         <tr
@@ -241,7 +391,7 @@ export default function ContributionsPage() {
                               ? () => window.open(f.href, '_blank', 'noopener,noreferrer')
                               : undefined
                           }
-                          className={`border-b border-gray-100 dark:border-gray-800/60 last:border-b-0 transition-colors ${
+                          className={`group border-b border-gray-100 dark:border-gray-800/60 last:border-b-0 transition-colors ${
                             pending
                               ? 'opacity-60'
                               : clickable
@@ -257,6 +407,7 @@ export default function ContributionsPage() {
                 </table>
               </div>
             </section>
+            )}
 
             <Footer />
           </div>
