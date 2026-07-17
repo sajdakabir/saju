@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-j57j-w9ph-xxmc', date: 'Jul 17, 2026', project: 'readest', title: 'Unauthenticated SSRF in the /api/kosync proxy via an incomplete isLanAddress host filter', severity: 'High', cvss: '7.2', href: 'https://github.com/readest/readest/security/advisories/GHSA-j57j-w9ph-xxmc', published: true },
   { id: 'GHSA-hcv7-mg77-pg73', date: 'Jul 11, 2026', project: 'heym', title: 'Unsandboxed skill code execution: skills run via a local backend subprocess without the Docker isolation that Python tools mandate', severity: 'High', cvss: '8.8', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-hcv7-mg77-pg73', published: true },
   { id: 'GHSA-pp95-gc86-jq6q', date: 'Jul 9, 2026', project: 'trigger.dev', title: 'Missing authentication in run-replay action allows cross-organization task execution (IDOR)', severity: 'High', cvss: '7.1', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pp95-gc86-jq6q', published: true },
   { id: 'GHSA-jjvx-3wfc-p8hq', date: 'Jul 5, 2026', project: 'heym', title: 'SSRF via /api/mcp/fetch-tools reaches local and private URLs (SSE and streamable-HTTP transports)', severity: 'High', cvss: '7.1', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-jjvx-3wfc-p8hq', published: true },
