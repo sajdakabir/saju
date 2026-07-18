@@ -121,7 +121,7 @@ export default function Photos() {
 
               <div className="mb-16">
                 <div className="text-[11px] font-mono text-gray-400 dark:text-gray-600 mb-1">
-                  sajdakabir.com / love
+                  sajdakabir.me / love
                 </div>
                 <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   what i love

@@ -62,7 +62,7 @@ export default function Projects() {
       description: "Your second brain, powered by voice. Journal, take notes, and dictate in any app—all powered by your voice. One workspace to replace multiple apps.",
       techStack: ['Rust', 'Postgres', 'MCP', 'Composio', 'Voice Dictation'],
       githubUrl: 'https://github.com/sajdakabir/orbit',
-      liveUrl: 'https://orbit.sajdakabir.com/',
+      liveUrl: 'https://orbit.sajdakabir.me/',
       challenges: [
 
       ],
@@ -73,7 +73,7 @@ export default function Projects() {
       description: "A free, open-source macOS menu-bar app that combines a pomodoro timer with ambient sounds and adorable animal companions. Deep work feels less lonely.",
       techStack: ['Rust', 'Tauri', 'JavaScript', 'CSS'],
       githubUrl: 'https://github.com/sajdakabir/meow',
-      liveUrl: 'https://meow.sajdakabir.com/',
+      liveUrl: 'https://meow.sajdakabir.me/',
       demo: 'https://youtu.be/hvV6_gn72TI?si=8MNDO2C1oWlVkzP_',
       githubStats: {
         // stars: 5,
@@ -103,7 +103,7 @@ export default function Projects() {
       description: "Web to Markdown converts any website URL into a clean, readable Markdown file. Built to scrape, clean, and prepare content for LLMs",
       techStack: ['Nextjs', 'Flask', 'python', 'BeautifulSoup', 'Playwright', 'ZenRows', 'openAi'],
       githubUrl: 'https://github.com/sajdakabir/webToMd',
-      liveUrl: 'https://webtomd.sajdakabir.com/',
+      liveUrl: 'https://webtomd.sajdakabir.me/',
 
       challenges: [
    
@@ -116,7 +116,7 @@ export default function Projects() {
       description: "userArray is a Linear companion for open-source and user-facing teams. It syncs your Linear workspace to collect feedback, share progress, and keep users updated.",
       techStack: ['Nextjs', 'Nodejs', 'Webhooks', 'websockets', 'Redis', 'MongoDB'],
       githubUrl: 'https://github.com/sajdakabir/userarray',
-      liveUrl: 'https://userarray.sajdakabir.com/',
+      liveUrl: 'https://userarray.sajdakabir.me/',
 
       challenges: [
    
@@ -142,7 +142,7 @@ export default function Projects() {
 
               <div className="mb-16">
                 <div className="text-[11px] font-mono text-gray-400 dark:text-gray-600 mb-1">
-                  sajdakabir.com / projects
+                  sajdakabir.me / projects
                 </div>
                 <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   i love building things

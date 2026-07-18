@@ -210,7 +210,7 @@ export default function ContributionsPage() {
 
             <div className="mb-12">
               <div className="text-[11px] font-mono text-gray-400 dark:text-gray-600 mb-1">
-                sajdakabir.com / oss-acc
+                sajdakabir.me / oss-acc
               </div>
               <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 open source contributions

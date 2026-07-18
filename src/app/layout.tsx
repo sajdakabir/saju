@@ -3,13 +3,13 @@ import { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sajdakabir.com'),
+  metadataBase: new URL('https://sajdakabir.me'),
   title: 'Sajda Kabir',
   description: 'Personal website of Sajda Kabir',
   openGraph: {
     title: 'Sajda Kabir',
     description: 'Personal website of Sajda Kabir',
-    url: 'https://sajdakabir.com',
+    url: 'https://sajdakabir.me',
     siteName: 'Sajda Kabir',
     images: [
       {
