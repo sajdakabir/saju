@@ -135,7 +135,7 @@ export default function HistoryPage() {
 
             <div className="mb-16">
               <div className="text-[11px] font-mono text-gray-400 dark:text-gray-600 mb-1">
-                sajdakabir.com / history
+                sajdakabir.me / history
               </div>
               <h1 className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 history
