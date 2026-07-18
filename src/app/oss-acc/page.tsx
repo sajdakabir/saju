@@ -158,13 +158,6 @@ const sevStyle: Record<Severity, string> = {
   Medium: 'border-yellow-500/40 bg-yellow-500/10 text-yellow-600 dark:text-yellow-500',
 };
 
-// Colored spine on the left of each row, so the table scans by risk.
-const sevAccent: Record<Severity, string> = {
-  Critical: 'border-l-red-500',
-  High: 'border-l-orange-500',
-  Medium: 'border-l-yellow-500',
-};
-
 // Full literal class names so Tailwind compiles them (constructed strings aren't detected).
 const sevDot: Record<Severity, string> = {
   Critical: 'bg-red-500',
@@ -205,7 +198,7 @@ export default function ContributionsPage() {
 
       <main className="pl-0 md:pl-24">
         <div className="min-h-screen flex justify-center p-4 sm:p-6 pt-20 sm:pt-16">
-          <div className="max-w-3xl w-full mx-auto px-4">
+          <div className="max-w-5xl w-full mx-auto px-4">
             <ThemeToggle onClick={toggleTheme} theme={theme} />
 
             <div className="mb-12">
@@ -307,13 +300,13 @@ export default function ContributionsPage() {
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-gray-200 dark:border-gray-800">
-                      <th className="border-l-2 border-transparent px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
+                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
                         ID
                       </th>
                       <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
                         Project
                       </th>
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600">
+                      <th className="w-1/2 px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600">
                         Finding
                       </th>
                       <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
@@ -328,12 +321,9 @@ export default function ContributionsPage() {
                     {securityFindings.map((f, i) => {
                       const pending = !f.published;
                       const clickable = !pending && !!f.href;
-                      const accent = pending
-                        ? 'border-l-gray-300 dark:border-l-gray-700'
-                        : sevAccent[f.severity];
                       const row = (
                         <>
-                          <td className={`border-l-2 ${accent} px-3 py-2.5 font-mono text-[12px] align-top whitespace-nowrap`}>
+                          <td className="px-3 py-2.5 font-mono text-[12px] align-top whitespace-nowrap">
                             <span className={pending ? 'italic text-gray-400 dark:text-gray-600' : 'text-gray-700 dark:text-gray-300'}>
                               {f.id}
                             </span>
