@@ -158,13 +158,6 @@ const sevStyle: Record<Severity, string> = {
   Medium: 'border-yellow-500/40 bg-yellow-500/10 text-yellow-600 dark:text-yellow-500',
 };
 
-// Colored spine on the left of each row, so the table scans by risk.
-const sevAccent: Record<Severity, string> = {
-  Critical: 'border-l-red-500',
-  High: 'border-l-orange-500',
-  Medium: 'border-l-yellow-500',
-};
-
 // Full literal class names so Tailwind compiles them (constructed strings aren't detected).
 const sevDot: Record<Severity, string> = {
   Critical: 'bg-red-500',
@@ -303,109 +296,79 @@ export default function ContributionsPage() {
                   {publishedFindings.length} disclosed · {pendingCount} pending
                 </span>
               </div>
-              <div className="overflow-x-auto border border-gray-200 dark:border-gray-800 rounded-md">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="border-b border-gray-200 dark:border-gray-800">
-                      <th className="border-l-2 border-transparent px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
-                        ID
-                      </th>
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
-                        Project
-                      </th>
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600">
-                        Finding
-                      </th>
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap">
-                        Severity
-                      </th>
-                      <th className="px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-gray-400 dark:text-gray-600 whitespace-nowrap text-right">
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {securityFindings.map((f, i) => {
-                      const pending = !f.published;
-                      const clickable = !pending && !!f.href;
-                      const accent = pending
-                        ? 'border-l-gray-300 dark:border-l-gray-700'
-                        : sevAccent[f.severity];
-                      const row = (
-                        <>
-                          <td className={`border-l-2 ${accent} px-3 py-2.5 font-mono text-[12px] align-top whitespace-nowrap`}>
-                            <span className={pending ? 'italic text-gray-400 dark:text-gray-600' : 'text-gray-700 dark:text-gray-300'}>
-                              {f.id}
-                            </span>
-                          </td>
-                          <td className="px-3 py-2.5 text-[13px] font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap align-top">
-                            {f.project}
-                          </td>
-                          <td className="px-3 py-2.5 text-[13px] align-top">
-                            {pending ? (
-                              <span className="italic text-gray-400 dark:text-gray-600">
-                                Pending disclosure
-                              </span>
-                            ) : (
-                              <span className="text-gray-600 dark:text-gray-400">{f.title}</span>
-                            )}
-                          </td>
-                          <td className="px-3 py-2.5 align-top whitespace-nowrap">
-                            <div className="flex flex-col items-start gap-1">
-                              <span
-                                className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[10.5px] uppercase tracking-wide ${sevStyle[f.severity]}`}
-                              >
-                                {f.severity}
-                              </span>
-                              {!pending && f.cvss && (
-                                <span className="font-mono text-[10px] text-gray-400 dark:text-gray-600">
-                                  CVSS {f.cvss}
-                                </span>
-                              )}
-                            </div>
-                          </td>
-                          <td className="px-3 py-2.5 text-[12px] text-gray-500 dark:text-gray-500 whitespace-nowrap text-right align-top">
-                            <span className="inline-flex items-center justify-end gap-1">
-                              {pending ? 'TBD' : f.date}
-                              {clickable && (
-                                <svg
-                                  className="h-3 w-3 shrink-0 text-gray-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-gray-500"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="1.75"
-                                  viewBox="0 0 24 24"
-                                  aria-hidden="true"
-                                >
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M9 7h8v8" />
-                                </svg>
-                              )}
-                            </span>
-                          </td>
-                        </>
-                      );
+              <div className="space-y-5">
+                {securityFindings.map((f, i) => {
+                  const pending = !f.published;
+                  const clickable = !pending && !!f.href;
 
-                      return (
-                        <tr
-                          key={`${f.id}-${f.project}-${i}`}
-                          onClick={
-                            clickable
-                              ? () => window.open(f.href, '_blank', 'noopener,noreferrer')
-                              : undefined
-                          }
-                          className={`group border-b border-gray-100 dark:border-gray-800/60 last:border-b-0 transition-colors ${
-                            pending
-                              ? 'opacity-60'
-                              : clickable
-                              ? 'cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900/40'
-                              : ''
-                          }`}
-                        >
-                          {row}
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+                  const card = (
+                    <>
+                      <div className="mb-2 flex items-start justify-between gap-4">
+                        <h3 className="text-[15px] font-semibold text-gray-900 dark:text-gray-100">
+                          {f.project}
+                        </h3>
+                        <div className="flex shrink-0 items-center gap-2 whitespace-nowrap pt-0.5">
+                          <span
+                            className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[10.5px] uppercase tracking-wide ${sevStyle[f.severity]}`}
+                          >
+                            {f.severity}
+                          </span>
+                          {!pending && f.cvss && (
+                            <span className="font-mono text-[11px] text-gray-400 dark:text-gray-600">
+                              CVSS {f.cvss}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <p className="mb-2.5 text-[13px] leading-relaxed text-gray-600 dark:text-gray-400">
+                        {pending ? (
+                          <span className="italic text-gray-400 dark:text-gray-600">Pending disclosure</span>
+                        ) : (
+                          f.title
+                        )}
+                      </p>
+
+                      <div className="flex items-center gap-2 font-mono text-[11px] text-gray-400 dark:text-gray-600">
+                        <span className={pending ? 'italic' : ''}>{f.id}</span>
+                        <span aria-hidden="true">·</span>
+                        <span>{pending ? 'TBD' : f.date}</span>
+                        {clickable && (
+                          <svg
+                            className="h-3 w-3 shrink-0 opacity-0 transition-opacity group-hover:opacity-100"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.75"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M9 7h8v8" />
+                          </svg>
+                        )}
+                      </div>
+                    </>
+                  );
+
+                  const base =
+                    'border-b border-gray-200 dark:border-gray-700 pb-5 last:border-b-0';
+
+                  return clickable ? (
+                    <div
+                      key={`${f.id}-${f.project}-${i}`}
+                      onClick={() => window.open(f.href, '_blank', 'noopener,noreferrer')}
+                      className={`group cursor-pointer ${base}`}
+                    >
+                      {card}
+                    </div>
+                  ) : (
+                    <div
+                      key={`${f.id}-${f.project}-${i}`}
+                      className={`${base} ${pending ? 'opacity-60' : ''}`}
+                    >
+                      {card}
+                    </div>
+                  );
+                })}
               </div>
             </section>
             )}
