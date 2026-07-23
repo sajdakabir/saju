@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-378x-q589-34mv', date: 'Jul 21, 2026', project: 'heym', title: 'Command execution via POST /api/mcp/fetch-tools stdio transport: supplied command is spawned before MCP validation', severity: 'High', cvss: '8.8', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-378x-q589-34mv', published: true },
   { id: 'GHSA-j57j-w9ph-xxmc', date: 'Jul 17, 2026', project: 'readest', title: 'Unauthenticated SSRF in the /api/kosync proxy via an incomplete isLanAddress host filter', severity: 'High', cvss: '7.2', href: 'https://github.com/readest/readest/security/advisories/GHSA-j57j-w9ph-xxmc', published: true },
   { id: 'GHSA-hcv7-mg77-pg73', date: 'Jul 11, 2026', project: 'heym', title: 'Unsandboxed skill code execution: skills run via a local backend subprocess without the Docker isolation that Python tools mandate', severity: 'High', cvss: '8.8', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-hcv7-mg77-pg73', published: true },
   { id: 'GHSA-pp95-gc86-jq6q', date: 'Jul 9, 2026', project: 'trigger.dev', title: 'Missing authentication in run-replay action allows cross-organization task execution (IDOR)', severity: 'High', cvss: '7.1', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pp95-gc86-jq6q', published: true },
@@ -148,7 +149,6 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'mindsdb', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'misoTTS', title: 'Pending disclosure', severity: 'Critical', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'flowise', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
-  { id: 'GHSA-378x-q589-34mv', date: '', project: 'heym', title: 'Pending disclosure', severity: 'High', cvss: '', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-378x-q589-34mv', published: false },
   { id: 'Reserved', date: '', project: 'tolgee-platform', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
 ];
 
