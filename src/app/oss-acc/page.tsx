@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-9q4r-4842-93vw', date: 'Jul 21, 2026', project: 'trigger.dev', title: 'Cross-tenant SQL injection in the TSQL query compiler (POST /api/v1/query) via unsanitized window-function name', severity: 'High', cvss: '7.7', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-9q4r-4842-93vw', published: true },
   { id: 'GHSA-378x-q589-34mv', date: 'Jul 21, 2026', project: 'heym', title: 'Command execution via POST /api/mcp/fetch-tools stdio transport: supplied command is spawned before MCP validation', severity: 'High', cvss: '8.8', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-378x-q589-34mv', published: true },
   { id: 'GHSA-j57j-w9ph-xxmc', date: 'Jul 17, 2026', project: 'readest', title: 'Unauthenticated SSRF in the /api/kosync proxy via an incomplete isLanAddress host filter', severity: 'High', cvss: '7.2', href: 'https://github.com/readest/readest/security/advisories/GHSA-j57j-w9ph-xxmc', published: true },
   { id: 'GHSA-hcv7-mg77-pg73', date: 'Jul 11, 2026', project: 'heym', title: 'Unsandboxed skill code execution: skills run via a local backend subprocess without the Docker isolation that Python tools mandate', severity: 'High', cvss: '8.8', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-hcv7-mg77-pg73', published: true },
@@ -143,7 +144,6 @@ const securityFindings: SecurityFinding[] = [
   { id: 'PR-7772', date: 'Apr 27, 2026', project: 'tiptap', title: 'Stored XSS in @tiptap/static-renderer — missing HTML escaping in serializeAttrsToHTMLString() and text-node rendering', severity: 'Medium', cvss: '', href: 'https://github.com/ueberdosis/tiptap/pull/7772', published: true },
 
   // Coordinated — reported and accepted, awaiting public disclosure.
-  { id: 'GHSA-9q4r-4842-93vw', date: '', project: 'trigger.dev', title: 'Pending disclosure', severity: 'High', cvss: '', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-9q4r-4842-93vw', published: false },
   { id: 'Reserved', date: '', project: 'metabase', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'cline', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'mindsdb', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
