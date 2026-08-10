@@ -18,10 +18,10 @@ interface NavigationProps {
 
 const navigationItems: NavigationItem[] = [
   { label: 'home', href: '/' },
-  { label: 'history', href: '/history' },
+  // { label: 'history', href: '/history' },
   { label: 'oss/acc', href: '/oss-acc' },
   { label: 'projects', href: '/projects' },
-  { label: 'writing', href: '/posts' },
+  // { label: 'writing', href: '/posts' },
   { label: 'love', href: '/photos' },
 ];
 
