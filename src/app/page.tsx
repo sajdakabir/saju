@@ -39,7 +39,7 @@ export default function Home() {
 
                 <p className="max-w-xl">I prefer clean code over clever one-liners, and I can spend hours automating 10 minutes of manual work.</p>
 
-                <p className="max-w-xl">When I'm not coding, you can find me reading books, biking, playing badminton, trying new food, or cooking it in the kitchen (yeah, I can cook both code and food).</p>
+                <p className="max-w-xl">When I'm not coding, you can find me <Link href="/oss-acc" className="underline hover:no-underline">breaking code</Link>, playing badminton, trying new food, or cooking it in the kitchen (yeah, I can cook both code and food).</p>
 
                 {/* <p className="max-w-xl">To know more about me, take a look at my <Link href="/history" className="underline hover:no-underline">history</Link>.</p> */}
 
