@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-4wr8-5c3p-rjcr', date: 'Aug 14, 2026', project: 'budibase', title: 'Missing authorization on license management endpoints allows any authenticated user to delete license', severity: 'High', cvss: '8.1', href: 'https://github.com/Budibase/budibase/security/advisories/GHSA-4wr8-5c3p-rjcr', published: true },
   { id: 'GHSA-r263-56q3-8v3v', date: 'Aug 13, 2026', project: 'lightdash', title: 'SSRF via unvalidated Google Chat and Microsoft Teams webhook URLs in scheduled deliveries', severity: 'Medium', cvss: '6.4', href: 'https://github.com/lightdash/lightdash/security/advisories/GHSA-r263-56q3-8v3v', published: true },
   { id: 'GHSA-9q4r-4842-93vw', date: 'Jul 21, 2026', project: 'trigger.dev', title: 'Cross-tenant SQL injection in the TSQL query compiler (POST /api/v1/query) via unsanitized window-function name', severity: 'High', cvss: '7.7', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-9q4r-4842-93vw', published: true },
   { id: 'GHSA-378x-q589-34mv', date: 'Jul 21, 2026', project: 'heym', title: 'Command execution via POST /api/mcp/fetch-tools stdio transport: supplied command is spawned before MCP validation', severity: 'High', cvss: '8.8', href: 'https://github.com/heymrun/heym/security/advisories/GHSA-378x-q589-34mv', published: true },
