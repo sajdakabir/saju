@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-hqjp-v5g5-vxvf', date: 'Aug 20, 2026', project: 'entire.io', title: 'Repository-controlled settings can lead to arbitrary code execution', severity: 'High', cvss: '8.8', href: 'https://github.com/entireio/cli/security/advisories/GHSA-hqjp-v5g5-vxvf', published: true },
   { id: 'GHSA-6774-6cqw-f586', date: 'Aug 17, 2026', project: 'martin', title: 'Out-of-gamut CIE color in the static-overlay body panics the renderer and permanently kills the render worker pool', severity: 'High', cvss: '7.5', href: 'https://github.com/maplibre/martin/security/advisories/GHSA-6774-6cqw-f586', published: true },
   { id: 'GHSA-5x5g-6p4c-jqfh', date: 'Aug 17, 2026', project: 'martin', title: 'Unbounded id repetition in sprite, font, tiles amplifies server work for a byte-identical response', severity: 'Medium', cvss: '5.3', href: 'https://github.com/maplibre/martin/security/advisories/GHSA-5x5g-6p4c-jqfh', published: true },
   { id: 'GHSA-4wr8-5c3p-rjcr', date: 'Aug 14, 2026', project: 'budibase', title: 'Missing authorization on license management endpoints allows any authenticated user to delete license', severity: 'High', cvss: '8.1', href: 'https://github.com/Budibase/budibase/security/advisories/GHSA-4wr8-5c3p-rjcr', published: true },
@@ -154,7 +155,6 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'misoTTS', title: 'Pending disclosure', severity: 'Critical', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'flowise', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'tolgee-platform', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
-  { id: 'Reserved', date: '', project: 'entire.io', title: 'Arbitrary code execution from a cloned repo via committed .entire/settings.json (local_dev)', severity: 'High', cvss: '', href: '', published: false },
 ];
 
 const sevStyle: Record<Severity, string> = {
