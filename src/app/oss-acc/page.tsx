@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-2j37-g5f6-h55p', date: 'Aug 26, 2026', project: 'nango', title: 'Nango proxy SSRF via base-url-override header (empty default denylist)', severity: 'High', cvss: '', href: 'https://github.com/NangoHQ/nango/security/advisories/GHSA-2j37-g5f6-h55p', published: true },
   { id: 'GHSA-hqjp-v5g5-vxvf', date: 'Aug 20, 2026', project: 'entire.io', title: 'Repository-controlled settings can lead to arbitrary code execution', severity: 'High', cvss: '8.8', href: 'https://github.com/entireio/cli/security/advisories/GHSA-hqjp-v5g5-vxvf', published: true },
   { id: 'GHSA-6774-6cqw-f586', date: 'Aug 17, 2026', project: 'martin', title: 'Out-of-gamut CIE color in the static-overlay body panics the renderer and permanently kills the render worker pool', severity: 'High', cvss: '7.5', href: 'https://github.com/maplibre/martin/security/advisories/GHSA-6774-6cqw-f586', published: true },
   { id: 'GHSA-5x5g-6p4c-jqfh', date: 'Aug 17, 2026', project: 'martin', title: 'Unbounded id repetition in sprite, font, tiles amplifies server work for a byte-identical response', severity: 'Medium', cvss: '5.3', href: 'https://github.com/maplibre/martin/security/advisories/GHSA-5x5g-6p4c-jqfh', published: true },
