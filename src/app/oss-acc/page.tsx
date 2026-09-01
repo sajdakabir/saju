@@ -116,6 +116,8 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-3556-624q-c5w3', date: 'Sep 1, 2026', project: 'logto', title: 'SSRF via webhooks and custom OAuth2 connector userinfo endpoint', severity: 'High', cvss: '', href: 'https://github.com/logto-io/logto/security/advisories/GHSA-3556-624q-c5w3', published: true },
+  { id: 'GHSA-hx55-h48h-7rw9', date: 'Aug 31, 2026', project: 'flowise', title: 'SSRF + LLM API key exfiltration via user-controlled basepath/baseUrl in 8 chat-model nodes', severity: 'Critical', cvss: '9.4', href: 'https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hx55-h48h-7rw9', published: true },
   { id: 'GHSA-2j37-g5f6-h55p', date: 'Aug 26, 2026', project: 'nango', title: 'Nango proxy SSRF via base-url-override header (empty default denylist)', severity: 'High', cvss: '', href: 'https://github.com/NangoHQ/nango/security/advisories/GHSA-2j37-g5f6-h55p', published: true },
   { id: 'GHSA-hqjp-v5g5-vxvf', date: 'Aug 20, 2026', project: 'entire.io', title: 'Repository-controlled settings can lead to arbitrary code execution', severity: 'High', cvss: '8.8', href: 'https://github.com/entireio/cli/security/advisories/GHSA-hqjp-v5g5-vxvf', published: true },
   { id: 'GHSA-6774-6cqw-f586', date: 'Aug 17, 2026', project: 'martin', title: 'Out-of-gamut CIE color in the static-overlay body panics the renderer and permanently kills the render worker pool', severity: 'High', cvss: '7.5', href: 'https://github.com/maplibre/martin/security/advisories/GHSA-6774-6cqw-f586', published: true },
@@ -154,7 +156,6 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'cline', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'mindsdb', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'misoTTS', title: 'Pending disclosure', severity: 'Critical', cvss: '', href: '', published: false },
-  { id: 'Reserved', date: '', project: 'flowise', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'tolgee-platform', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
 ];
 
