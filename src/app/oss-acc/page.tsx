@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-pc95-gc74-wg87', date: 'Sep 16, 2026', project: 'trigger.dev', title: 'Public session tokens can overwrite own server-authored chat snapshots', severity: 'Medium', cvss: '6.5', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pc95-gc74-wg87', published: true },
   { id: 'GHSA-xrp6-5fpv-4fxf', date: 'Sep 14, 2026', project: 'trigger.dev', title: 'Missing run authorization allows cross-tenant suspension and resume-data injection', severity: 'High', cvss: '8.3', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-xrp6-5fpv-4fxf', published: true },
   { id: 'GHSA-3556-624q-c5w3', date: 'Sep 1, 2026', project: 'logto', title: 'SSRF via webhooks and custom OAuth2 connector userinfo endpoint', severity: 'High', cvss: '', href: 'https://github.com/logto-io/logto/security/advisories/GHSA-3556-624q-c5w3', published: true },
   { id: 'GHSA-hx55-h48h-7rw9', date: 'Aug 31, 2026', project: 'flowise', title: 'SSRF + LLM API key exfiltration via user-controlled basepath/baseUrl in 8 chat-model nodes', severity: 'Critical', cvss: '9.4', href: 'https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hx55-h48h-7rw9', published: true },
