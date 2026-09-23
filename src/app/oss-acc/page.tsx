@@ -160,6 +160,7 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'misoTTS', title: 'Pending disclosure', severity: 'Critical', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'tolgee-platform', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'dbeaver', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
+  { id: 'Reserved', date: '', project: 'latitude-llm', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
 ];
 
 const sevStyle: Record<Severity, string> = {
