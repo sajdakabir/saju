@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-rf2c-2p5r-7g29', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Network Visualizer XSS', severity: 'Medium', cvss: '5.4', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-rf2c-2p5r-7g29', published: true },
   { id: 'GHSA-pc95-gc74-wg87', date: 'Sep 16, 2026', project: 'trigger.dev', title: 'Public session tokens can overwrite own server-authored chat snapshots', severity: 'Medium', cvss: '6.5', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pc95-gc74-wg87', published: true },
   { id: 'GHSA-xrp6-5fpv-4fxf', date: 'Sep 14, 2026', project: 'trigger.dev', title: 'Missing run authorization allows cross-tenant suspension and resume-data injection', severity: 'High', cvss: '8.3', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-xrp6-5fpv-4fxf', published: true },
   { id: 'GHSA-3556-624q-c5w3', date: 'Sep 1, 2026', project: 'logto', title: 'SSRF via webhooks and custom OAuth2 connector userinfo endpoint', severity: 'High', cvss: '', href: 'https://github.com/logto-io/logto/security/advisories/GHSA-3556-624q-c5w3', published: true },
