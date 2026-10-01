@@ -116,6 +116,8 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-p7rg-vcfw-3gx7', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Unauthenticated /sso endpoint in ziti-console Node server can expose session info', severity: 'Critical', cvss: '9.0', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-p7rg-vcfw-3gx7', published: true },
+  { id: 'GHSA-37wj-4gv3-98rj', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Unauthenticated /api/schema endpoint in ziti-console Node server can read filesystem and make requests', severity: 'High', cvss: '8.6', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-37wj-4gv3-98rj', published: true },
   { id: 'GHSA-pc95-gc74-wg87', date: 'Sep 16, 2026', project: 'trigger.dev', title: 'Public session tokens can overwrite own server-authored chat snapshots', severity: 'Medium', cvss: '6.5', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pc95-gc74-wg87', published: true },
   { id: 'GHSA-xrp6-5fpv-4fxf', date: 'Sep 14, 2026', project: 'trigger.dev', title: 'Missing run authorization allows cross-tenant suspension and resume-data injection', severity: 'High', cvss: '8.3', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-xrp6-5fpv-4fxf', published: true },
   { id: 'GHSA-3556-624q-c5w3', date: 'Sep 1, 2026', project: 'logto', title: 'SSRF via webhooks and custom OAuth2 connector userinfo endpoint', severity: 'High', cvss: '', href: 'https://github.com/logto-io/logto/security/advisories/GHSA-3556-624q-c5w3', published: true },
@@ -165,6 +167,7 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'latitude-llm', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'kavita', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'hatchet', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
+  { id: 'Reserved', date: '', project: 'pipecat', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
 ];
 
 const sevStyle: Record<Severity, string> = {
