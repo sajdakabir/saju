@@ -116,6 +116,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-rf2c-2p5r-7g29', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Network Visualizer XSS', severity: 'Medium', cvss: '5.4', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-rf2c-2p5r-7g29', published: true },
   { id: 'GHSA-p7rg-vcfw-3gx7', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Unauthenticated /sso endpoint in ziti-console Node server can expose session info', severity: 'Critical', cvss: '9.0', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-p7rg-vcfw-3gx7', published: true },
   { id: 'GHSA-37wj-4gv3-98rj', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Unauthenticated /api/schema endpoint in ziti-console Node server can read filesystem and make requests', severity: 'High', cvss: '8.6', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-37wj-4gv3-98rj', published: true },
   { id: 'GHSA-pc95-gc74-wg87', date: 'Sep 16, 2026', project: 'trigger.dev', title: 'Public session tokens can overwrite own server-authored chat snapshots', severity: 'Medium', cvss: '6.5', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pc95-gc74-wg87', published: true },
