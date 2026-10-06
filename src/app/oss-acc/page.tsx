@@ -170,6 +170,9 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'kavita', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'hatchet', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'pipecat', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
+  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
+  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
+  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
 ];
 
 const sevStyle: Record<Severity, string> = {
