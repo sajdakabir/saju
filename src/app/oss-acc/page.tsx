@@ -10,6 +10,14 @@ import { useTheme } from '@/hooks/useTheme';
 
 const contributions = [
   {
+    name: 'FastMCP',
+    description: 'The fast, Pythonic way to build MCP servers and clients',
+    prs: [
+      { title: 'Enhancement: configure token introspection audiences', url: 'https://github.com/PrefectHQ/fastmcp/pull/5461' }
+    ],
+    date: '2026'
+  },
+  {
     name: 'n8n',
     description: 'Workflow automation platform for connecting apps and building automations with a node-based editor',
     prs: [
