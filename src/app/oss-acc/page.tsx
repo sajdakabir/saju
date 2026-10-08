@@ -124,6 +124,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-3jwr-fh8p-v85j', date: 'Oct 8, 2026', project: 'latitude-llm', title: 'removeMember has no admin gate on any path, so any organization member can remove every admin', severity: 'High', cvss: '7.1', href: 'https://github.com/latitude-dev/latitude-llm/security/advisories/GHSA-3jwr-fh8p-v85j', published: true },
   { id: 'GHSA-cr6m-qrr6-q3j8', date: 'Oct 1, 2026', project: 'ghost', title: 'Memory corruption via crafted image uploads', severity: 'High', cvss: '8.8', href: 'https://github.com/TryGhost/Ghost/security/advisories/GHSA-cr6m-qrr6-q3j8', published: true },
   { id: 'GHSA-rf2c-2p5r-7g29', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Network Visualizer XSS', severity: 'Medium', cvss: '5.4', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-rf2c-2p5r-7g29', published: true },
   { id: 'GHSA-p7rg-vcfw-3gx7', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Unauthenticated /sso endpoint in ziti-console Node server can expose session info', severity: 'Critical', cvss: '9.0', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-p7rg-vcfw-3gx7', published: true },
@@ -174,7 +175,6 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'misoTTS', title: 'Pending disclosure', severity: 'Critical', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'tolgee-platform', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'dbeaver', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
-  { id: 'Reserved', date: '', project: 'latitude-llm', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'kavita', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'hatchet', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'pipecat', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
