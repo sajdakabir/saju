@@ -124,6 +124,9 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-r7fr-2v6h-rhqf', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Group-scoped agents could read other agent groups through ncl argument spellings', severity: 'Medium', cvss: '5.5', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-r7fr-2v6h-rhqf', published: true },
+  { id: 'GHSA-g3gp-6777-8p9g', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Non-admin group members could run /clear and /upload-trace by adding a suffix', severity: 'Medium', cvss: '6.3', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-g3gp-6777-8p9g', published: true },
+  { id: 'GHSA-9j3v-9hwg-v896', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Task run-log read built a host file path from a series id without checking it', severity: 'Medium', cvss: '5.5', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-9j3v-9hwg-v896', published: true },
   { id: 'GHSA-3jwr-fh8p-v85j', date: 'Oct 8, 2026', project: 'latitude-llm', title: 'removeMember has no admin gate on any path, so any organization member can remove every admin', severity: 'High', cvss: '7.1', href: 'https://github.com/latitude-dev/latitude-llm/security/advisories/GHSA-3jwr-fh8p-v85j', published: true },
   { id: 'GHSA-cr6m-qrr6-q3j8', date: 'Oct 1, 2026', project: 'ghost', title: 'Memory corruption via crafted image uploads', severity: 'High', cvss: '8.8', href: 'https://github.com/TryGhost/Ghost/security/advisories/GHSA-cr6m-qrr6-q3j8', published: true },
   { id: 'GHSA-rf2c-2p5r-7g29', date: 'Sep 29, 2026', project: 'ziti-console', title: 'Network Visualizer XSS', severity: 'Medium', cvss: '5.4', href: 'https://github.com/openziti/ziti-console/security/advisories/GHSA-rf2c-2p5r-7g29', published: true },
@@ -178,9 +181,6 @@ const securityFindings: SecurityFinding[] = [
   { id: 'Reserved', date: '', project: 'kavita', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'hatchet', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'pipecat', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
-  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
-  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
-  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
 ];
 
 const sevStyle: Record<Severity, string> = {
