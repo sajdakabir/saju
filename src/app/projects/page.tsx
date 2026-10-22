@@ -58,6 +58,17 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      name: 'Mortise',
+      description: "A local-first password manager for macOS. The vault is encrypted on your machine and stays there; optional sync only ever carries ciphertext the relay has no key for. Also holds developer secrets for teams.",
+      techStack: ['Rust', 'Svelte', 'TypeScript', 'Argon2id', 'Browser Extension'],
+      githubUrl: 'https://github.com/sajdakabir/mortise',
+      liveUrl: 'https://vault.sajdakabir.me',
+      challenges: [
+
+      ],
+      date: '2026',
+    },
+    {
       name: 'Orbit',
       description: "Your second brain, powered by voice. Journal, take notes, and dictate in any app—all powered by your voice. One workspace to replace multiple apps.",
       techStack: ['Rust', 'Postgres', 'MCP', 'Composio', 'Voice Dictation'],
