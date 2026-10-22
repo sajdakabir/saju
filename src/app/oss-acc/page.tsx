@@ -109,6 +109,12 @@ const contributions = [
   },
 ];
 
+// Projects whose GitHub owner is a person, so the avatar isn't the product logo.
+const logoOverrides: Record<string, string> = {
+  'typebot.io': '/logos/typebot.svg',
+  'changedetection.io': '/logos/changedetection.png',
+};
+
 // Owners for pending rows that have no advisory link yet.
 const pendingOwners: Record<string, string> = {
   metabase: 'metabase',
@@ -127,10 +133,10 @@ function ownerFromUrl(url: string): string | null {
   return m ? m[1] : null;
 }
 
-function OrgIcon({ owner, name }: { owner: string | null; name: string }) {
+function OrgIcon({ owner, name, logo }: { owner: string | null; name: string; logo?: string }) {
   const [failed, setFailed] = useState(false);
   const box = 'h-5 w-5 shrink-0 rounded-[5px]';
-  if (!owner || failed) {
+  if ((!owner && !logo) || failed) {
     return (
       <span
         aria-hidden="true"
@@ -143,7 +149,7 @@ function OrgIcon({ owner, name }: { owner: string | null; name: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`https://github.com/${owner}.png?size=40`}
+      src={logo ?? `https://github.com/${owner}.png?size=40`}
       alt=""
       width={20}
       height={20}
@@ -386,6 +392,7 @@ export default function ContributionsPage() {
                           <OrgIcon
                             owner={(f.href && ownerFromUrl(f.href)) || pendingOwners[f.project] || null}
                             name={f.project}
+                            logo={logoOverrides[f.project]}
                           />
                           {f.project}
                         </h3>
