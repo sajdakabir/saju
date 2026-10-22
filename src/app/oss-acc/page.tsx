@@ -124,6 +124,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-jw4x-p897-vx6q', date: 'Oct 22, 2026', project: 'lancedb', title: 'Unvalidated table name and namespace_path in LanceDB Cloud REST URLs: "../" rewrites the request route and escapes the namespace prefix', severity: 'Medium', cvss: '4.7', href: 'https://github.com/lancedb/lancedb/security/advisories/GHSA-jw4x-p897-vx6q', published: true },
   { id: 'GHSA-r7fr-2v6h-rhqf', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Group-scoped agents could read other agent groups through ncl argument spellings', severity: 'Medium', cvss: '5.5', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-r7fr-2v6h-rhqf', published: true },
   { id: 'GHSA-g3gp-6777-8p9g', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Non-admin group members could run /clear and /upload-trace by adding a suffix', severity: 'Medium', cvss: '6.3', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-g3gp-6777-8p9g', published: true },
   { id: 'GHSA-9j3v-9hwg-v896', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Task run-log read built a host file path from a series id without checking it', severity: 'Medium', cvss: '5.5', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-9j3v-9hwg-v896', published: true },
