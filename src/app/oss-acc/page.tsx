@@ -109,6 +109,51 @@ const contributions = [
   },
 ];
 
+// Owners for pending rows that have no advisory link yet.
+const pendingOwners: Record<string, string> = {
+  metabase: 'metabase',
+  cline: 'cline',
+  mindsdb: 'mindsdb',
+  'tolgee-platform': 'tolgee',
+  dbeaver: 'dbeaver',
+  'latitude-llm': 'latitude-dev',
+  kavita: 'Kareadita',
+  hatchet: 'hatchet-dev',
+  pipecat: 'pipecat-ai',
+};
+
+function ownerFromUrl(url: string): string | null {
+  const m = url.match(/^https:\/\/github\.com\/([^/]+)\//);
+  return m ? m[1] : null;
+}
+
+function OrgIcon({ owner, name }: { owner: string | null; name: string }) {
+  const [failed, setFailed] = useState(false);
+  const box = 'h-5 w-5 shrink-0 rounded-[5px]';
+  if (!owner || failed) {
+    return (
+      <span
+        aria-hidden="true"
+        className={`${box} inline-flex items-center justify-center bg-gray-100 text-[10px] font-semibold uppercase text-gray-500 dark:bg-gray-800 dark:text-gray-400`}
+      >
+        {name.charAt(0)}
+      </span>
+    );
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`https://github.com/${owner}.png?size=40`}
+      alt=""
+      width={20}
+      height={20}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      className={`${box} bg-gray-100 object-cover dark:bg-gray-800`}
+    />
+  );
+}
+
 type Severity = 'Critical' | 'High' | 'Medium';
 
 type SecurityFinding = {
@@ -277,7 +322,8 @@ export default function ContributionsPage() {
                     className="border-b border-gray-200 dark:border-gray-700 pb-5 last:border-b-0"
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                      <h3 className="flex items-center gap-2.5 text-lg font-semibold text-gray-900 dark:text-gray-100">
+                        <OrgIcon owner={ownerFromUrl(project.prs[0].url)} name={project.name} />
                         {project.name}
                       </h3>
                       <span className="ml-4 text-xs text-gray-500 dark:text-gray-500 whitespace-nowrap">
@@ -336,7 +382,11 @@ export default function ContributionsPage() {
                   const card = (
                     <>
                       <div className="mb-2 flex items-start justify-between gap-4">
-                        <h3 className="text-[15px] font-semibold text-gray-900 dark:text-gray-100">
+                        <h3 className="flex items-center gap-2 text-[15px] font-semibold text-gray-900 dark:text-gray-100">
+                          <OrgIcon
+                            owner={(f.href && ownerFromUrl(f.href)) || pendingOwners[f.project] || null}
+                            name={f.project}
+                          />
                           {f.project}
                         </h3>
                         <div className="flex shrink-0 items-center gap-2 whitespace-nowrap pt-0.5">
