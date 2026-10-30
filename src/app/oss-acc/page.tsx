@@ -161,14 +161,15 @@ type SecurityFinding = {
   date: string;
   project: string;
   title: string;
-  severity: Severity;
+  severity: Severity | null;
   cvss: string;
   href: string;
   published: boolean;
 };
 
-// Coordinated disclosures reported via zerotrail — GitHub Security Advisories.
+// Coordinated disclosures reported via zerotrail — public security advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'CVE-2026-119168', date: 'Oct 29, 2026', project: 'nomad', title: 'Symlink following during allocation data migration may change host directory permissions and ownership', severity: null, cvss: '', href: 'https://discuss.hashicorp.com/t/hcsec-2026-53-nomad-allocation-data-migration-may-allow-host-directory-permission-modification-via-symlink-following/77931', published: true },
   { id: 'GHSA-jw4x-p897-vx6q', date: 'Oct 22, 2026', project: 'lancedb', title: 'Unvalidated table name and namespace_path in LanceDB Cloud REST URLs: "../" rewrites the request route and escapes the namespace prefix', severity: 'Medium', cvss: '4.7', href: 'https://github.com/lancedb/lancedb/security/advisories/GHSA-jw4x-p897-vx6q', published: true },
   { id: 'GHSA-r7fr-2v6h-rhqf', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Group-scoped agents could read other agent groups through ncl argument spellings', severity: 'Medium', cvss: '5.5', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-r7fr-2v6h-rhqf', published: true },
   { id: 'GHSA-g3gp-6777-8p9g', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Non-admin group members could run /clear and /upload-trace by adding a suffix', severity: 'Medium', cvss: '6.3', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-g3gp-6777-8p9g', published: true },
@@ -390,11 +391,11 @@ export default function ContributionsPage() {
                           {f.project}
                         </h3>
                         <div className="flex shrink-0 items-center gap-2 whitespace-nowrap pt-0.5">
-                          <span
+                          {f.severity && <span
                             className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[10.5px] uppercase tracking-wide ${sevStyle[f.severity]}`}
                           >
                             {f.severity}
-                          </span>
+                          </span>}
                           {!pending && f.cvss && (
                             <span className="font-mono text-[11px] text-gray-400 dark:text-gray-600">
                               CVSS {f.cvss}
