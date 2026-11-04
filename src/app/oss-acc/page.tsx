@@ -111,6 +111,7 @@ const contributions = [
 
 // Owners for pending rows that have no advisory link yet.
 const pendingOwners: Record<string, string> = {
+  litellm: 'BerriAI',
   metabase: 'metabase',
   cline: 'cline',
   mindsdb: 'mindsdb',
@@ -219,6 +220,7 @@ const securityFindings: SecurityFinding[] = [
   { id: 'PR-7772', date: 'Apr 27, 2026', project: 'tiptap', title: 'Stored XSS in @tiptap/static-renderer — missing HTML escaping in serializeAttrsToHTMLString() and text-node rendering', severity: 'Medium', cvss: '', href: 'https://github.com/ueberdosis/tiptap/pull/7772', published: true },
 
   // Coordinated — reported and accepted, awaiting public disclosure.
+  { id: 'Reserved', date: '', project: 'litellm', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'metabase', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'cline', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'mindsdb', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
