@@ -171,6 +171,8 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — public security advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-7f32-g5xc-mqr7', date: 'Nov 12, 2026', project: 'dokploy', title: 'Vault provider settings can expose stored credentials', severity: 'Medium', cvss: '6.8', href: 'https://github.com/Dokploy/dokploy/security/advisories/GHSA-7f32-g5xc-mqr7', published: true },
+  { id: 'GHSA-286g-v4cw-2x8v', date: 'Nov 12, 2026', project: 'dokploy', title: 'Deployment streaming can expose host SSH private keys to authenticated members', severity: 'High', cvss: '7.7', href: 'https://github.com/Dokploy/dokploy/security/advisories/GHSA-286g-v4cw-2x8v', published: true },
   { id: 'CVE-2026-119168', date: 'Oct 29, 2026', project: 'nomad', title: 'Symlink following during allocation data migration may change host directory permissions and ownership', severity: null, cvss: '', href: 'https://discuss.hashicorp.com/t/hcsec-2026-53-nomad-allocation-data-migration-may-allow-host-directory-permission-modification-via-symlink-following/77931', published: true },
   { id: 'GHSA-jw4x-p897-vx6q', date: 'Oct 22, 2026', project: 'lancedb', title: 'Unvalidated table name and namespace_path in LanceDB Cloud REST URLs: "../" rewrites the request route and escapes the namespace prefix', severity: 'Medium', cvss: '4.7', href: 'https://github.com/lancedb/lancedb/security/advisories/GHSA-jw4x-p897-vx6q', published: true },
   { id: 'GHSA-r7fr-2v6h-rhqf', date: 'Oct 13, 2026', project: 'nanoclaw', title: 'Group-scoped agents could read other agent groups through ncl argument spellings', severity: 'Medium', cvss: '5.5', href: 'https://github.com/nanocoai/nanoclaw/security/advisories/GHSA-r7fr-2v6h-rhqf', published: true },
