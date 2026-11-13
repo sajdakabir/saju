@@ -156,7 +156,7 @@ function OrgIcon({ owner, name }: { owner: string | null; name: string }) {
   );
 }
 
-type Severity = 'Critical' | 'High' | 'Medium';
+type Severity = 'Critical' | 'High' | 'Medium' | 'Low';
 
 type SecurityFinding = {
   id: string;
@@ -171,6 +171,8 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — public security advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-hf2m-86fv-rjw5', date: 'Nov 12, 2026', project: 'hatchet', title: 'Some endpoints bypass per-member payload viewing restrictions', severity: 'Low', cvss: '3.1', href: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-hf2m-86fv-rjw5', published: true },
+  { id: 'GHSA-2m5w-442c-7fg3', date: 'Nov 12, 2026', project: 'hatchet', title: 'Hatchet profiles can fall back to plaintext gRPC and store tokens unencrypted', severity: 'Low', cvss: '2.0', href: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-2m5w-442c-7fg3', published: true },
   { id: 'GHSA-7f32-g5xc-mqr7', date: 'Nov 12, 2026', project: 'dokploy', title: 'Vault provider settings can expose stored credentials', severity: 'Medium', cvss: '6.8', href: 'https://github.com/Dokploy/dokploy/security/advisories/GHSA-7f32-g5xc-mqr7', published: true },
   { id: 'GHSA-286g-v4cw-2x8v', date: 'Nov 12, 2026', project: 'dokploy', title: 'Deployment streaming can expose host SSH private keys to authenticated members', severity: 'High', cvss: '7.7', href: 'https://github.com/Dokploy/dokploy/security/advisories/GHSA-286g-v4cw-2x8v', published: true },
   { id: 'CVE-2026-119168', date: 'Oct 29, 2026', project: 'nomad', title: 'Symlink following during allocation data migration may change host directory permissions and ownership', severity: null, cvss: '', href: 'https://discuss.hashicorp.com/t/hcsec-2026-53-nomad-allocation-data-migration-may-allow-host-directory-permission-modification-via-symlink-following/77931', published: true },
@@ -240,6 +242,7 @@ const sevStyle: Record<Severity, string> = {
   Critical: 'border-red-500/40 bg-red-500/10 text-red-500 dark:text-red-400',
   High: 'border-orange-500/40 bg-orange-500/10 text-orange-600 dark:text-orange-400',
   Medium: 'border-yellow-500/40 bg-yellow-500/10 text-yellow-600 dark:text-yellow-500',
+  Low: 'border-blue-500/40 bg-blue-500/10 text-blue-600 dark:text-blue-400',
 };
 
 // Full literal class names so Tailwind compiles them (constructed strings aren't detected).
@@ -247,9 +250,10 @@ const sevDot: Record<Severity, string> = {
   Critical: 'bg-red-500',
   High: 'bg-orange-500',
   Medium: 'bg-yellow-500',
+  Low: 'bg-blue-500',
 };
 
-const sevOrder: Severity[] = ['Critical', 'High', 'Medium'];
+const sevOrder: Severity[] = ['Critical', 'High', 'Medium', 'Low'];
 
 export default function ContributionsPage() {
   const { theme, mounted, toggleTheme, isAnimating, incomingTheme } = useTheme();
