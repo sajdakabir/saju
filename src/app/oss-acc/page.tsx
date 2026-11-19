@@ -172,6 +172,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — public security advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-3pr6-pcvv-9jrp', date: 'Nov 19, 2026', project: 'pangolin', title: 'Unauthenticated internal API route exposes decrypted OIDC client credentials', severity: 'High', cvss: '7.4', href: 'https://github.com/fosrl/pangolin/security/advisories/GHSA-3pr6-pcvv-9jrp', published: true },
   { id: 'GHSA-99hv-gfpx-m2jj', date: 'Nov 18, 2026', project: 'trigger.dev', title: 'Restricted API keys can read stored packets outside their scope through payload-pointer injection', severity: 'Medium', cvss: '5.3', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-99hv-gfpx-m2jj', published: true },
   { id: 'GHSA-hf2m-86fv-rjw5', date: 'Nov 12, 2026', project: 'hatchet', title: 'Some endpoints bypass per-member payload viewing restrictions', severity: 'Low', cvss: '3.1', href: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-hf2m-86fv-rjw5', published: true },
   { id: 'GHSA-2m5w-442c-7fg3', date: 'Nov 12, 2026', project: 'hatchet', title: 'Hatchet profiles can fall back to plaintext gRPC and store tokens unencrypted', severity: 'Low', cvss: '2.0', href: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-2m5w-442c-7fg3', published: true },
