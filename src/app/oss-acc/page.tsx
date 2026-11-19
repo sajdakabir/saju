@@ -111,6 +111,7 @@ const contributions = [
 
 // Owners for pending rows that have no advisory link yet.
 const pendingOwners: Record<string, string> = {
+  nanoclaw: 'nanocoai',
   hyperswitch: 'juspay',
   litellm: 'BerriAI',
   metabase: 'metabase',
@@ -171,6 +172,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — public security advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-99hv-gfpx-m2jj', date: 'Nov 18, 2026', project: 'trigger.dev', title: 'Restricted API keys can read stored packets outside their scope through payload-pointer injection', severity: 'Medium', cvss: '5.3', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-99hv-gfpx-m2jj', published: true },
   { id: 'GHSA-hf2m-86fv-rjw5', date: 'Nov 12, 2026', project: 'hatchet', title: 'Some endpoints bypass per-member payload viewing restrictions', severity: 'Low', cvss: '3.1', href: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-hf2m-86fv-rjw5', published: true },
   { id: 'GHSA-2m5w-442c-7fg3', date: 'Nov 12, 2026', project: 'hatchet', title: 'Hatchet profiles can fall back to plaintext gRPC and store tokens unencrypted', severity: 'Low', cvss: '2.0', href: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-2m5w-442c-7fg3', published: true },
   { id: 'GHSA-7f32-g5xc-mqr7', date: 'Nov 12, 2026', project: 'dokploy', title: 'Vault provider settings can expose stored credentials', severity: 'Medium', cvss: '6.8', href: 'https://github.com/Dokploy/dokploy/security/advisories/GHSA-7f32-g5xc-mqr7', published: true },
@@ -226,7 +228,8 @@ const securityFindings: SecurityFinding[] = [
   { id: 'CVE-2026-33981', date: 'Mar 27, 2026', project: 'changedetection.io', title: 'Environment variable disclosure via the jq env builtin', severity: 'High', cvss: '', href: 'https://github.com/dgtlmoon/changedetection.io/security/advisories/GHSA-58r7-4wr5-hfx8', published: true },
   { id: 'PR-7772', date: 'Apr 27, 2026', project: 'tiptap', title: 'Stored XSS in @tiptap/static-renderer — missing HTML escaping in serializeAttrsToHTMLString() and text-node rendering', severity: 'Medium', cvss: '', href: 'https://github.com/ueberdosis/tiptap/pull/7772', published: true },
 
-  // Coordinated — reported and accepted, awaiting public disclosure.
+  // Reported findings awaiting public disclosure.
+  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'hyperswitch', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'litellm', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'metabase', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
