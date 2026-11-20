@@ -172,6 +172,7 @@ type SecurityFinding = {
 
 // Coordinated disclosures reported via zerotrail — public security advisories.
 const securityFindings: SecurityFinding[] = [
+  { id: 'GHSA-cm7r-f7h3-q33p', date: 'Nov 19, 2026', project: 'appsmith', title: 'SQL injection in datasource filters allows server-side file reads and writes', severity: 'High', cvss: '8.3', href: 'https://github.com/appsmithorg/appsmith/security/advisories/GHSA-cm7r-f7h3-q33p', published: true },
   { id: 'GHSA-3pr6-pcvv-9jrp', date: 'Nov 19, 2026', project: 'pangolin', title: 'Unauthenticated internal API route exposes decrypted OIDC client credentials', severity: 'High', cvss: '7.4', href: 'https://github.com/fosrl/pangolin/security/advisories/GHSA-3pr6-pcvv-9jrp', published: true },
   { id: 'GHSA-99hv-gfpx-m2jj', date: 'Nov 18, 2026', project: 'trigger.dev', title: 'Restricted API keys can read stored packets outside their scope through payload-pointer injection', severity: 'Medium', cvss: '5.3', href: 'https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-99hv-gfpx-m2jj', published: true },
   { id: 'GHSA-hf2m-86fv-rjw5', date: 'Nov 12, 2026', project: 'hatchet', title: 'Some endpoints bypass per-member payload viewing restrictions', severity: 'Low', cvss: '3.1', href: 'https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-hf2m-86fv-rjw5', published: true },
@@ -230,6 +231,7 @@ const securityFindings: SecurityFinding[] = [
   { id: 'PR-7772', date: 'Apr 27, 2026', project: 'tiptap', title: 'Stored XSS in @tiptap/static-renderer — missing HTML escaping in serializeAttrsToHTMLString() and text-node rendering', severity: 'Medium', cvss: '', href: 'https://github.com/ueberdosis/tiptap/pull/7772', published: true },
 
   // Reported findings awaiting public disclosure.
+  { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'nanoclaw', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'hyperswitch', title: 'Pending disclosure', severity: 'Medium', cvss: '', href: '', published: false },
   { id: 'Reserved', date: '', project: 'litellm', title: 'Pending disclosure', severity: 'High', cvss: '', href: '', published: false },
